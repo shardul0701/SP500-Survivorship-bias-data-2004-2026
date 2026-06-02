@@ -1,0 +1,32 @@
+{
+  "source_repo": "https://github.com/fja05680/sp500",
+  "sources": {
+    "base_historical": {
+      "file": "S&P 500 Historical Components & Changes.csv",
+      "coverage": "1996-01-02 to 2019-01-11",
+      "notes": "Original source file. Tickers included TICKER-YYYYMM suffixes indicating removal month."
+    },
+    "post_2019_patch": {
+      "file": "sp500_changes_since_2019.csv",
+      "coverage": "2019-01-18 to 2026-01-14",
+      "notes": "add/remove change log format. Supplementary reference for cross-validation."
+    },
+    "final_generated_source": {
+      "file": "S&P 500 Historical Components & Changes(01-17-2026).csv",
+      "coverage": "1996-01-02 to 2026-01-14",
+      "notes": "Updated consolidated file with clean tickers (no YYYYMM suffixes). Primary source used for YAML generation."
+    }
+  },
+  "date_downloaded": "2026-06-02",
+  "license": "MIT (see licenses/fja05680_sp500_LICENSE)",
+  "yaml_coverage": "2004-01-01 through 2026-01-14 (real data). 2026-01-15 onward is frozen at last known membership.",
+  "data_freeze_date": "2026-01-14",
+  "caveats": [
+    "Historical S&P 500 data sourced from community-maintained repo. Research-grade accuracy.",
+    "Some historical tickers may use old symbols that predate modern corporate renaming.",
+    "Tickers T, ON, Y, N are quoted in YAML output to prevent YAML 1.1 boolean misparse.",
+    "2026-01-15 and beyond: no changes recorded. Update manually from upstream source when available.",
+    "Pre-2004 data exists in source but is not included here."
+  ],
+  "note": "Converted to internal canonical YAML format for point-in-time S&P 500 backtesting universe. Do not depend on upstream repo at runtime."
+}

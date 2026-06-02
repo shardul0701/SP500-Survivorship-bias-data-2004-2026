@@ -1,0 +1,721 @@
+year: 2007
+
+tickers_on_Jan_1:
+  - 'A'
+  - 'AABA'
+  - 'AAPL'
+  - 'ABC'
+  - 'ABI'
+  - 'ABKFQ'
+  - 'ABT'
+  - 'ACS'
+  - 'ADBE'
+  - 'ADCT'
+  - 'ADI'
+  - 'ADM'
+  - 'ADP'
+  - 'ADSK'
+  - 'AEE'
+  - 'AEP'
+  - 'AES'
+  - 'AET'
+  - 'AFL'
+  - 'AGN'
+  - 'AIG'
+  - 'AIV'
+  - 'ALL'
+  - 'ALTR'
+  - 'AMAT'
+  - 'AMD'
+  - 'AMGN'
+  - 'AMP'
+  - 'AMZN'
+  - 'AN'
+  - 'ANTM'
+  - 'AON'
+  - 'APA'
+  - 'APC'
+  - 'APCC'
+  - 'APD'
+  - 'APOL'
+  - 'ARNC'
+  - 'ASH'
+  - 'ASN'
+  - 'AT'
+  - 'ATI'
+  - 'AV'
+  - 'AVP'
+  - 'AVY'
+  - 'AW'
+  - 'AXP'
+  - 'AYE'
+  - 'AZO'
+  - 'BA'
+  - 'BAC'
+  - 'BAX'
+  - 'BBBY'
+  - 'BBT'
+  - 'BBY'
+  - 'BC'
+  - 'BCR'
+  - 'BDK'
+  - 'BDX'
+  - 'BEAM'
+  - 'BEN'
+  - 'BF.B'
+  - 'BHGE'
+  - 'BIG'
+  - 'BIIB'
+  - 'BJS'
+  - 'BK'
+  - 'BLL'
+  - 'BLS'
+  - 'BMC'
+  - 'BMET'
+  - 'BMS'
+  - 'BMY'
+  - 'BNI'
+  - 'BOL'
+  - 'BRCM'
+  - 'BRL'
+  - 'BSC'
+  - 'BSX'
+  - 'BTUUQ'
+  - 'BUD'
+  - 'BXP'
+  - 'C'
+  - 'CA'
+  - 'CAG'
+  - 'CAH'
+  - 'CAT'
+  - 'CB'
+  - 'CBE'
+  - 'CBH'
+  - 'CBRE'
+  - 'CBS'
+  - 'CBSS'
+  - 'CCE'
+  - 'CCL'
+  - 'CCTYQ'
+  - 'CCU'
+  - 'CEG'
+  - 'CELG'
+  - 'CFC'
+  - 'CHK'
+  - 'CI'
+  - 'CIEN'
+  - 'CINF'
+  - 'CITGQ'
+  - 'CL'
+  - 'CLX'
+  - 'CMA'
+  - 'CMCSA'
+  - 'CME'
+  - 'CMI'
+  - 'CMS'
+  - 'CMVT'
+  - 'CMX'
+  - 'CNP'
+  - 'CNX'
+  - 'COF'
+  - 'COL'
+  - 'COP'
+  - 'COST'
+  - 'CPB'
+  - 'CPWR'
+  - 'CSCO'
+  - 'CSX'
+  - 'CTAS'
+  - 'CTL'
+  - 'CTSH'
+  - 'CTX'
+  - 'CTXS'
+  - 'CVG'
+  - 'CVH'
+  - 'CVS'
+  - 'CVX'
+  - 'D'
+  - 'DD'
+  - 'DDS'
+  - 'DE'
+  - 'DELL'
+  - 'DF'
+  - 'DG'
+  - 'DGX'
+  - 'DHI'
+  - 'DHR'
+  - 'DIS'
+  - 'DJ'
+  - 'DOV'
+  - 'DOW'
+  - 'DRI'
+  - 'DTE'
+  - 'DTV'
+  - 'DUK'
+  - 'DVN'
+  - 'DXC'
+  - 'DYN'
+  - 'EA'
+  - 'EBAY'
+  - 'ECL'
+  - 'ED'
+  - 'EDS'
+  - 'EFX'
+  - 'EIX'
+  - 'EKDKQ'
+  - 'EL'
+  - 'EMC'
+  - 'EMN'
+  - 'EMR'
+  - 'EOG'
+  - 'EOP'
+  - 'EP'
+  - 'EQ'
+  - 'EQR'
+  - 'ESRX'
+  - 'ETFC'
+  - 'ETN'
+  - 'ETR'
+  - 'EXC'
+  - 'F'
+  - 'FCX'
+  - 'FDC'
+  - 'FDO'
+  - 'FDX'
+  - 'FE'
+  - 'FHN'
+  - 'FII'
+  - 'FIS'
+  - 'FISV'
+  - 'FITB'
+  - 'FLR'
+  - 'FMCC'
+  - 'FNMA'
+  - 'FOXA'
+  - 'FRX'
+  - 'FTR'
+  - 'GAS'
+  - 'GD'
+  - 'GE'
+  - 'GENZ'
+  - 'GILD'
+  - 'GIS'
+  - 'GLW'
+  - 'GNW'
+  - 'GOOGL'
+  - 'GPC'
+  - 'GPS'
+  - 'GR'
+  - 'GS'
+  - 'GT'
+  - 'GWW'
+  - 'H'
+  - 'HAL'
+  - 'HAR'
+  - 'HAS'
+  - 'HBAN'
+  - 'HCR'
+  - 'HD'
+  - 'HES'
+  - 'HET'
+  - 'HIG'
+  - 'HLT'
+  - 'HMA'
+  - 'HNZ'
+  - 'HOG'
+  - 'HON'
+  - 'HOT'
+  - 'HPC'
+  - 'HPQ'
+  - 'HRB'
+  - 'HSH'
+  - 'HSP'
+  - 'HSY'
+  - 'HUM'
+  - 'IAC'
+  - 'IBM'
+  - 'IFF'
+  - 'IGT'
+  - 'INTC'
+  - 'INTU'
+  - 'IP'
+  - 'IPG'
+  - 'IR'
+  - 'ITT'
+  - 'ITW'
+  - 'JAVA'
+  - 'JBL'
+  - 'JCI'
+  - 'JCP'
+  - 'JNJ'
+  - 'JNPR'
+  - 'JNS'
+  - 'JNY'
+  - 'JPM'
+  - 'JWN'
+  - 'K'
+  - 'KATE'
+  - 'KBH'
+  - 'KEY'
+  - 'KG'
+  - 'KIM'
+  - 'KLAC'
+  - 'KMB'
+  - 'KMI'
+  - 'KO'
+  - 'KR'
+  - 'KSE'
+  - 'KSS'
+  - 'L'
+  - 'LB'
+  - 'LEG'
+  - 'LEHMQ'
+  - 'LEN'
+  - 'LH'
+  - 'LLL'
+  - 'LLTC'
+  - 'LLY'
+  - 'LM'
+  - 'LMT'
+  - 'LNC'
+  - 'LOW'
+  - 'LSI'
+  - 'LUV'
+  - 'LXK'
+  - 'M'
+  - 'MAR'
+  - 'MAS'
+  - 'MAT'
+  - 'MBI'
+  - 'MCD'
+  - 'MCK'
+  - 'MCO'
+  - 'MDP'
+  - 'MDT'
+  - 'MEDI'
+  - 'MEL'
+  - 'MER'
+  - 'MET'
+  - 'MHS'
+  - 'MI'
+  - 'MIL'
+  - 'MKC'
+  - 'MMC'
+  - 'MMM'
+  - 'MO'
+  - 'MOLX'
+  - 'MON'
+  - 'MRK'
+  - 'MRO'
+  - 'MS'
+  - 'MSFT'
+  - 'MSI'
+  - 'MTB'
+  - 'MTG'
+  - 'MTLQQ'
+  - 'MU'
+  - 'MUR'
+  - 'MWV'
+  - 'MWW'
+  - 'MXIM'
+  - 'MYL'
+  - 'NBR'
+  - 'NCC'
+  - 'NCR'
+  - 'NE'
+  - 'NEE'
+  - 'NEM'
+  - 'NI'
+  - 'NKE'
+  - 'NOC'
+  - 'NOV'
+  - 'NOVL'
+  - 'NSC'
+  - 'NSM'
+  - 'NTAP'
+  - 'NTRS'
+  - 'NUE'
+  - 'NVDA'
+  - 'NVLS'
+  - 'NWL'
+  - 'NYT'
+  - 'ODP'
+  - 'OMC'
+  - 'OMX'
+  - 'ORCL'
+  - 'OXY'
+  - 'PAYX'
+  - 'PBG'
+  - 'PBI'
+  - 'PCAR'
+  - 'PCG'
+  - 'PCL'
+  - 'PD'
+  - 'PDCO'
+  - 'PEG'
+  - 'PEP'
+  - 'PFE'
+  - 'PFG'
+  - 'PG'
+  - 'PGL'
+  - 'PGN'
+  - 'PGR'
+  - 'PH'
+  - 'PHM'
+  - 'PKI'
+  - 'PLD'
+  - 'PLL'
+  - 'PMCS'
+  - 'PNC'
+  - 'PNW'
+  - 'PPG'
+  - 'PPL'
+  - 'PRU'
+  - 'PSA'
+  - 'PTC'
+  - 'PTV'
+  - 'PX'
+  - 'Q'
+  - 'QCOM'
+  - 'QLGC'
+  - 'R'
+  - 'RAI'
+  - 'RDC'
+  - 'RF'
+  - 'RHI'
+  - 'RIG'
+  - 'ROH'
+  - 'ROK'
+  - 'RRD'
+  - 'RSHCQ'
+  - 'RTN'
+  - 'RX'
+  - 'S'
+  - 'SAF'
+  - 'SANM'
+  - 'SBL'
+  - 'SBUX'
+  - 'SCHW'
+  - 'SEE'
+  - 'SGP'
+  - 'SHLD'
+  - 'SHW'
+  - 'SIAL'
+  - 'SII'
+  - 'SLB'
+  - 'SLM'
+  - 'SLR'
+  - 'SNA'
+  - 'SNDK'
+  - 'SNV'
+  - 'SO'
+  - 'SOV'
+  - 'SPG'
+  - 'SPGI'
+  - 'SPLS'
+  - 'SRE'
+  - 'SSP'
+  - 'STI'
+  - 'STJ'
+  - 'STR'
+  - 'STT'
+  - 'STZ'
+  - 'SUN'
+  - 'SVU'
+  - 'SWK'
+  - 'SWY'
+  - 'SYK'
+  - 'SYMC'
+  - 'SYY'
+  - 'T'
+  - 'TAP'
+  - 'TE'
+  - 'TEK'
+  - 'TER'
+  - 'TEX'
+  - 'TGNA'
+  - 'TGT'
+  - 'THC'
+  - 'TIF'
+  - 'TIN'
+  - 'TJX'
+  - 'TLAB'
+  - 'TMK'
+  - 'TMO'
+  - 'TPR'
+  - 'TRB'
+  - 'TROW'
+  - 'TRV'
+  - 'TSG'
+  - 'TSN'
+  - 'TT'
+  - 'TWX'
+  - 'TXN'
+  - 'TXT'
+  - 'TXU'
+  - 'UIS'
+  - 'UNH'
+  - 'UNM'
+  - 'UNP'
+  - 'UPS'
+  - 'USB'
+  - 'UST'
+  - 'UTX'
+  - 'UVN'
+  - 'VFC'
+  - 'VIAB'
+  - 'VIAV'
+  - 'VLO'
+  - 'VMC'
+  - 'VNO'
+  - 'VRSN'
+  - 'VZ'
+  - 'WAMUQ'
+  - 'WAT'
+  - 'WB'
+  - 'WBA'
+  - 'WEN'
+  - 'WFC'
+  - 'WFM'
+  - 'WFT'
+  - 'WHR'
+  - 'WIN'
+  - 'WM'
+  - 'WMB'
+  - 'WMT'
+  - 'WU'
+  - 'WWY'
+  - 'WY'
+  - 'WYE'
+  - 'WYND'
+  - 'X'
+  - 'XEL'
+  - 'XL'
+  - 'XLNX'
+  - 'XOM'
+  - 'XRX'
+  - 'XTO'
+  - 'YUM'
+  - 'ZBH'
+  - 'ZION'
+
+changes:
+
+  '2007-01-03':
+    difference:
+      - 'BLS'
+      - 'PTC'
+    union:
+      - 'SE'
+
+  '2007-01-04':
+    union:
+      - 'ESV'
+
+  '2007-01-10':
+    difference:
+      - 'SBL'
+    union:
+      - 'AVB'
+
+  '2007-02-01':
+    difference:
+      - 'CMVT'
+
+  '2007-02-02':
+    union:
+      - 'RL'
+
+  '2007-02-12':
+    difference:
+      - 'EOP'
+    union:
+      - 'VAR'
+
+  '2007-02-15':
+    difference:
+      - 'APCC'
+    union:
+      - 'HCBK'
+
+  '2007-02-22':
+    difference:
+      - 'PGL'
+    union:
+      - 'TEG'
+
+  '2007-03-02':
+    difference:
+      - 'HMA'
+    union:
+      - 'CHRW'
+
+  '2007-03-20':
+    difference:
+      - 'PD'
+    union:
+      - 'HST'
+
+  '2007-03-23':
+    difference:
+      - 'CMX'
+    union:
+      - 'DDR'
+
+  '2007-03-29':
+    difference:
+      - 'UVN'
+    union:
+      - 'ANF'
+
+  '2007-04-02':
+    difference:
+      - 'TSG'
+    union:
+      - 'MDLZ'
+
+  '2007-04-10':
+    difference:
+      - 'H'
+    union:
+      - 'AIZ'
+
+  '2007-05-31':
+    difference:
+      - 'KMI'
+    union:
+      - 'SUNEQ'
+
+  '2007-06-01':
+    difference:
+      - 'MEDI'
+    union:
+      - 'PCP'
+
+  '2007-07-02':
+    difference:
+      - 'ADCT'
+      - 'MEL'
+      - 'PMCS'
+      - 'SANM'
+    union:
+      - 'COV'
+      - 'DFS'
+      - 'GGP'
+      - 'TEL'
+
+  '2007-07-09':
+    difference:
+      - 'DG'
+    union:
+      - 'ACAS'
+
+  '2007-07-12':
+    difference:
+      - 'BMET'
+    union:
+      - 'AKAM'
+
+  '2007-08-27':
+    difference:
+      - 'KSE'
+    union:
+      - 'JEF'
+
+  '2007-09-07':
+    difference:
+      - 'CBSS'
+    union:
+      - 'MCHP'
+
+  '2007-09-25':
+    difference:
+      - 'FDC'
+
+  '2007-09-26':
+    union:
+      - 'ICE'
+
+  '2007-09-27':
+    difference:
+      - 'MXIM'
+    union:
+      - 'ANDV'
+
+  '2007-10-01':
+    difference:
+      - 'NCR'
+    union:
+      - 'TDC'
+
+  '2007-10-02':
+    difference:
+      - 'SLR'
+    union:
+      - 'EXPE'
+
+  '2007-10-08':
+    difference:
+      - 'ASN'
+    union:
+      - 'NBL'
+
+  '2007-10-10':
+    difference:
+      - 'TXU'
+    union:
+      - 'EXPD'
+
+  '2007-10-25':
+    difference:
+      - 'HLT'
+    union:
+      - 'NYX'
+
+  '2007-10-26':
+    difference:
+      - 'AV'
+    union:
+      - 'JEC'
+
+  '2007-10-29':
+    difference:
+      - 'BOL'
+    union:
+      - 'TIE'
+
+  '2007-11-09':
+    difference:
+      - 'HCR'
+    union:
+      - 'POM'
+
+  '2007-11-16':
+    difference:
+      - 'TEK'
+    union:
+      - 'MTW'
+
+  '2007-11-19':
+    difference:
+      - 'AT'
+    union:
+      - 'AMT'
+
+  '2007-12-14':
+    difference:
+      - 'DJ'
+    union:
+      - 'GME'
+
+  '2007-12-21':
+    difference:
+      - 'TRB'
+    union:
+      - 'RRC'
+
+  '2007-12-31':
+    difference:
+      - 'TIN'
+    union:
+      - 'GHC'
