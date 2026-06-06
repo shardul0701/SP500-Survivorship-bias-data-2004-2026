@@ -1,2 +1,9 @@
 pyyaml>=6.0
 pandas>=1.5.0
+pytest>=8.0
+beautifulsoup4>=4.12
+pypdf>=5.0
+python-dateutil>=2.9
+requests>=2.32
+ruamel.yaml>=0.18
+truststore>=0.10

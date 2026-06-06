@@ -1,0 +1,26 @@
+repository_index: sp500
+confidence_threshold: 0.90
+
+sources:
+  - index_name: S&P 500
+    source_name: S&P Global Press Releases
+    source_url: https://press.spglobal.com/index.php?s=2429&l=100
+    source_type: html
+    parser_name: spglobal_press_archive
+    official_source: true
+    enabled: true
+    discovery: true
+    notes: Official S&P Global press archive; discovery is title-filtered for S&P 500 changes.
+    seed_urls:
+      - https://press.spglobal.com/2026-06-05-Marvell-Technology-and-Flex-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+      - https://press.spglobal.com/2026-05-27-FedEx-Freight-Holding-Company-Set-to-Join-S-P-500-EPAM-Systems-and-Dave-to-Join-S-P-SmallCap-600
+
+  - index_name: S&P 500
+    source_name: S&P Dow Jones Index News and Announcements
+    source_url: https://www.spglobal.com/spdji/en/index-news-and-announcements/
+    source_type: html
+    parser_name: spdji_index_news
+    official_source: true
+    enabled: false
+    discovery: true
+    notes: Official S&P DJI announcement hub; disabled until its client-rendered listing has a stable selector.
