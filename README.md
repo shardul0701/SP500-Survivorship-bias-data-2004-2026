@@ -12,8 +12,10 @@ Each year has a YAML file under `src/sp500_ticker_history/` recording:
 This allows you to reconstruct the exact S&P 500 universe on any date, including
 tickers that were later removed — eliminating survivorship bias.
 
-**Data coverage:** Source CSV covers 1996-01-02 through 2019-01-11.
-YAML files for 2020-2026 carry forward the last known 2019 membership (no change entries).
+**Data coverage:** YAML membership covers 2004 through June 2026. Historical data begins
+with the consolidated community dataset, while post-2019 changes are reconciled against
+official S&P Global announcements. Verified changes are current through June 2, 2026,
+with the announced June 22, 2026 rebalance stored as pending.
 
 ## Usage
 
@@ -63,6 +65,13 @@ python scripts/update_membership_yaml.py --index sp500 --dry-run
 python scripts/validate_membership.py --index sp500
 python scripts/audit_membership_update.py
 python scripts/check_freshness.py --index sp500
+```
+
+For a bounded historical audit:
+
+```bash
+python scripts/fetch_official_sp500_announcements.py --history-start 2018-11-01
+python scripts/reconcile_official_sp500_history.py --start-year 2019 --end-year 2026
 ```
 
 See `MERGE_OR_REFRESH_SPEC.md` for source registration, validation, correction mode, and the

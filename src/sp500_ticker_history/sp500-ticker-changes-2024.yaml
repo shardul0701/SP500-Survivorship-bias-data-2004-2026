@@ -527,26 +527,48 @@ changes:
       - 'DECK'
       - 'SMCI'
 
+    source_url: https://press.spglobal.com/2024-03-01-Super-Micro-Computer-and-Deckers-Outdoor-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Super Micro Computer and Deckers Outdoor Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2024-03-01'
+    confidence_score: 0.99
   '2024-03-25':
     difference:
       - 'FLT'
     union:
       - 'CPAY'
 
+  '2024-04-01':
+    union:
+      - SOLV
+    source_url: https://press.spglobal.com/2024-03-27-GE-Vernova-and-Solventum-Set-to-Join-S-P-500-Dentsply-Sirona-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600
+    source_title: GE Vernova and Solventum Set to Join S&P 500; Dentsply Sirona to Join S&P MidCap 400; Others to Join S&P SmallCap 600
+    announcement_date: '2024-03-27'
+    confidence_score: 0.99
+  '2024-04-02':
+    union:
+      - GEV
+    source_url: https://press.spglobal.com/2024-03-27-GE-Vernova-and-Solventum-Set-to-Join-S-P-500-Dentsply-Sirona-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600
+    source_title: GE Vernova and Solventum Set to Join S&P 500; Dentsply Sirona to Join S&P MidCap 400; Others to Join S&P SmallCap 600
+    announcement_date: '2024-03-27'
+    confidence_score: 0.99
   '2024-04-03':
     difference:
-      - 'VFC'
-      - 'XRAY'
-    union:
-      - 'GEV'
-      - 'SOLV'
-
+      - VFC
+      - XRAY
+    source_url: https://press.spglobal.com/2024-03-27-GE-Vernova-and-Solventum-Set-to-Join-S-P-500-Dentsply-Sirona-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600
+    source_title: GE Vernova and Solventum Set to Join S&P 500; Dentsply Sirona to Join S&P MidCap 400; Others to Join S&P SmallCap 600
+    announcement_date: '2024-03-27'
+    confidence_score: 0.99
   '2024-05-08':
     difference:
       - 'PXD'
     union:
       - 'VST'
 
+    source_url: https://press.spglobal.com/2024-05-03-Vistra-Set-to-Join-S-P-500-Aaon-to-Join-S-P-MidCap-400-Marathon-Digital-Holdings-to-Join-S-P-SmallCap-600
+    source_title: Vistra Set to Join S&P 500; Aaon to Join S&P MidCap 400; Marathon Digital Holdings to Join S&P SmallCap 600
+    announcement_date: '2024-05-03'
+    confidence_score: 0.99
   '2024-06-24':
     difference:
       - 'CMA'
@@ -557,6 +579,10 @@ changes:
       - 'GDDY'
       - 'KKR'
 
+    source_url: https://press.spglobal.com/2024-06-07-KKR,-CrowdStrike-Holdings-and-GoDaddy-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: KKR, CrowdStrike Holdings and GoDaddy Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2024-06-07'
+    confidence_score: 0.99
   '2024-07-08':
     difference:
       - 'WRK'
@@ -573,20 +599,36 @@ changes:
       - 'ERIE'
       - 'PLTR'
 
+    source_url: https://press.spglobal.com/2024-09-06-Palantir-Technologies,-Dell-Technologies,-and-Erie-Indemnity-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Palantir Technologies, Dell Technologies, and Erie Indemnity Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2024-09-06'
+    confidence_score: 0.99
   '2024-09-30':
     union:
       - 'AMTM'
 
+    source_url: https://press.spglobal.com/2024-09-24-Amentum-Set-to-Join-S-P-500-Bath-Body-Works-to-Join-S-P-SmallCap-600
+    source_title: Amentum Set to Join S&P 500; Bath & Body Works to Join S&P SmallCap 600
+    announcement_date: '2024-09-24'
+    confidence_score: 0.99
   '2024-10-01':
     difference:
       - 'BBWI'
 
+    source_url: https://press.spglobal.com/2024-09-24-Amentum-Set-to-Join-S-P-500-Bath-Body-Works-to-Join-S-P-SmallCap-600
+    source_title: Amentum Set to Join S&P 500; Bath & Body Works to Join S&P SmallCap 600
+    announcement_date: '2024-09-24'
+    confidence_score: 0.99
   '2024-11-26':
     difference:
       - 'MRO'
     union:
       - 'TPL'
 
+    source_url: https://press.spglobal.com/2024-11-21-Texas-Pacific-Land-Set-to-Join-S-P-500,-Mueller-Industries-to-Join-S-P-MidCap-400-and-Atlas-Energy-Solutions-to-Join-S-P-SmallCap-600
+    source_title: Texas Pacific Land Set to Join S&P 500, Mueller Industries to Join S&P MidCap 400 and Atlas Energy Solutions to Join S&P SmallCap 600
+    announcement_date: '2024-11-21'
+    confidence_score: 0.99
   '2024-12-23':
     difference:
       - 'AMTM'

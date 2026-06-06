@@ -512,3 +512,71 @@ changes:
       - 'MMC'
     union:
       - 'MRSH'
+  '2026-02-09':
+    difference:
+      - DAY
+    union:
+      - CIEN
+    source_url: https://press.spglobal.com/2026-02-04-Ciena-Set-to-Join-S-P-500-Arrowhead-Pharmaceuticals-to-Join-S-P-MidCap-400-ADT-and-OneSpaWorld-Holdings-to-Join-S-P-SmallCap-600
+    source_title: Ciena Set to Join S&P 500; Arrowhead Pharmaceuticals to Join S&P MidCap 400; ADT and OneSpaWorld Holdings to Join S&P SmallCap 600
+    announcement_date: '2026-02-04'
+    confidence_score: 0.99
+  '2026-03-23':
+    difference:
+      - LW
+      - MOH
+      - MTCH
+      - PAYC
+    union:
+      - COHR
+      - LITE
+      - SATS
+      - VRT
+    source_url: https://press.spglobal.com/2026-03-06-Vertiv-Holdings,-Lumentum-Holdings,-Coherent,-and-EchoStar-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400,-and-S-P-SmallCap-600
+    source_title: Vertiv Holdings, Lumentum Holdings, Coherent, and EchoStar Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400, and S&P SmallCap 600
+    announcement_date: '2026-03-06'
+    confidence_score: 0.99
+  '2026-04-09':
+    difference:
+      - HOLX
+    union:
+      - CASY
+    source_url: https://press.spglobal.com/2026-04-06-Caseys-General-Stores-Set-to-Join-S-P-500-DigitalOcean-Holdings-to-Join-S-P-MidCap-400-Broadstone-Net-Lease-to-Join-S-P-SmallCap-600
+    source_title: Casey's General Stores Set to Join S&P 500; DigitalOcean Holdings to Join S&P MidCap 400; Broadstone Net Lease to Join S&P SmallCap 600
+    announcement_date: '2026-04-06'
+    confidence_score: 0.99
+  '2026-05-07':
+    difference:
+      - CTRA
+    union:
+      - VEEV
+    source_url: https://press.spglobal.com/2026-04-30-Veeva-Systems-Set-to-Join-S-P-500
+    source_title: Veeva Systems Set to Join S&P 500
+    announcement_date: '2026-04-30'
+    confidence_score: 0.99
+  '2026-06-01':
+    union:
+      - FDXF
+    source_url: https://press.spglobal.com/2026-05-27-FedEx-Freight-Holding-Company-Set-to-Join-S-P-500-EPAM-Systems-and-Dave-to-Join-S-P-SmallCap-600
+    source_title: FedEx Freight Holding Company Set to Join S&P 500; EPAM Systems and Dave to Join S&P SmallCap 600
+    announcement_date: '2026-05-27'
+    confidence_score: 0.99
+  '2026-06-02':
+    difference:
+      - EPAM
+    source_url: https://press.spglobal.com/2026-05-27-FedEx-Freight-Holding-Company-Set-to-Join-S-P-500-EPAM-Systems-and-Dave-to-Join-S-P-SmallCap-600
+    source_title: FedEx Freight Holding Company Set to Join S&P 500; EPAM Systems and Dave to Join S&P SmallCap 600
+    announcement_date: '2026-05-27'
+    confidence_score: 0.99
+  '2026-06-22':
+    difference:
+      - CPB
+      - POOL
+    union:
+      - FLEX
+      - MRVL
+    source_url: https://press.spglobal.com/2026-06-05-Marvell-Technology-and-Flex-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Marvell Technology and Flex Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2026-06-05'
+    confidence_score: 0.99
+    pending: true

@@ -20,7 +20,7 @@ from dataclasses import dataclass
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Iterable
-from urllib.parse import urljoin, urlparse
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlsplit, urlunsplit
 
 import requests
 import yaml
@@ -184,6 +184,26 @@ def normalize_ticker(raw: str, aliases: dict[str, str]) -> str | None:
     return ticker if TICKER_PATTERN.fullmatch(ticker) else None
 
 
+def normalize_ticker_cell(raw: str, aliases: dict[str, str]) -> list[str]:
+    compact = raw.strip().upper()
+    if compact in aliases:
+        return [aliases[compact]]
+    if "/" in compact:
+        slash_values = [
+            value
+            for part in compact.split("/")
+            if (value := normalize_ticker(part, aliases))
+        ]
+        if len(slash_values) > 1:
+            return list(dict.fromkeys(slash_values))
+    values = []
+    for token in re.findall(r"[A-Z][A-Z0-9.\-/]{0,11}", compact):
+        ticker = normalize_ticker(token, aliases)
+        if ticker and ticker not in values:
+            values.append(ticker)
+    return values
+
+
 def official_url(url: str, allowed_domains: set[str]) -> bool:
     host = (urlparse(url).hostname or "").lower()
     return host in allowed_domains
@@ -258,6 +278,77 @@ def discover_links(index: str, html: bytes, base_url: str) -> list[tuple[str, st
         if title and title_pattern.search(title):
             found[href] = title
     return sorted(found.items())
+
+
+def press_release_date(url: str) -> date | None:
+    match = re.search(r"/(20\d{2}-\d{2}-\d{2})-", urlparse(url).path)
+    if not match:
+        return None
+    try:
+        return date.fromisoformat(match.group(1))
+    except ValueError:
+        return None
+
+
+def _query_url(url: str, **updates: object) -> str:
+    parts = urlsplit(url)
+    query = dict(parse_qsl(parts.query, keep_blank_values=True))
+    query.update({key: str(value) for key, value in updates.items()})
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))
+
+
+def _archive_dates(html: bytes, base_url: str) -> list[date]:
+    soup = BeautifulSoup(html, "html.parser")
+    values = {
+        value
+        for anchor in soup.find_all("a", href=True)
+        if (value := press_release_date(urljoin(base_url, anchor["href"]))) is not None
+    }
+    return sorted(values)
+
+
+def discover_archive_history(
+    session: requests.Session,
+    index: str,
+    source_url: str,
+    start: date,
+    end: date,
+    page_size: int = 100,
+    max_pages: int = 50,
+) -> tuple[dict[str, str], list[str], int]:
+    """Discover dated official releases from a paginated press archive."""
+    discovered: dict[str, str] = {}
+    errors: list[str] = []
+    successful_fetches = 0
+
+    for page_number in range(max_pages):
+        page_url = _query_url(source_url, l=page_size, o=page_number * page_size)
+        try:
+            response = fetch_url(session, page_url)
+            successful_fetches += 1
+            save_raw(index, page_url, response.content, response.headers.get("content-type", ""))
+        except Exception as exc:
+            errors.append(f"{page_url}: {exc}")
+            break
+
+        archive_dates = _archive_dates(response.content, page_url)
+        for link, title in discover_links(index, response.content, page_url):
+            release_date = press_release_date(link)
+            if release_date is None or start <= release_date <= end:
+                discovered[link] = title
+
+        if not archive_dates:
+            errors.append(f"{page_url}: no dated press releases found")
+            break
+        if min(archive_dates) < start:
+            break
+    else:
+        errors.append(
+            f"{source_url}: historical discovery reached max_pages={max_pages} "
+            f"before finding releases older than {start.isoformat()}"
+        )
+
+    return discovered, errors, successful_fetches
 
 
 def parse_date_value(value: str, default_year: int | None = None) -> str:
@@ -423,27 +514,36 @@ def _sp500_table_events(
         if not required.issubset(set(headers)):
             continue
         positions = {name: headers.index(name) for name in required}
+        current_effective_date = ""
         for row in rows[1:]:
             if len(row) <= max(positions.values()):
                 continue
             if row[positions["index name"]].strip().lower() not in {"s&p 500", "s & p 500"}:
                 continue
-            try:
-                eff = parse_date_value(
-                    row[positions["effective date"]],
-                    default_year=int(announcement_date[:4]) if announcement_date else utc_now().year,
-                )
-            except Exception:
+            raw_effective_date = row[positions["effective date"]].strip()
+            if raw_effective_date:
+                try:
+                    current_effective_date = parse_date_value(
+                        raw_effective_date,
+                        default_year=(
+                            int(announcement_date[:4]) if announcement_date else utc_now().year
+                        ),
+                    )
+                except Exception:
+                    current_effective_date = ""
+            if not current_effective_date:
                 continue
-            ticker = normalize_ticker(row[positions["ticker"]], aliases)
-            if not ticker:
+            tickers = normalize_ticker_cell(row[positions["ticker"]], aliases)
+            if not tickers:
                 continue
             action = row[positions["action"]].lower()
-            bucket = grouped.setdefault(eff, {"added": [], "removed": []})
+            bucket = grouped.setdefault(
+                current_effective_date, {"added": [], "removed": []}
+            )
             if "add" in action:
-                bucket["added"].append(ticker)
+                bucket["added"].extend(tickers)
             elif "delet" in action or "remov" in action:
-                bucket["removed"].append(ticker)
+                bucket["removed"].extend(tickers)
     return [
         ParsedChange(
             index_name="S&P 500",
@@ -476,6 +576,21 @@ def parse_sp500(
     dates = effective_dates(text, announcement_date)
     additions: list[str] = []
     removals: list[str] = []
+    exchange_ticker = (
+        r"\((?:Nasdaq|NYSE|NASD|NYSE American)\s*:\s*"
+        r"([A-Z][A-Z0-9.\-/]{0,11})\)"
+    )
+    replacement_pattern = re.compile(
+        exchange_ticker
+        + r"\s+will replace\s+(?:(?!\bwill replace\b).){0,280}?"
+        + exchange_ticker
+        + r"\s+in (?:the )?S&P 500\b",
+        re.IGNORECASE,
+    )
+    for match in replacement_pattern.finditer(text):
+        additions.append(match.group(1))
+        removals.append(match.group(2))
+
     for sentence in re.split(r"(?<=[.!?])\s+", text):
         if "S&P 500" not in sentence:
             continue
@@ -568,7 +683,11 @@ def read_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def fetch_official_candidates(index: str) -> list[dict[str, str]]:
+def fetch_official_candidates(
+    index: str,
+    history_start: date | None = None,
+    history_end: date | None = None,
+) -> list[dict[str, str]]:
     prof = profile(index)
     registry = load_registry()
     sources = [
@@ -583,17 +702,39 @@ def fetch_official_candidates(index: str) -> list[dict[str, str]]:
     fetch_errors: list[str] = []
     successful_fetches = 0
     for source in sources:
-        urls = [
-            (
+        if history_start and source.get("discovery", False):
+            historical, errors, fetch_count = discover_archive_history(
+                session,
+                index,
                 source["source_url"],
-                source.get("source_name", source["source_url"]),
-                source.get("discovery", False),
+                history_start,
+                history_end or date.today(),
+                page_size=int(source.get("archive_page_size", 100)),
+                max_pages=int(source.get("archive_max_pages", 50)),
             )
-        ]
-        urls.extend(
-            (url, source.get("source_name", url), False)
-            for url in source.get("seed_urls", [])
-        )
+            discovered.update(historical)
+            fetch_errors.extend(errors)
+            successful_fetches += fetch_count
+            urls = [
+                (url, source.get("source_name", url), False)
+                for url in source.get("seed_urls", [])
+                if (
+                    (release_date := press_release_date(url)) is None
+                    or history_start <= release_date <= (history_end or date.today())
+                )
+            ]
+        else:
+            urls = [
+                (
+                    source["source_url"],
+                    source.get("source_name", source["source_url"]),
+                    source.get("discovery", False),
+                )
+            ]
+            urls.extend(
+                (url, source.get("source_name", url), False)
+                for url in source.get("seed_urls", [])
+            )
         for url, fallback_title, is_discovery in urls:
             if not official_url(url, prof["official_domains"]):
                 fetch_errors.append(f"registry rejected unofficial URL: {url}")
@@ -665,6 +806,8 @@ def fetch_official_candidates(index: str) -> list[dict[str, str]]:
         "errors": fetch_errors,
         "successful_fetches": successful_fetches,
         "successful": successful_fetches > 0,
+        "history_start": history_start.isoformat() if history_start else None,
+        "history_end": (history_end or date.today()).isoformat() if history_start else None,
     }
     METADATA_DIR.mkdir(parents=True, exist_ok=True)
     (METADATA_DIR / f"{index}_fetch_state.json").write_text(
@@ -673,11 +816,177 @@ def fetch_official_candidates(index: str) -> list[dict[str, str]]:
     return rows
 
 
+def reconcile_official_history(
+    index: str,
+    start_year: int,
+    end_year: int,
+    threshold: float = 0.90,
+) -> dict:
+    """Compare official candidates with existing YAML without changing membership."""
+    prof = profile(index)
+    yaml_events: dict[str, dict] = {}
+    for year in range(start_year, end_year + 1):
+        data = load_year(index, year)
+        if not data:
+            continue
+        for raw_date, entry in (data.get("changes") or {}).items():
+            effective_date = str(raw_date)
+            yaml_events[effective_date] = {
+                "effective_date": effective_date,
+                "added": sorted((entry or {}).get("union") or []),
+                "removed": sorted((entry or {}).get("difference") or []),
+            }
+
+    official_events: dict[tuple[str, tuple[str, ...], tuple[str, ...]], dict] = {}
+    rejected_rows: list[dict] = []
+    for row in read_csv(prof["candidate_file"]):
+        effective_date = row.get("effective_date", "")
+        try:
+            effective_year = date.fromisoformat(effective_date).year
+            confidence = float(row.get("confidence_score", 0))
+        except (TypeError, ValueError):
+            rejected_rows.append({**row, "reason": "missing or invalid effective date/confidence"})
+            continue
+        if not start_year <= effective_year <= end_year:
+            continue
+        if row.get("manual_review_required", "").lower() == "true" or confidence < threshold:
+            rejected_rows.append({**row, "reason": "parser marked for review or below threshold"})
+            continue
+        added = tuple(sorted(filter(None, row.get("added_tickers", "").split(";"))))
+        removed = tuple(sorted(filter(None, row.get("removed_tickers", "").split(";"))))
+        signature = (effective_date, added, removed)
+        event = official_events.setdefault(
+            signature,
+            {
+                "effective_date": effective_date,
+                "added": list(added),
+                "removed": list(removed),
+                "sources": [],
+            },
+        )
+        event["sources"].append(
+            {
+                "announcement_date": row.get("announcement_date", ""),
+                "source_title": row.get("source_title", ""),
+                "source_url": row.get("source_url", ""),
+                "confidence_score": confidence,
+            }
+        )
+
+    official_by_date: dict[str, dict] = {}
+    for event in official_events.values():
+        combined = official_by_date.setdefault(
+            event["effective_date"],
+            {
+                "effective_date": event["effective_date"],
+                "added": [],
+                "removed": [],
+                "sources": [],
+            },
+        )
+        combined["added"] = sorted(set(combined["added"]) | set(event["added"]))
+        combined["removed"] = sorted(set(combined["removed"]) | set(event["removed"]))
+        known_urls = {source["source_url"] for source in combined["sources"]}
+        combined["sources"].extend(
+            source for source in event["sources"] if source["source_url"] not in known_urls
+        )
+
+    exact_matches: list[dict] = []
+    conflicts: list[dict] = []
+    official_missing_from_yaml: list[dict] = []
+    for effective_date, event in sorted(official_by_date.items()):
+        yaml_event = yaml_events.get(effective_date)
+        if yaml_event is None:
+            official_missing_from_yaml.append(event)
+        elif event["added"] == yaml_event["added"] and event["removed"] == yaml_event["removed"]:
+            exact_matches.append({**event, "yaml": yaml_event})
+        else:
+            conflicts.append({**event, "yaml": yaml_event})
+
+    matched_dates = {event["effective_date"] for event in exact_matches}
+    matched_dates.update(event["effective_date"] for event in conflicts)
+    yaml_without_official_match = [
+        event
+        for effective_date, event in sorted(yaml_events.items())
+        if effective_date not in matched_dates
+    ]
+
+    result = {
+        "index_name": prof["index_name"],
+        "generated_at": iso_now(),
+        "start_year": start_year,
+        "end_year": end_year,
+        "summary": {
+            "yaml_events": len(yaml_events),
+            "official_events": len(official_by_date),
+            "exact_matches": len(exact_matches),
+            "conflicts": len(conflicts),
+            "official_missing_from_yaml": len(official_missing_from_yaml),
+            "yaml_without_official_match": len(yaml_without_official_match),
+            "rejected_official_rows": len(rejected_rows),
+        },
+        "exact_matches": exact_matches,
+        "conflicts": conflicts,
+        "official_missing_from_yaml": official_missing_from_yaml,
+        "yaml_without_official_match": yaml_without_official_match,
+        "rejected_official_rows": rejected_rows,
+    }
+    AUDIT_DIR.mkdir(parents=True, exist_ok=True)
+    json_path = AUDIT_DIR / f"{index}_{start_year}_{end_year}_reconciliation.json"
+    json_path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+
+    summary = result["summary"]
+    lines = [
+        f"# {prof['index_name']} Official Reconciliation ({start_year}-{end_year})",
+        "",
+        f"Generated: {result['generated_at']}",
+        "",
+        "This report is read-only. It does not modify membership YAML.",
+        "",
+        "## Summary",
+        "",
+        f"- YAML events: {summary['yaml_events']}",
+        f"- Distinct official events parsed: {summary['official_events']}",
+        f"- Exact date and membership matches: {summary['exact_matches']}",
+        f"- Same-date conflicts: {summary['conflicts']}",
+        f"- Official events missing from YAML: {summary['official_missing_from_yaml']}",
+        f"- YAML dates without a parsed official match: {summary['yaml_without_official_match']}",
+        f"- Official rows requiring review: {summary['rejected_official_rows']}",
+        "",
+        "## Actionable Differences",
+        "",
+    ]
+    actionable = conflicts + official_missing_from_yaml
+    if actionable:
+        for event in actionable:
+            lines.append(
+                f"- {event['effective_date']}: add={','.join(event['added']) or '-'}; "
+                f"remove={','.join(event['removed']) or '-'}"
+            )
+    else:
+        lines.append("- None")
+    lines.extend(
+        [
+            "",
+            "## Interpretation",
+            "",
+            "- Exact matches are eligible for official source metadata backfill.",
+            "- Conflicts and missing events require evidence review before correction mode.",
+            "- Unmatched YAML dates are not automatically errors; some may be corporate actions",
+            "  announced outside title-filtered S&P 500 membership releases.",
+        ]
+    )
+    (AUDIT_DIR / f"{index}_{start_year}_{end_year}_reconciliation.md").write_text(
+        "\n".join(lines) + "\n", encoding="utf-8"
+    )
+    return result
+
+
 def yaml_rt() -> YAML:
     parser = YAML()
     parser.preserve_quotes = True
     parser.indent(mapping=2, sequence=4, offset=2)
-    parser.width = 100
+    parser.width = 4096
     return parser
 
 
