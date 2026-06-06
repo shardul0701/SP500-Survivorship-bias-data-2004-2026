@@ -1,6 +1,7 @@
 # Only notation aliases belong here. Do not map historical companies to successors.
 aliases:
   BRK-B: BRK.B
+  BRK/B: BRK.B
   BF-B: BF.B
 
 notes:

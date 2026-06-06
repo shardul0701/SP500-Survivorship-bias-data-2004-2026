@@ -15,17 +15,22 @@
       "file": "S&P 500 Historical Components & Changes(01-17-2026).csv",
       "coverage": "1996-01-02 to 2026-01-14",
       "notes": "Updated consolidated file with clean tickers (no YYYYMM suffixes). Primary source used for YAML generation."
+    },
+    "official_spglobal_reconciliation": {
+      "url": "https://press.spglobal.com/index.php?s=2429",
+      "coverage": "2019 through 2026-06-22",
+      "notes": "Official S&P Global announcements used to reconcile post-2019 membership changes. The 2026-06-22 event is announced but pending."
     }
   },
   "date_downloaded": "2026-06-02",
   "license": "MIT (see licenses/fja05680_sp500_LICENSE)",
-  "yaml_coverage": "2004-01-01 through 2026-01-14 (real data). 2026-01-15 onward is frozen at last known membership.",
-  "data_freeze_date": "2026-01-14",
+  "yaml_coverage": "2004-01-01 through 2026-06-02, plus the announced 2026-06-22 rebalance marked pending.",
+  "data_freeze_date": "2026-06-02",
   "caveats": [
     "Historical S&P 500 data sourced from community-maintained repo. Research-grade accuracy.",
-    "Some historical tickers may use old symbols that predate modern corporate renaming.",
+    "Three official reconciliation conflicts remain around ticker-transition notation: BMS/AMCR, CBS/VIAC, and GDI/TT.",
     "Tickers T, ON, Y, N are quoted in YAML output to prevent YAML 1.1 boolean misparse.",
-    "2026-01-15 and beyond: no changes recorded. Update manually from upstream source when available.",
+    "The 2026-06-22 rebalance is pending and must not be treated as effective before that date.",
     "Pre-2004 data exists in source but is not included here."
   ],
   "note": "Converted to internal canonical YAML format for point-in-time S&P 500 backtesting universe. Do not depend on upstream repo at runtime."

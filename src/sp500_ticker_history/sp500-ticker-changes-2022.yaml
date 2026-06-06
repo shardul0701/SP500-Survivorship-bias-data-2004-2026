@@ -516,17 +516,29 @@ changes:
       - 'WTW'
 
   '2022-02-02':
-    difference:
-      - 'GPS'
     union:
-      - 'CEG'
-
+      - CEG
+    source_url: https://press.spglobal.com/2022-01-26-Constellation-Energy-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Constellation Energy Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2022-01-26'
+    confidence_score: 0.99
+  '2022-02-03':
+    difference:
+      - GPS
+    source_url: https://press.spglobal.com/2022-01-26-Constellation-Energy-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Constellation Energy Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2022-01-26'
+    confidence_score: 0.99
   '2022-02-15':
     difference:
       - 'XLNX'
     union:
       - 'NDSN'
 
+    source_url: https://press.spglobal.com/2022-02-10-Nordson-Set-to-Join-S-P-500-PDC-Energy-to-Join-S-P-MidCap-400-XPEL-to-Join-S-P-SmallCap-600
+    source_title: Nordson Set to Join S&P 500; PDC Energy to Join S&P MidCap 400; XPEL to Join S&P SmallCap 600
+    announcement_date: '2022-02-10'
+    confidence_score: 0.99
   '2022-02-17':
     difference:
       - 'VIAC'
@@ -539,12 +551,20 @@ changes:
     union:
       - 'MOH'
 
+    source_url: https://press.spglobal.com/2022-02-25-Molina-Healthcare-Set-to-Join-S-P-500-Range-Resources-to-Join-S-P-MidCap-400-Golden-Entertainment-to-Join-S-P-SmallCap-600
+    source_title: Molina Healthcare Set to Join S&P 500; Range Resources to Join S&P MidCap 400; Golden Entertainment to Join S&P SmallCap 600
+    announcement_date: '2022-02-25'
+    confidence_score: 0.99
   '2022-04-04':
     difference:
       - 'PBCT'
     union:
       - 'CPT'
 
+    source_url: https://press.spglobal.com/2022-03-29-Camden-Property-Trust-Set-to-Join-S-P-500-Matador-Resources-to-Join-S-P-MidCap-400-Vir-Biotechnology-to-Join-S-P-SmallCap-600
+    source_title: Camden Property Trust Set to Join S&P 500; Matador Resources to Join S&P MidCap 400; Vir Biotechnology to Join S&P SmallCap 600
+    announcement_date: '2022-03-29'
+    confidence_score: 0.99
   '2022-04-11':
     difference:
       - 'DISCA'
@@ -564,6 +584,10 @@ changes:
     union:
       - 'VICI'
 
+    source_url: https://press.spglobal.com/2022-06-03-Keurig-Dr-Pepper,-VICI-Properties-and-ON-Semiconductor-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400,-and-S-P-SmallCap-600
+    source_title: Keurig Dr Pepper, VICI Properties and ON Semiconductor Set to Join S&P 500; Others to Join S&P MidCap 400, and S&P SmallCap 600
+    announcement_date: '2022-06-03'
+    confidence_score: 0.99
   '2022-06-09':
     difference:
       - 'FB'
@@ -579,6 +603,10 @@ changes:
       - 'KDP'
       - 'ON'
 
+    source_url: https://press.spglobal.com/2022-06-03-Keurig-Dr-Pepper,-VICI-Properties-and-ON-Semiconductor-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400,-and-S-P-SmallCap-600
+    source_title: Keurig Dr Pepper, VICI Properties and ON Semiconductor Set to Join S&P 500; Others to Join S&P MidCap 400, and S&P SmallCap 600
+    announcement_date: '2022-06-03'
+    confidence_score: 0.99
   '2022-06-28':
     difference:
       - 'ANTM'
@@ -593,6 +621,10 @@ changes:
       - 'CSGP'
       - 'INVH'
 
+    source_url: https://press.spglobal.com/2022-09-02-CoStar-Group,-Invitation-Homes-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400,-and-S-P-SmallCap-600
+    source_title: CoStar Group, Invitation Homes Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400, and S&P SmallCap 600
+    announcement_date: '2022-09-02'
+    confidence_score: 0.99
   '2022-10-03':
     difference:
       - 'CTXS'
@@ -601,32 +633,59 @@ changes:
       - 'EQT'
       - 'PCG'
 
+    source_url: https://press.spglobal.com/2022-09-23-PG-E-and-EQT-Set-to-Join-S-P-500-ExlService-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600
+    source_title: PG&E and EQT Set to Join S&P 500; ExlService to Join S&P MidCap 400; Others to Join S&P SmallCap 600
+    announcement_date: '2022-09-23'
+    confidence_score: 0.99
   '2022-10-12':
     difference:
       - 'NLSN'
     union:
       - 'TRGP'
 
+    source_url: https://press.spglobal.com/2022-10-06-Targa-Resources-Set-to-Join-S-P-500-Lantheus-Holdings-to-Join-S-P-MidCap-400-Payoneer-Global-to-Join-S-P-SmallCap-600
+    source_title: Targa Resources Set to Join S&P 500; Lantheus Holdings to Join S&P MidCap 400; Payoneer Global to Join S&P SmallCap 600
+    announcement_date: '2022-10-06'
+    confidence_score: 0.99
   '2022-11-01':
     difference:
       - 'TWTR'
     union:
       - 'ACGL'
 
+    source_url: https://press.spglobal.com/2022-10-27-Arch-Capital-Group-Set-to-Join-S-P-500-RXO-to-Join-S-P-MidCap-400-Bread-Financial-Holdings-to-Join-S-P-SmallCap-600
+    source_title: Arch Capital Group Set to Join S&P 500; RXO to Join S&P MidCap 400; Bread Financial Holdings to Join S&P SmallCap 600
+    announcement_date: '2022-10-27'
+    confidence_score: 0.99
   '2022-11-08':
     difference:
       - 'NLOK'
     union:
       - 'GEN'
 
+  '2022-12-15':
+    union:
+      - MBC
+    source_url: https://press.spglobal.com/2022-12-12-First-Solar-Set-to-Join-S-P-500-Fortune-Brands-Innovations-to-Join-S-P-MidCap-400-MasterBrand-to-Join-S-P-SmallCap-600
+    source_title: First Solar Set to Join S&P 500; Fortune Brands Innovations to Join S&P MidCap 400; MasterBrand to Join S&P SmallCap 600
+    announcement_date: '2022-12-12'
+    confidence_score: 0.99
   '2022-12-19':
     difference:
-      - 'FBHS'
+      - FBHS
+      - MBC
     union:
-      - 'FSLR'
-
+      - FSLR
+    source_url: https://press.spglobal.com/2022-12-12-First-Solar-Set-to-Join-S-P-500-Fortune-Brands-Innovations-to-Join-S-P-MidCap-400-MasterBrand-to-Join-S-P-SmallCap-600
+    source_title: First Solar Set to Join S&P 500; Fortune Brands Innovations to Join S&P MidCap 400; MasterBrand to Join S&P SmallCap 600
+    announcement_date: '2022-12-12'
+    confidence_score: 0.99
   '2022-12-22':
     difference:
       - 'ABMD'
     union:
       - 'STLD'
+    source_url: https://press.spglobal.com/2022-12-19-Steel-Dynamics-Set-to-Join-S-P-500-Super-Micro-Computer-to-Join-S-P-MidCap-400
+    source_title: Steel Dynamics Set to Join S&P 500; Super Micro Computer to Join S&P MidCap 400
+    announcement_date: '2022-12-19'
+    confidence_score: 0.99

@@ -1,0 +1,2993 @@
+{
+  "index_name": "S&P 500",
+  "generated_at": "2026-06-06T21:07:37+00:00",
+  "start_year": 2019,
+  "end_year": 2026,
+  "summary": {
+    "yaml_events": 127,
+    "official_events": 89,
+    "exact_matches": 86,
+    "conflicts": 3,
+    "official_missing_from_yaml": 0,
+    "yaml_without_official_match": 38,
+    "rejected_official_rows": 15
+  },
+  "exact_matches": [
+    {
+      "effective_date": "2019-01-02",
+      "added": [
+        "FRC"
+      ],
+      "removed": [
+        "SCG"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2018-12-27",
+          "source_title": "First Republic Bank Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2018-12-27-First-Republic-Bank-Set-to-Join-S-P-500",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2019-01-02",
+        "added": [
+          "FRC"
+        ],
+        "removed": [
+          "SCG"
+        ]
+      }
+    },
+    {
+      "effective_date": "2019-01-18",
+      "added": [
+        "TFX"
+      ],
+      "removed": [
+        "PCG"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2019-01-15",
+          "source_title": "Teleflex Set to Join S&P 500; Green Dot to Join S&P MidCap 400; Mercer International to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2019-01-15-Teleflex-Set-to-Join-S-P-500-Green-Dot-to-Join-S-P-MidCap-400-Mercer-International-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2019-01-18",
+        "added": [
+          "TFX"
+        ],
+        "removed": [
+          "PCG"
+        ]
+      }
+    },
+    {
+      "effective_date": "2019-02-15",
+      "added": [
+        "ATO"
+      ],
+      "removed": [
+        "NFX"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2019-02-08",
+          "source_title": "Atmos Energy Set to Join S&P 500; Spire to Join S&P MidCap 400; NorthStar Realty Europe to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2019-02-08-Atmos-Energy-Set-to-Join-S-P-500-Spire-to-Join-S-P-MidCap-400-NorthStar-Realty-Europe-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2019-02-15",
+        "added": [
+          "ATO"
+        ],
+        "removed": [
+          "NFX"
+        ]
+      }
+    },
+    {
+      "effective_date": "2019-02-27",
+      "added": [
+        "WAB"
+      ],
+      "removed": [
+        "GT"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2019-02-21",
+          "source_title": "Wabtec Set to Join S&P 500 and The Goodyear Tire & Rubber to Join S&P MidCap 400",
+          "source_url": "https://press.spglobal.com/2019-02-21-Wabtec-Set-to-Join-S-P-500-and-The-Goodyear-Tire-Rubber-to-Join-S-P-MidCap-400",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2019-02-27",
+        "added": [
+          "WAB"
+        ],
+        "removed": [
+          "GT"
+        ]
+      }
+    },
+    {
+      "effective_date": "2019-07-15",
+      "added": [
+        "TMUS"
+      ],
+      "removed": [
+        "RHT"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2019-07-09",
+          "source_title": "T-Mobile US Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2019-07-09-T-Mobile-US-Set-to-Join-S-P-500",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2019-07-15",
+        "added": [
+          "TMUS"
+        ],
+        "removed": [
+          "RHT"
+        ]
+      }
+    },
+    {
+      "effective_date": "2019-09-23",
+      "added": [
+        "CDW"
+      ],
+      "removed": [
+        "TSS"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2019-09-17",
+          "source_title": "CDW Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2019-09-17-CDW-Set-to-Join-S-P-500",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2019-09-23",
+        "added": [
+          "CDW"
+        ],
+        "removed": [
+          "TSS"
+        ]
+      }
+    },
+    {
+      "effective_date": "2019-09-26",
+      "added": [
+        "NVR"
+      ],
+      "removed": [
+        "JEF"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2019-09-20",
+          "source_title": "NVR Set to Join S&P 500; Jefferies Financial Group, II-VI to Join S&P MidCap 400; Callon Petroleum, PriceSmart to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2019-09-20-NVR-Set-to-Join-S-P-500-Jefferies-Financial-Group-II-VI-to-Join-S-P-MidCap-400-Callon-Petroleum-PriceSmart-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2019-09-26",
+        "added": [
+          "NVR"
+        ],
+        "removed": [
+          "JEF"
+        ]
+      }
+    },
+    {
+      "effective_date": "2020-01-28",
+      "added": [
+        "PAYC"
+      ],
+      "removed": [
+        "WCG"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2020-01-22",
+          "source_title": "Paycom Software Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2020-01-22-Paycom-Software-Set-to-Join-S-P-500",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2020-01-28",
+        "added": [
+          "PAYC"
+        ],
+        "removed": [
+          "WCG"
+        ]
+      }
+    },
+    {
+      "effective_date": "2020-05-12",
+      "added": [
+        "DPZ",
+        "DXCM"
+      ],
+      "removed": [
+        "AGN",
+        "CPRI"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2020-05-06",
+          "source_title": "DexCom & Domino's Pizza Set to Join S&P 500; Salesforce.com to Join S&P 100; STORE Capital to Join S&P MidCap 400; Capri Holdings to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2020-05-06-DexCom-Dominos-Pizza-Set-to-Join-S-P-500-Salesforce-com-to-Join-S-P-100-STORE-Capital-to-Join-S-P-MidCap-400-Capri-Holdings-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2020-05-12",
+        "added": [
+          "DPZ",
+          "DXCM"
+        ],
+        "removed": [
+          "AGN",
+          "CPRI"
+        ]
+      }
+    },
+    {
+      "effective_date": "2020-05-22",
+      "added": [
+        "WST"
+      ],
+      "removed": [
+        "HP"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2020-05-18",
+          "source_title": "West Pharmaceutical Services Set to Join S&P 500; Physicians Realty Trust to Join S&P MidCap 400; Helmerich & Payne to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2020-05-18-West-Pharmaceutical-Services-Set-to-Join-S-P-500-Physicians-Realty-Trust-to-Join-S-P-MidCap-400-Helmerich-Payne-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2020-05-22",
+        "added": [
+          "WST"
+        ],
+        "removed": [
+          "HP"
+        ]
+      }
+    },
+    {
+      "effective_date": "2020-09-21",
+      "added": [
+        "CTLT",
+        "ETSY",
+        "TER"
+      ],
+      "removed": [
+        "COTY",
+        "HRB",
+        "KSS"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2020-09-04",
+          "source_title": "Etsy, Teradyne and Catalent Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2020-09-04-Etsy-Teradyne-and-Catalent-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2020-09-21",
+        "added": [
+          "CTLT",
+          "ETSY",
+          "TER"
+        ],
+        "removed": [
+          "COTY",
+          "HRB",
+          "KSS"
+        ]
+      }
+    },
+    {
+      "effective_date": "2020-10-07",
+      "added": [
+        "POOL"
+      ],
+      "removed": [
+        "ETFC"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2020-10-01",
+          "source_title": "Pool Set to Join S&P 500; Neogen & Simpson Manufacturing to Join S&P MidCap 400; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2020-10-01-Pool-Set-to-Join-S-P-500-Neogen-Simpson-Manufacturing-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2020-10-07",
+        "added": [
+          "POOL"
+        ],
+        "removed": [
+          "ETFC"
+        ]
+      }
+    },
+    {
+      "effective_date": "2020-10-09",
+      "added": [
+        "VNT"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2020-10-05",
+          "source_title": "Vontier Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2020-10-05-Vontier-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2020-10-09",
+        "added": [
+          "VNT"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2020-10-12",
+      "added": [],
+      "removed": [
+        "NBL"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2020-10-05",
+          "source_title": "Vontier Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2020-10-05-Vontier-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2020-10-12",
+        "added": [],
+        "removed": [
+          "NBL"
+        ]
+      }
+    },
+    {
+      "effective_date": "2020-12-21",
+      "added": [
+        "TSLA"
+      ],
+      "removed": [
+        "AIV"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2020-11-16",
+          "source_title": "Tesla Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2020-11-16-Tesla-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        },
+        {
+          "announcement_date": "2020-12-11",
+          "source_title": "Tesla Set to Join S&P 500 & 100; Apartment Income REIT to Join S&P MidCap 400",
+          "source_url": "https://press.spglobal.com/2020-12-11-Tesla-Set-to-Join-S-P-500-100-Apartment-Income-REIT-to-Join-S-P-MidCap-400",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2020-12-21",
+        "added": [
+          "TSLA"
+        ],
+        "removed": [
+          "AIV"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-01-07",
+      "added": [
+        "ENPH"
+      ],
+      "removed": [
+        "TIF"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2020-12-30",
+          "source_title": "Enphase Energy Set to Join S&P 500; Capri Holdings & Brooks Automation to Join S&P MidCap 400; Celsius Holdings & e.l.f. Beauty to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2020-12-30-Enphase-Energy-Set-to-Join-S-P-500-Capri-Holdings-Brooks-Automation-to-Join-S-P-MidCap-400-Celsius-Holdings-e-l-f-Beauty-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-01-07",
+        "added": [
+          "ENPH"
+        ],
+        "removed": [
+          "TIF"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-01-21",
+      "added": [
+        "TRMB"
+      ],
+      "removed": [
+        "CXO"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2021-01-15",
+          "source_title": "Trimble Set to Join S&P 500; YETI Holdings to Join S&P MidCap 400; Hilltop Holdings to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2021-01-15-Trimble-Set-to-Join-S-P-500-YETI-Holdings-to-Join-S-P-MidCap-400-Hilltop-Holdings-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-01-21",
+        "added": [
+          "TRMB"
+        ],
+        "removed": [
+          "CXO"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-02-12",
+      "added": [
+        "MPWR"
+      ],
+      "removed": [
+        "FTI"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2021-02-08",
+          "source_title": "Monolithic Power Systems Set to Join S&P 500; Iridium Communications to Join S&P MidCap 400; Collegium Pharmaceutical to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2021-02-08-Monolithic-Power-Systems-Set-to-Join-S-P-500-Iridium-Communications-to-Join-S-P-MidCap-400-Collegium-Pharmaceutical-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-02-12",
+        "added": [
+          "MPWR"
+        ],
+        "removed": [
+          "FTI"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-03-22",
+      "added": [
+        "CZR",
+        "GNRC",
+        "NXPI",
+        "PENN"
+      ],
+      "removed": [
+        "FLS",
+        "SLG",
+        "VNT",
+        "XRX"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2021-03-12",
+          "source_title": "NXP Semiconductors, Penn National Gaming, Generac Holdings and Caesars Entertainment Set to Join S&P 500; Others to Join S&P MidCap 400, S&P SmallCap 600 and S&P 100",
+          "source_url": "https://press.spglobal.com/2021-03-12-NXP-Semiconductors-Penn-National-Gaming-Generac-Holdings-and-Caesars-Entertainment-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-S-P-SmallCap-600-and-S-P-100",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-03-22",
+        "added": [
+          "CZR",
+          "GNRC",
+          "NXPI",
+          "PENN"
+        ],
+        "removed": [
+          "FLS",
+          "SLG",
+          "VNT",
+          "XRX"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-04-20",
+      "added": [
+        "PTC"
+      ],
+      "removed": [
+        "VAR"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2021-04-15",
+          "source_title": "PTC Set to Join S&P 500; Lattice Semiconductor & Progyny to Join S&P MidCap 400; Domtar to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2021-04-15-PTC-Set-to-Join-S-P-500-Lattice-Semiconductor-Progyny-to-Join-S-P-MidCap-400-Domtar-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-04-20",
+        "added": [
+          "PTC"
+        ],
+        "removed": [
+          "VAR"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-05-14",
+      "added": [
+        "CRL"
+      ],
+      "removed": [
+        "FLIR"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2021-05-10",
+          "source_title": "Charles River Laboratories International Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2021-05-10-Charles-River-Laboratories-International-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-05-14",
+        "added": [
+          "CRL"
+        ],
+        "removed": [
+          "FLIR"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-06-03",
+      "added": [
+        "OGN"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2021-05-27",
+          "source_title": "Organon Set to Join S&P 500; HollyFrontier to Join S&P MidCap 400; Service Properties Trust to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2021-05-27-Organon-Set-to-Join-S-P-500-HollyFrontier-to-Join-S-P-MidCap-400-Service-Properties-Trust-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-06-03",
+        "added": [
+          "OGN"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2021-06-04",
+      "added": [],
+      "removed": [
+        "HFC"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2021-05-27",
+          "source_title": "Organon Set to Join S&P 500; HollyFrontier to Join S&P MidCap 400; Service Properties Trust to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2021-05-27-Organon-Set-to-Join-S-P-500-HollyFrontier-to-Join-S-P-MidCap-400-Service-Properties-Trust-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-06-04",
+        "added": [],
+        "removed": [
+          "HFC"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-07-21",
+      "added": [
+        "MRNA"
+      ],
+      "removed": [
+        "ALXN"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2021-07-15",
+          "source_title": "Moderna Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2021-07-15-Moderna-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-07-21",
+        "added": [
+          "MRNA"
+        ],
+        "removed": [
+          "ALXN"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-08-30",
+      "added": [
+        "TECH"
+      ],
+      "removed": [
+        "MXIM"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2021-08-24",
+          "source_title": "Bio-Techne Set to Join S&P 500; Saia, Mimecast & Option Care Health to Join S&P MidCap 400; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2021-08-24-Bio-Techne-Set-to-Join-S-P-500-Saia,-Mimecast-Option-Care-Health-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-08-30",
+        "added": [
+          "TECH"
+        ],
+        "removed": [
+          "MXIM"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-09-20",
+      "added": [
+        "BRO",
+        "CDAY",
+        "MTCH"
+      ],
+      "removed": [
+        "NOV",
+        "PRGO",
+        "UNM"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2021-09-03",
+          "source_title": "Match Group, Ceridian HCM and Brown & Brown Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2021-09-03-Match-Group,-Ceridian-HCM-and-Brown-Brown-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-09-20",
+        "added": [
+          "BRO",
+          "CDAY",
+          "MTCH"
+        ],
+        "removed": [
+          "NOV",
+          "PRGO",
+          "UNM"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-12-14",
+      "added": [
+        "EPAM"
+      ],
+      "removed": [
+        "KSU"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2021-12-07",
+          "source_title": "EPAM Systems Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2021-12-07-EPAM-Systems-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-12-14",
+        "added": [
+          "EPAM"
+        ],
+        "removed": [
+          "KSU"
+        ]
+      }
+    },
+    {
+      "effective_date": "2021-12-20",
+      "added": [
+        "FDS",
+        "SBNY",
+        "SEDG"
+      ],
+      "removed": [
+        "HBI",
+        "LEG",
+        "WU"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2021-12-03",
+          "source_title": "Signature Bank, SolarEdge Technologies and FactSet Research Systems Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2021-12-03-Signature-Bank,-SolarEdge-Technologies-and-FactSet-Research-Systems-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2021-12-20",
+        "added": [
+          "FDS",
+          "SBNY",
+          "SEDG"
+        ],
+        "removed": [
+          "HBI",
+          "LEG",
+          "WU"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-02-02",
+      "added": [
+        "CEG"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2022-01-26",
+          "source_title": "Constellation Energy Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-01-26-Constellation-Energy-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-02-02",
+        "added": [
+          "CEG"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2022-02-03",
+      "added": [],
+      "removed": [
+        "GPS"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-01-26",
+          "source_title": "Constellation Energy Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-01-26-Constellation-Energy-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-02-03",
+        "added": [],
+        "removed": [
+          "GPS"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-02-15",
+      "added": [
+        "NDSN"
+      ],
+      "removed": [
+        "XLNX"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-02-10",
+          "source_title": "Nordson Set to Join S&P 500; PDC Energy to Join S&P MidCap 400; XPEL to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-02-10-Nordson-Set-to-Join-S-P-500-PDC-Energy-to-Join-S-P-MidCap-400-XPEL-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-02-15",
+        "added": [
+          "NDSN"
+        ],
+        "removed": [
+          "XLNX"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-03-02",
+      "added": [
+        "MOH"
+      ],
+      "removed": [
+        "INFO"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-02-25",
+          "source_title": "Molina Healthcare Set to Join S&P 500; Range Resources to Join S&P MidCap 400; Golden Entertainment to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-02-25-Molina-Healthcare-Set-to-Join-S-P-500-Range-Resources-to-Join-S-P-MidCap-400-Golden-Entertainment-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-03-02",
+        "added": [
+          "MOH"
+        ],
+        "removed": [
+          "INFO"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-04-04",
+      "added": [
+        "CPT"
+      ],
+      "removed": [
+        "PBCT"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-03-29",
+          "source_title": "Camden Property Trust Set to Join S&P 500; Matador Resources to Join S&P MidCap 400; Vir Biotechnology to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-03-29-Camden-Property-Trust-Set-to-Join-S-P-500-Matador-Resources-to-Join-S-P-MidCap-400-Vir-Biotechnology-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-04-04",
+        "added": [
+          "CPT"
+        ],
+        "removed": [
+          "PBCT"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-06-08",
+      "added": [
+        "VICI"
+      ],
+      "removed": [
+        "CERN"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-06-03",
+          "source_title": "Keurig Dr Pepper, VICI Properties and ON Semiconductor Set to Join S&P 500; Others to Join S&P MidCap 400, and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-06-03-Keurig-Dr-Pepper,-VICI-Properties-and-ON-Semiconductor-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400,-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-06-08",
+        "added": [
+          "VICI"
+        ],
+        "removed": [
+          "CERN"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-06-21",
+      "added": [
+        "KDP",
+        "ON"
+      ],
+      "removed": [
+        "IPGP",
+        "UA",
+        "UAA"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-06-03",
+          "source_title": "Keurig Dr Pepper, VICI Properties and ON Semiconductor Set to Join S&P 500; Others to Join S&P MidCap 400, and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-06-03-Keurig-Dr-Pepper,-VICI-Properties-and-ON-Semiconductor-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400,-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-06-21",
+        "added": [
+          "KDP",
+          "ON"
+        ],
+        "removed": [
+          "IPGP",
+          "UA",
+          "UAA"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-09-19",
+      "added": [
+        "CSGP",
+        "INVH"
+      ],
+      "removed": [
+        "PENN",
+        "PVH"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-09-02",
+          "source_title": "CoStar Group, Invitation Homes Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400, and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-09-02-CoStar-Group,-Invitation-Homes-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400,-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-09-19",
+        "added": [
+          "CSGP",
+          "INVH"
+        ],
+        "removed": [
+          "PENN",
+          "PVH"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-10-03",
+      "added": [
+        "EQT",
+        "PCG"
+      ],
+      "removed": [
+        "CTXS",
+        "DRE"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-09-23",
+          "source_title": "PG&E and EQT Set to Join S&P 500; ExlService to Join S&P MidCap 400; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-09-23-PG-E-and-EQT-Set-to-Join-S-P-500-ExlService-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-10-03",
+        "added": [
+          "EQT",
+          "PCG"
+        ],
+        "removed": [
+          "CTXS",
+          "DRE"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-10-12",
+      "added": [
+        "TRGP"
+      ],
+      "removed": [
+        "NLSN"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-10-06",
+          "source_title": "Targa Resources Set to Join S&P 500; Lantheus Holdings to Join S&P MidCap 400; Payoneer Global to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-10-06-Targa-Resources-Set-to-Join-S-P-500-Lantheus-Holdings-to-Join-S-P-MidCap-400-Payoneer-Global-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-10-12",
+        "added": [
+          "TRGP"
+        ],
+        "removed": [
+          "NLSN"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-11-01",
+      "added": [
+        "ACGL"
+      ],
+      "removed": [
+        "TWTR"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-10-27",
+          "source_title": "Arch Capital Group Set to Join S&P 500; RXO to Join S&P MidCap 400; Bread Financial Holdings to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-10-27-Arch-Capital-Group-Set-to-Join-S-P-500-RXO-to-Join-S-P-MidCap-400-Bread-Financial-Holdings-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-11-01",
+        "added": [
+          "ACGL"
+        ],
+        "removed": [
+          "TWTR"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-12-15",
+      "added": [
+        "MBC"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2022-12-12",
+          "source_title": "First Solar Set to Join S&P 500; Fortune Brands Innovations to Join S&P MidCap 400; MasterBrand to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-12-12-First-Solar-Set-to-Join-S-P-500-Fortune-Brands-Innovations-to-Join-S-P-MidCap-400-MasterBrand-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-12-15",
+        "added": [
+          "MBC"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2022-12-19",
+      "added": [
+        "FSLR"
+      ],
+      "removed": [
+        "FBHS",
+        "MBC"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-12-12",
+          "source_title": "First Solar Set to Join S&P 500; Fortune Brands Innovations to Join S&P MidCap 400; MasterBrand to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-12-12-First-Solar-Set-to-Join-S-P-500-Fortune-Brands-Innovations-to-Join-S-P-MidCap-400-MasterBrand-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-12-19",
+        "added": [
+          "FSLR"
+        ],
+        "removed": [
+          "FBHS",
+          "MBC"
+        ]
+      }
+    },
+    {
+      "effective_date": "2022-12-22",
+      "added": [
+        "STLD"
+      ],
+      "removed": [
+        "ABMD"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-12-19",
+          "source_title": "Steel Dynamics Set to Join S&P 500; Super Micro Computer to Join S&P MidCap 400",
+          "source_url": "https://press.spglobal.com/2022-12-19-Steel-Dynamics-Set-to-Join-S-P-500-Super-Micro-Computer-to-Join-S-P-MidCap-400",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2022-12-22",
+        "added": [
+          "STLD"
+        ],
+        "removed": [
+          "ABMD"
+        ]
+      }
+    },
+    {
+      "effective_date": "2023-01-04",
+      "added": [
+        "GEHC"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2022-12-28",
+          "source_title": "GE HealthCare Technologies Set to Join S&P 500; Vornado Realty Trust to Join S&P MidCap 400; RXO to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-12-28-GE-HealthCare-Technologies-Set-to-Join-S-P-500-Vornado-Realty-Trust-to-Join-S-P-MidCap-400-RXO-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-01-04",
+        "added": [
+          "GEHC"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2023-01-05",
+      "added": [],
+      "removed": [
+        "VNO"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2022-12-28",
+          "source_title": "GE HealthCare Technologies Set to Join S&P 500; Vornado Realty Trust to Join S&P MidCap 400; RXO to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2022-12-28-GE-HealthCare-Technologies-Set-to-Join-S-P-500-Vornado-Realty-Trust-to-Join-S-P-MidCap-400-RXO-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-01-05",
+        "added": [],
+        "removed": [
+          "VNO"
+        ]
+      }
+    },
+    {
+      "effective_date": "2023-03-15",
+      "added": [
+        "BG",
+        "PODD"
+      ],
+      "removed": [
+        "SBNY",
+        "SIVB"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2023-03-10",
+          "source_title": "Insulet Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2023-03-10-Insulet-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        },
+        {
+          "announcement_date": "2023-03-13",
+          "source_title": "Bunge Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2023-03-13-Bunge-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-03-15",
+        "added": [
+          "BG",
+          "PODD"
+        ],
+        "removed": [
+          "SBNY",
+          "SIVB"
+        ]
+      }
+    },
+    {
+      "effective_date": "2023-03-20",
+      "added": [
+        "FICO"
+      ],
+      "removed": [
+        "LUMN"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2023-03-03",
+          "source_title": "Fair Isaac & Co. Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2023-03-03-Fair-Isaac-Co-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-03-20",
+        "added": [
+          "FICO"
+        ],
+        "removed": [
+          "LUMN"
+        ]
+      }
+    },
+    {
+      "effective_date": "2023-05-04",
+      "added": [
+        "AXON"
+      ],
+      "removed": [
+        "FRC"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2023-05-01",
+          "source_title": "Axon Enterprise Set to Join S&P 500; STAG Industrial to Join S&P MidCap 400",
+          "source_url": "https://press.spglobal.com/2023-05-01-Axon-Enterprise-Set-to-Join-S-P-500-STAG-Industrial-to-Join-S-P-MidCap-400",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-05-04",
+        "added": [
+          "AXON"
+        ],
+        "removed": [
+          "FRC"
+        ]
+      }
+    },
+    {
+      "effective_date": "2023-06-19",
+      "added": [
+        "PANW"
+      ],
+      "removed": [
+        "DISH"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2023-06-02",
+          "source_title": "Palo Alto Networks Set to S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2023-06-02-Palo-Alto-Networks-Set-to-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-06-19",
+        "added": [
+          "PANW"
+        ],
+        "removed": [
+          "DISH"
+        ]
+      }
+    },
+    {
+      "effective_date": "2023-08-25",
+      "added": [
+        "KVUE"
+      ],
+      "removed": [
+        "AAP"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2023-08-21",
+          "source_title": "Kenvue Set to Join S&P 500; Advance Auto Parts to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2023-08-21-Kenvue-Set-to-Join-S-P-500-Advance-Auto-Parts-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-08-25",
+        "added": [
+          "KVUE"
+        ],
+        "removed": [
+          "AAP"
+        ]
+      }
+    },
+    {
+      "effective_date": "2023-09-18",
+      "added": [
+        "ABNB",
+        "BX"
+      ],
+      "removed": [
+        "LNC",
+        "NWL"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2023-09-01",
+          "source_title": "Blackstone and Airbnb Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2023-09-01-Blackstone-and-Airbnb-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-09-18",
+        "added": [
+          "ABNB",
+          "BX"
+        ],
+        "removed": [
+          "LNC",
+          "NWL"
+        ]
+      }
+    },
+    {
+      "effective_date": "2023-10-02",
+      "added": [
+        "VLTO"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2023-09-28",
+          "source_title": "Veralto Set to Join S&P 500; Vestis to Join S&P MidCap 400; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2023-09-28-Veralto-Set-to-Join-S-P-500-Vestis-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-10-02",
+        "added": [
+          "VLTO"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2023-10-03",
+      "added": [],
+      "removed": [
+        "DXC"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2023-09-28",
+          "source_title": "Veralto Set to Join S&P 500; Vestis to Join S&P MidCap 400; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2023-09-28-Veralto-Set-to-Join-S-P-500-Vestis-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-10-03",
+        "added": [],
+        "removed": [
+          "DXC"
+        ]
+      }
+    },
+    {
+      "effective_date": "2023-10-18",
+      "added": [
+        "HUBB",
+        "LULU"
+      ],
+      "removed": [
+        "ATVI",
+        "OGN"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2023-10-13",
+          "source_title": "Lululemon Athletica & Hubbell Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2023-10-13-Lululemon-Athletica-Hubbell-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-10-18",
+        "added": [
+          "HUBB",
+          "LULU"
+        ],
+        "removed": [
+          "ATVI",
+          "OGN"
+        ]
+      }
+    },
+    {
+      "effective_date": "2023-12-18",
+      "added": [
+        "BLDR",
+        "JBL",
+        "UBER"
+      ],
+      "removed": [
+        "ALK",
+        "SEDG",
+        "SEE"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2023-12-01",
+          "source_title": "Uber Technologies, Jabil and Builders FirstSource Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2023-12-01-Uber-Technologies,-Jabil-and-Builders-FirstSource-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2023-12-18",
+        "added": [
+          "BLDR",
+          "JBL",
+          "UBER"
+        ],
+        "removed": [
+          "ALK",
+          "SEDG",
+          "SEE"
+        ]
+      }
+    },
+    {
+      "effective_date": "2024-03-18",
+      "added": [
+        "DECK",
+        "SMCI"
+      ],
+      "removed": [
+        "WHR",
+        "ZION"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2024-03-01",
+          "source_title": "Super Micro Computer and Deckers Outdoor Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2024-03-01-Super-Micro-Computer-and-Deckers-Outdoor-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2024-03-18",
+        "added": [
+          "DECK",
+          "SMCI"
+        ],
+        "removed": [
+          "WHR",
+          "ZION"
+        ]
+      }
+    },
+    {
+      "effective_date": "2024-04-01",
+      "added": [
+        "SOLV"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2024-03-27",
+          "source_title": "GE Vernova and Solventum Set to Join S&P 500; Dentsply Sirona to Join S&P MidCap 400; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2024-03-27-GE-Vernova-and-Solventum-Set-to-Join-S-P-500-Dentsply-Sirona-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2024-04-01",
+        "added": [
+          "SOLV"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2024-04-02",
+      "added": [
+        "GEV"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2024-03-27",
+          "source_title": "GE Vernova and Solventum Set to Join S&P 500; Dentsply Sirona to Join S&P MidCap 400; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2024-03-27-GE-Vernova-and-Solventum-Set-to-Join-S-P-500-Dentsply-Sirona-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2024-04-02",
+        "added": [
+          "GEV"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2024-04-03",
+      "added": [],
+      "removed": [
+        "VFC",
+        "XRAY"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2024-03-27",
+          "source_title": "GE Vernova and Solventum Set to Join S&P 500; Dentsply Sirona to Join S&P MidCap 400; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2024-03-27-GE-Vernova-and-Solventum-Set-to-Join-S-P-500-Dentsply-Sirona-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2024-04-03",
+        "added": [],
+        "removed": [
+          "VFC",
+          "XRAY"
+        ]
+      }
+    },
+    {
+      "effective_date": "2024-05-08",
+      "added": [
+        "VST"
+      ],
+      "removed": [
+        "PXD"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2024-05-03",
+          "source_title": "Vistra Set to Join S&P 500; Aaon to Join S&P MidCap 400; Marathon Digital Holdings to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2024-05-03-Vistra-Set-to-Join-S-P-500-Aaon-to-Join-S-P-MidCap-400-Marathon-Digital-Holdings-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2024-05-08",
+        "added": [
+          "VST"
+        ],
+        "removed": [
+          "PXD"
+        ]
+      }
+    },
+    {
+      "effective_date": "2024-06-24",
+      "added": [
+        "CRWD",
+        "GDDY",
+        "KKR"
+      ],
+      "removed": [
+        "CMA",
+        "ILMN",
+        "RHI"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2024-06-07",
+          "source_title": "KKR, CrowdStrike Holdings and GoDaddy Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2024-06-07-KKR,-CrowdStrike-Holdings-and-GoDaddy-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2024-06-24",
+        "added": [
+          "CRWD",
+          "GDDY",
+          "KKR"
+        ],
+        "removed": [
+          "CMA",
+          "ILMN",
+          "RHI"
+        ]
+      }
+    },
+    {
+      "effective_date": "2024-09-23",
+      "added": [
+        "DELL",
+        "ERIE",
+        "PLTR"
+      ],
+      "removed": [
+        "AAL",
+        "BIO",
+        "ETSY"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2024-09-06",
+          "source_title": "Palantir Technologies, Dell Technologies, and Erie Indemnity Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2024-09-06-Palantir-Technologies,-Dell-Technologies,-and-Erie-Indemnity-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2024-09-23",
+        "added": [
+          "DELL",
+          "ERIE",
+          "PLTR"
+        ],
+        "removed": [
+          "AAL",
+          "BIO",
+          "ETSY"
+        ]
+      }
+    },
+    {
+      "effective_date": "2024-09-30",
+      "added": [
+        "AMTM"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2024-09-24",
+          "source_title": "Amentum Set to Join S&P 500; Bath & Body Works to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2024-09-24-Amentum-Set-to-Join-S-P-500-Bath-Body-Works-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2024-09-30",
+        "added": [
+          "AMTM"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2024-10-01",
+      "added": [],
+      "removed": [
+        "BBWI"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2024-09-24",
+          "source_title": "Amentum Set to Join S&P 500; Bath & Body Works to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2024-09-24-Amentum-Set-to-Join-S-P-500-Bath-Body-Works-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2024-10-01",
+        "added": [],
+        "removed": [
+          "BBWI"
+        ]
+      }
+    },
+    {
+      "effective_date": "2024-11-26",
+      "added": [
+        "TPL"
+      ],
+      "removed": [
+        "MRO"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2024-11-21",
+          "source_title": "Texas Pacific Land Set to Join S&P 500, Mueller Industries to Join S&P MidCap 400 and Atlas Energy Solutions to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2024-11-21-Texas-Pacific-Land-Set-to-Join-S-P-500,-Mueller-Industries-to-Join-S-P-MidCap-400-and-Atlas-Energy-Solutions-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2024-11-26",
+        "added": [
+          "TPL"
+        ],
+        "removed": [
+          "MRO"
+        ]
+      }
+    },
+    {
+      "effective_date": "2024-12-23",
+      "added": [
+        "APO",
+        "LII",
+        "WDAY"
+      ],
+      "removed": [
+        "AMTM",
+        "CTLT",
+        "QRVO"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2024-12-06",
+          "source_title": "Apollo Global Management and Workday Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2024-12-06-Apollo-Global-Management-and-Workday-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        },
+        {
+          "announcement_date": "2024-12-18",
+          "source_title": "Lennox International Set to Join S&P 500 and BILL Holdings to Join S&P MidCap 400",
+          "source_url": "https://press.spglobal.com/2024-12-18-Lennox-International-Set-to-Join-S-P-500-and-BILL-Holdings-to-Join-S-P-MidCap-400",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2024-12-23",
+        "added": [
+          "APO",
+          "LII",
+          "WDAY"
+        ],
+        "removed": [
+          "AMTM",
+          "CTLT",
+          "QRVO"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-03-24",
+      "added": [
+        "DASH",
+        "EXE",
+        "TKO",
+        "WSM"
+      ],
+      "removed": [
+        "BWA",
+        "CE",
+        "FMC",
+        "TFX"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-03-07",
+          "source_title": "DoorDash, TKO Group Holdings, Williams-Sonoma and Expand Energy Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2025-03-07-DoorDash,-TKO-Group-Holdings,-Williams-Sonoma-and-Expand-Energy-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-03-24",
+        "added": [
+          "DASH",
+          "EXE",
+          "TKO",
+          "WSM"
+        ],
+        "removed": [
+          "BWA",
+          "CE",
+          "FMC",
+          "TFX"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-05-19",
+      "added": [
+        "COIN"
+      ],
+      "removed": [
+        "DFS"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-05-12",
+          "source_title": "Coinbase Global Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2025-05-12-Coinbase-Global-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-05-19",
+        "added": [
+          "COIN"
+        ],
+        "removed": [
+          "DFS"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-07-09",
+      "added": [
+        "DDOG"
+      ],
+      "removed": [
+        "JNPR"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-07-02",
+          "source_title": "Datadog Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2025-07-02-Datadog-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-07-09",
+        "added": [
+          "DDOG"
+        ],
+        "removed": [
+          "JNPR"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-07-18",
+      "added": [
+        "TTD"
+      ],
+      "removed": [
+        "ANSS"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-07-14",
+          "source_title": "The Trade Desk Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2025-07-14-The-Trade-Desk-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-07-18",
+        "added": [
+          "TTD"
+        ],
+        "removed": [
+          "ANSS"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-07-23",
+      "added": [
+        "XYZ"
+      ],
+      "removed": [
+        "HES"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-07-18",
+          "source_title": "Block Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2025-07-18-Block-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-07-23",
+        "added": [
+          "XYZ"
+        ],
+        "removed": [
+          "HES"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-08-28",
+      "added": [
+        "IBKR"
+      ],
+      "removed": [
+        "WBA"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-08-25",
+          "source_title": "Interactive Brokers Group Set to Join S&P 500, Talen Energy to Join S&P MidCap 400 and Kinetik Holdings to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2025-08-25-Interactive-Brokers-Group-Set-to-Join-S-P-500,-Talen-Energy-to-Join-S-P-MidCap-400-and-Kinetik-Holdings-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-08-28",
+        "added": [
+          "IBKR"
+        ],
+        "removed": [
+          "WBA"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-09-22",
+      "added": [
+        "APP",
+        "EME",
+        "HOOD"
+      ],
+      "removed": [
+        "CZR",
+        "ENPH",
+        "MKTX"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-09-05",
+          "source_title": "AppLovin, Robinhood Markets and Emcor Group Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2025-09-05-AppLovin,-Robinhood-Markets-and-Emcor-Group-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-09-22",
+        "added": [
+          "APP",
+          "EME",
+          "HOOD"
+        ],
+        "removed": [
+          "CZR",
+          "ENPH",
+          "MKTX"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-10-30",
+      "added": [
+        "SOLS"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2025-10-27",
+          "source_title": "Solstice Advance Materials and Qnity Electronics Set to Join S&P 500; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2025-10-27-Solstice-Advance-Materials-and-Qnity-Electronics-Set-to-Join-S-P-500-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-10-30",
+        "added": [
+          "SOLS"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2025-10-31",
+      "added": [],
+      "removed": [
+        "KMX"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-10-27",
+          "source_title": "Solstice Advance Materials and Qnity Electronics Set to Join S&P 500; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2025-10-27-Solstice-Advance-Materials-and-Qnity-Electronics-Set-to-Join-S-P-500-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-10-31",
+        "added": [],
+        "removed": [
+          "KMX"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-11-03",
+      "added": [
+        "Q"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2025-10-27",
+          "source_title": "Solstice Advance Materials and Qnity Electronics Set to Join S&P 500; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2025-10-27-Solstice-Advance-Materials-and-Qnity-Electronics-Set-to-Join-S-P-500-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-11-03",
+        "added": [
+          "Q"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2025-11-04",
+      "added": [],
+      "removed": [
+        "EMN"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-10-27",
+          "source_title": "Solstice Advance Materials and Qnity Electronics Set to Join S&P 500; Others to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2025-10-27-Solstice-Advance-Materials-and-Qnity-Electronics-Set-to-Join-S-P-500-Others-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-11-04",
+        "added": [],
+        "removed": [
+          "EMN"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-11-28",
+      "added": [
+        "SNDK"
+      ],
+      "removed": [
+        "IPG"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-11-24",
+          "source_title": "Sandisk Set to Join S&P 500; Upwork, First Interstate BancSystem, PTC Therapeutics to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2025-11-24-Sandisk-Set-to-Join-S-P-500-Upwork,-First-Interstate-BancSystem,-PTC-Therapeutics-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-11-28",
+        "added": [
+          "SNDK"
+        ],
+        "removed": [
+          "IPG"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-12-11",
+      "added": [
+        "ARES"
+      ],
+      "removed": [
+        "K"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-12-08",
+          "source_title": "Ares Management Set to Join S&P 500; Sezzle and Vital Farms to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2025-12-08-Ares-Management-Set-to-Join-S-P-500-Sezzle-and-Vital-Farms-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-12-11",
+        "added": [
+          "ARES"
+        ],
+        "removed": [
+          "K"
+        ]
+      }
+    },
+    {
+      "effective_date": "2025-12-22",
+      "added": [
+        "CRH",
+        "CVNA",
+        "FIX"
+      ],
+      "removed": [
+        "LKQ",
+        "MHK",
+        "SOLS"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2025-12-05",
+          "source_title": "CRH, Carvana and Comfort Systems USA Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2025-12-05-CRH,-Carvana-and-Comfort-Systems-USA-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2025-12-22",
+        "added": [
+          "CRH",
+          "CVNA",
+          "FIX"
+        ],
+        "removed": [
+          "LKQ",
+          "MHK",
+          "SOLS"
+        ]
+      }
+    },
+    {
+      "effective_date": "2026-02-09",
+      "added": [
+        "CIEN"
+      ],
+      "removed": [
+        "DAY"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2026-02-04",
+          "source_title": "Ciena Set to Join S&P 500; Arrowhead Pharmaceuticals to Join S&P MidCap 400; ADT and OneSpaWorld Holdings to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2026-02-04-Ciena-Set-to-Join-S-P-500-Arrowhead-Pharmaceuticals-to-Join-S-P-MidCap-400-ADT-and-OneSpaWorld-Holdings-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2026-02-09",
+        "added": [
+          "CIEN"
+        ],
+        "removed": [
+          "DAY"
+        ]
+      }
+    },
+    {
+      "effective_date": "2026-03-23",
+      "added": [
+        "COHR",
+        "LITE",
+        "SATS",
+        "VRT"
+      ],
+      "removed": [
+        "LW",
+        "MOH",
+        "MTCH",
+        "PAYC"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2026-03-06",
+          "source_title": "Vertiv Holdings, Lumentum Holdings, Coherent, and EchoStar Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400, and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2026-03-06-Vertiv-Holdings,-Lumentum-Holdings,-Coherent,-and-EchoStar-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400,-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2026-03-23",
+        "added": [
+          "COHR",
+          "LITE",
+          "SATS",
+          "VRT"
+        ],
+        "removed": [
+          "LW",
+          "MOH",
+          "MTCH",
+          "PAYC"
+        ]
+      }
+    },
+    {
+      "effective_date": "2026-04-09",
+      "added": [
+        "CASY"
+      ],
+      "removed": [
+        "HOLX"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2026-04-06",
+          "source_title": "Casey's General Stores Set to Join S&P 500; DigitalOcean Holdings to Join S&P MidCap 400; Broadstone Net Lease to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2026-04-06-Caseys-General-Stores-Set-to-Join-S-P-500-DigitalOcean-Holdings-to-Join-S-P-MidCap-400-Broadstone-Net-Lease-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2026-04-09",
+        "added": [
+          "CASY"
+        ],
+        "removed": [
+          "HOLX"
+        ]
+      }
+    },
+    {
+      "effective_date": "2026-05-07",
+      "added": [
+        "VEEV"
+      ],
+      "removed": [
+        "CTRA"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2026-04-30",
+          "source_title": "Veeva Systems Set to Join S&P 500",
+          "source_url": "https://press.spglobal.com/2026-04-30-Veeva-Systems-Set-to-Join-S-P-500",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2026-05-07",
+        "added": [
+          "VEEV"
+        ],
+        "removed": [
+          "CTRA"
+        ]
+      }
+    },
+    {
+      "effective_date": "2026-06-01",
+      "added": [
+        "FDXF"
+      ],
+      "removed": [],
+      "sources": [
+        {
+          "announcement_date": "2026-05-27",
+          "source_title": "FedEx Freight Holding Company Set to Join S&P 500; EPAM Systems and Dave to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2026-05-27-FedEx-Freight-Holding-Company-Set-to-Join-S-P-500-EPAM-Systems-and-Dave-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2026-06-01",
+        "added": [
+          "FDXF"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "effective_date": "2026-06-02",
+      "added": [],
+      "removed": [
+        "EPAM"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2026-05-27",
+          "source_title": "FedEx Freight Holding Company Set to Join S&P 500; EPAM Systems and Dave to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2026-05-27-FedEx-Freight-Holding-Company-Set-to-Join-S-P-500-EPAM-Systems-and-Dave-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2026-06-02",
+        "added": [],
+        "removed": [
+          "EPAM"
+        ]
+      }
+    },
+    {
+      "effective_date": "2026-06-22",
+      "added": [
+        "FLEX",
+        "MRVL"
+      ],
+      "removed": [
+        "CPB",
+        "POOL"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2026-06-05",
+          "source_title": "Marvell Technology and Flex Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2026-06-05-Marvell-Technology-and-Flex-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+          "confidence_score": 0.99
+        }
+      ],
+      "yaml": {
+        "effective_date": "2026-06-22",
+        "added": [
+          "FLEX",
+          "MRVL"
+        ],
+        "removed": [
+          "CPB",
+          "POOL"
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "effective_date": "2019-06-07",
+      "added": [
+        "BMS"
+      ],
+      "removed": [
+        "MAT"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2019-06-03",
+          "source_title": "Bemis Set to Join S&P 500; Mattel to Join S&P MidCap 400",
+          "source_url": "https://press.spglobal.com/2019-06-03-Bemis-Set-to-Join-S-P-500-Mattel-to-Join-S-P-MidCap-400",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2019-06-07",
+        "added": [
+          "AMCR"
+        ],
+        "removed": [
+          "MAT"
+        ]
+      }
+    },
+    {
+      "effective_date": "2019-12-05",
+      "added": [
+        "WRB"
+      ],
+      "removed": [
+        "VIAB"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2019-11-27",
+          "source_title": "W.R. Berkley Set to Join S&P 500; RLI to Join S&P MidCap 400; The St. Joe Company to Join S&P SmallCap 600",
+          "source_url": "https://press.spglobal.com/2019-11-27-W-R-Berkley-Set-to-Join-S-P-500-RLI-to-Join-S-P-MidCap-400-The-St-Joe-Company-to-Join-S-P-SmallCap-600",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2019-12-05",
+        "added": [
+          "VIAC",
+          "WRB"
+        ],
+        "removed": [
+          "CBS",
+          "VIAB"
+        ]
+      }
+    },
+    {
+      "effective_date": "2020-03-03",
+      "added": [
+        "GDI"
+      ],
+      "removed": [
+        "XEC"
+      ],
+      "sources": [
+        {
+          "announcement_date": "2020-02-27",
+          "source_title": "Gardner Denver Holdings Set to Join S&P 500; Cimarex Energy to Join S&P MidCap 400",
+          "source_url": "https://press.spglobal.com/2020-02-27-Gardner-Denver-Holdings-Set-to-Join-S-P-500-Cimarex-Energy-to-Join-S-P-MidCap-400",
+          "confidence_score": 0.95
+        }
+      ],
+      "yaml": {
+        "effective_date": "2020-03-03",
+        "added": [
+          "TT"
+        ],
+        "removed": [
+          "XEC"
+        ]
+      }
+    }
+  ],
+  "official_missing_from_yaml": [],
+  "yaml_without_official_match": [
+    {
+      "effective_date": "2019-04-02",
+      "added": [
+        "DOW"
+      ],
+      "removed": [
+        "BHF"
+      ]
+    },
+    {
+      "effective_date": "2019-06-01",
+      "added": [
+        "LHX"
+      ],
+      "removed": [
+        "HRS"
+      ]
+    },
+    {
+      "effective_date": "2019-06-03",
+      "added": [
+        "CTVA",
+        "DD"
+      ],
+      "removed": [
+        "DWDP",
+        "FLR"
+      ]
+    },
+    {
+      "effective_date": "2019-07-01",
+      "added": [
+        "MKTX"
+      ],
+      "removed": [
+        "LLL"
+      ]
+    },
+    {
+      "effective_date": "2019-08-08",
+      "added": [
+        "GL"
+      ],
+      "removed": [
+        "TMK"
+      ]
+    },
+    {
+      "effective_date": "2019-08-09",
+      "added": [
+        "IEX",
+        "LDOS"
+      ],
+      "removed": [
+        "APC",
+        "FL"
+      ]
+    },
+    {
+      "effective_date": "2019-10-03",
+      "added": [
+        "LVS"
+      ],
+      "removed": [
+        "NKTR"
+      ]
+    },
+    {
+      "effective_date": "2019-10-18",
+      "added": [
+        "BKR"
+      ],
+      "removed": [
+        "BHGE"
+      ]
+    },
+    {
+      "effective_date": "2019-11-05",
+      "added": [
+        "NLOK",
+        "PEAK"
+      ],
+      "removed": [
+        "HCP",
+        "SYMC"
+      ]
+    },
+    {
+      "effective_date": "2019-11-21",
+      "added": [
+        "NOW"
+      ],
+      "removed": [
+        "CELG"
+      ]
+    },
+    {
+      "effective_date": "2019-12-09",
+      "added": [
+        "ODFL",
+        "TFC"
+      ],
+      "removed": [
+        "BBT",
+        "STI"
+      ]
+    },
+    {
+      "effective_date": "2019-12-10",
+      "added": [
+        "J"
+      ],
+      "removed": [
+        "JEC"
+      ]
+    },
+    {
+      "effective_date": "2019-12-23",
+      "added": [
+        "LYV",
+        "STE",
+        "ZBRA"
+      ],
+      "removed": [
+        "AMG",
+        "MAC",
+        "TRIP"
+      ]
+    },
+    {
+      "effective_date": "2020-04-03",
+      "added": [
+        "CARR",
+        "OTIS",
+        "RTX"
+      ],
+      "removed": [
+        "UTX"
+      ]
+    },
+    {
+      "effective_date": "2020-04-06",
+      "added": [
+        "HWM"
+      ],
+      "removed": [
+        "ARNC",
+        "M",
+        "RTN"
+      ]
+    },
+    {
+      "effective_date": "2020-06-22",
+      "added": [
+        "BIO",
+        "TDY",
+        "TYL"
+      ],
+      "removed": [
+        "ADS",
+        "HOG",
+        "JWN"
+      ]
+    },
+    {
+      "effective_date": "2020-09-18",
+      "added": [
+        "LUMN"
+      ],
+      "removed": [
+        "CTL"
+      ]
+    },
+    {
+      "effective_date": "2020-11-17",
+      "added": [
+        "VTRS"
+      ],
+      "removed": [
+        "MYL"
+      ]
+    },
+    {
+      "effective_date": "2021-08-03",
+      "added": [
+        "BBWI"
+      ],
+      "removed": [
+        "LB"
+      ]
+    },
+    {
+      "effective_date": "2021-10-04",
+      "added": [
+        "CTRA"
+      ],
+      "removed": [
+        "COG"
+      ]
+    },
+    {
+      "effective_date": "2022-01-10",
+      "added": [
+        "WTW"
+      ],
+      "removed": [
+        "WLTW"
+      ]
+    },
+    {
+      "effective_date": "2022-02-17",
+      "added": [
+        "PARA"
+      ],
+      "removed": [
+        "VIAC"
+      ]
+    },
+    {
+      "effective_date": "2022-04-11",
+      "added": [
+        "WBD"
+      ],
+      "removed": [
+        "DISCA",
+        "DISCK"
+      ]
+    },
+    {
+      "effective_date": "2022-05-10",
+      "added": [
+        "BALL"
+      ],
+      "removed": [
+        "BLL"
+      ]
+    },
+    {
+      "effective_date": "2022-06-09",
+      "added": [
+        "META"
+      ],
+      "removed": [
+        "FB"
+      ]
+    },
+    {
+      "effective_date": "2022-06-28",
+      "added": [
+        "ELV"
+      ],
+      "removed": [
+        "ANTM"
+      ]
+    },
+    {
+      "effective_date": "2022-11-08",
+      "added": [
+        "GEN"
+      ],
+      "removed": [
+        "NLOK"
+      ]
+    },
+    {
+      "effective_date": "2023-05-16",
+      "added": [
+        "RVTY"
+      ],
+      "removed": [
+        "PKI"
+      ]
+    },
+    {
+      "effective_date": "2023-06-07",
+      "added": [
+        "FI"
+      ],
+      "removed": [
+        "FISV"
+      ]
+    },
+    {
+      "effective_date": "2023-07-10",
+      "added": [
+        "EG"
+      ],
+      "removed": [
+        "RE"
+      ]
+    },
+    {
+      "effective_date": "2023-08-30",
+      "added": [
+        "COR"
+      ],
+      "removed": [
+        "ABC"
+      ]
+    },
+    {
+      "effective_date": "2024-02-01",
+      "added": [
+        "DAY"
+      ],
+      "removed": [
+        "CDAY"
+      ]
+    },
+    {
+      "effective_date": "2024-03-04",
+      "added": [
+        "DOC"
+      ],
+      "removed": [
+        "PEAK"
+      ]
+    },
+    {
+      "effective_date": "2024-03-25",
+      "added": [
+        "CPAY"
+      ],
+      "removed": [
+        "FLT"
+      ]
+    },
+    {
+      "effective_date": "2024-07-08",
+      "added": [
+        "SW"
+      ],
+      "removed": [
+        "WRK"
+      ]
+    },
+    {
+      "effective_date": "2025-08-08",
+      "added": [
+        "PSKY"
+      ],
+      "removed": [
+        "PARA"
+      ]
+    },
+    {
+      "effective_date": "2025-11-11",
+      "added": [
+        "FISV"
+      ],
+      "removed": [
+        "FI"
+      ]
+    },
+    {
+      "effective_date": "2026-01-14",
+      "added": [
+        "MRSH"
+      ],
+      "removed": [
+        "MMC"
+      ]
+    }
+  ],
+  "rejected_official_rows": [
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2018-11-07",
+      "effective_date": "",
+      "added_tickers": "JKHY",
+      "removed_tickers": "EQT",
+      "source_url": "https://press.spglobal.com/2018-11-07-Jack-Henry-Associates-Set-to-Join-S-P-500-EQT-Equitrans-Midstream-MasTec-to-Join-S-P-MidCap-400-Superior-Energy-Services-United-Natural-Foods-to-Join-S-P-SmallCap-600",
+      "source_title": "Jack Henry & Associates Set to Join S&P 500; EQT, Equitrans Midstream, MasTec to Join S&P MidCap 400; Superior Energy Services, United Natural Foods to Join S&P SmallCap 600",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205910Z-05d632c3d86e-2018-11-07-Jack-Henry-Associates-Set-to-Join-S-P-500-EQT-Equitrans-Midstream-MasTec-to-Join-S-P-MidC.html",
+      "confidence_score": "0.40",
+      "parser_notes": "effective date missing or ambiguous; extracted=html",
+      "manual_review_required": "true",
+      "reason": "missing or invalid effective date/confidence"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2019-01-29",
+      "effective_date": "2019-02-04",
+      "added_tickers": "",
+      "removed_tickers": "",
+      "source_url": "https://press.spglobal.com/2019-01-29-Caesars-Entertainment-Set-to-Join-S-P-MidCap-400-Conns-and-Dril-Quip-to-Join-S-P-SmallCap-600-New-Fox-Continues-in-S-P-500",
+      "source_title": "Caesars Entertainment Set to Join S&P MidCap 400; Conn's and Dril-Quip to Join S&P SmallCap 600; \"New\" Fox Continues in S&P 500",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205914Z-9da09afd7906-2019-01-29-Caesars-Entertainment-Set-to-Join-S-P-MidCap-400-Conns-and-Dril-Quip-to-Join-S-P-SmallCap.html",
+      "confidence_score": "0.40",
+      "parser_notes": "S&P 500 replacement pair not confidently parsed; extracted=html",
+      "manual_review_required": "true",
+      "reason": "parser marked for review or below threshold"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2019-03-14",
+      "effective_date": "2019-03-20",
+      "added_tickers": "",
+      "removed_tickers": "",
+      "source_url": "https://press.spglobal.com/2019-03-14-Fox-Set-to-Join-S-P-500-Adobe-to-Join-S-P-100",
+      "source_title": "Fox Set to Join S&P 500; Adobe to Join S&P 100",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205916Z-984e6dbb93d3-2019-03-14-Fox-Set-to-Join-S-P-500-Adobe-to-Join-S-P-100.html",
+      "confidence_score": "0.40",
+      "parser_notes": "S&P 500 replacement pair not confidently parsed; extracted=html",
+      "manual_review_required": "true",
+      "reason": "parser marked for review or below threshold"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2019-03-26",
+      "effective_date": "2019-04-02",
+      "added_tickers": "",
+      "removed_tickers": "",
+      "source_url": "https://press.spglobal.com/2019-03-26-Dow-Set-to-Join-S-P-500-and-S-P-100-Brighthouse-Financial-and-Trex-Company-to-Join-S-P-MidCap-400-Pitney-Bowes-and-Xenia-Hotels-Resorts-to-Join-S-P-SmallCap-600",
+      "source_title": "Dow Set to Join S&P 500 and S&P 100; Brighthouse Financial and Trex Company to Join S&P MidCap 400; Pitney Bowes and Xenia Hotels & Resorts to Join S&P SmallCap 600",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205916Z-dc288f36c1bc-2019-03-26-Dow-Set-to-Join-S-P-500-and-S-P-100-Brighthouse-Financial-and-Trex-Company-to-Join-S-P-Mi.html",
+      "confidence_score": "0.40",
+      "parser_notes": "S&P 500 replacement pair not confidently parsed; extracted=html",
+      "manual_review_required": "true",
+      "reason": "parser marked for review or below threshold"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2019-05-28",
+      "effective_date": "",
+      "added_tickers": "",
+      "removed_tickers": "",
+      "source_url": "https://press.spglobal.com/2019-05-28-Corteva-Set-to-Join-S-P-500-Fluor-to-Join-S-P-MidCap-400-and-Realogy-and-Bloomin-Brands-to-Join-S-P-SmallCap-600",
+      "source_title": "Corteva Set to Join S&P 500; Fluor to Join S&P MidCap 400 and Realogy and Bloomin' Brands to Join S&P SmallCap 600",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205917Z-4c484982a39d-2019-05-28-Corteva-Set-to-Join-S-P-500-Fluor-to-Join-S-P-MidCap-400-and-Realogy-and-Bloomin-Brands-t.html",
+      "confidence_score": "0.40",
+      "parser_notes": "effective date missing or ambiguous; S&P 500 replacement pair not confidently parsed; extracted=html",
+      "manual_review_required": "true",
+      "reason": "missing or invalid effective date/confidence"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2019-06-24",
+      "effective_date": "",
+      "added_tickers": "MKTX",
+      "removed_tickers": "LLL",
+      "source_url": "https://press.spglobal.com/2019-06-24-MarketAxess-Holdings-Set-to-Join-S-P-500-Axon-Enterprise-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600",
+      "source_title": "MarketAxess Holdings Set to Join S&P 500; Axon Enterprise to Join S&P MidCap 400; Others to Join S&P SmallCap 600",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205918Z-c6c5f1b5e87c-2019-06-24-MarketAxess-Holdings-Set-to-Join-S-P-500-Axon-Enterprise-to-Join-S-P-MidCap-400-Others-to.html",
+      "confidence_score": "0.40",
+      "parser_notes": "effective date missing or ambiguous; extracted=html",
+      "manual_review_required": "true",
+      "reason": "missing or invalid effective date/confidence"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2019-08-01",
+      "effective_date": "",
+      "added_tickers": "",
+      "removed_tickers": "",
+      "source_url": "https://press.spglobal.com/2019-08-01-Leidos-Holdings-IDEX-Set-to-Join-S-P-500-Grubhub-Foot-Locker-to-Join-S-P-MidCap-400-National-Beverage-to-Join-S-P-SmallCap-600",
+      "source_title": "Leidos Holdings & IDEX Set to Join S&P 500; Grubhub & Foot Locker to Join S&P MidCap 400; National Beverage to Join S&P SmallCap 600",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205920Z-a52a2d705d5b-2019-08-01-Leidos-Holdings-IDEX-Set-to-Join-S-P-500-Grubhub-Foot-Locker-to-Join-S-P-MidCap-400-Natio.html",
+      "confidence_score": "0.40",
+      "parser_notes": "effective date missing or ambiguous; S&P 500 replacement pair not confidently parsed; extracted=html",
+      "manual_review_required": "true",
+      "reason": "missing or invalid effective date/confidence"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2019-09-26",
+      "effective_date": "",
+      "added_tickers": "LVS",
+      "removed_tickers": "NKTR",
+      "source_url": "https://press.spglobal.com/2019-09-26-Las-Vegas-Sands-Set-to-Join-S-P-500-Nektar-Therapeutics-to-Join-S-P-MidCap-400-The-Pennant-Group-to-Join-S-P-SmallCap-600",
+      "source_title": "Las Vegas Sands Set to Join S&P 500; Nektar Therapeutics to Join S&P MidCap 400; The Pennant Group to Join S&P SmallCap 600",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205923Z-0d4e412bf4cd-2019-09-26-Las-Vegas-Sands-Set-to-Join-S-P-500-Nektar-Therapeutics-to-Join-S-P-MidCap-400-The-Pennan.html",
+      "confidence_score": "0.40",
+      "parser_notes": "effective date missing or ambiguous; extracted=html",
+      "manual_review_required": "true",
+      "reason": "missing or invalid effective date/confidence"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2019-11-19",
+      "effective_date": "2019-11-21",
+      "added_tickers": "",
+      "removed_tickers": "",
+      "source_url": "https://press.spglobal.com/2019-11-19-Thermo-Fisher-Scientific-Set-to-Join-S-P-100-ServiceNow-to-Join-S-P-500",
+      "source_title": "Thermo Fisher Scientific Set to Join S&P 100; ServiceNow to Join S&P 500",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205924Z-47d35dcab72f-2019-11-19-Thermo-Fisher-Scientific-Set-to-Join-S-P-100-ServiceNow-to-Join-S-P-500.html",
+      "confidence_score": "0.40",
+      "parser_notes": "S&P 500 replacement pair not confidently parsed; extracted=html",
+      "manual_review_required": "true",
+      "reason": "parser marked for review or below threshold"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2019-12-02",
+      "effective_date": "",
+      "added_tickers": "ODFL",
+      "removed_tickers": "STI",
+      "source_url": "https://press.spglobal.com/2019-12-02-Old-Dominion-Freight-Line-Set-to-Join-S-P-500-Cabot-Microelectronics-to-Join-S-P-MidCap-400-Ready-Capital-and-Industrial-Logistics-Properties-Trust-to-Join-S-P-SmallCap-600",
+      "source_title": "Old Dominion Freight Line Set to Join S&P 500; Cabot Microelectronics to Join S&P MidCap 400; Ready Capital and Industrial Logistics Properties Trust to Join S&P SmallCap 600",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205926Z-cd8ff20233f4-2019-12-02-Old-Dominion-Freight-Line-Set-to-Join-S-P-500-Cabot-Microelectronics-to-Join-S-P-MidCap-4.html",
+      "confidence_score": "0.40",
+      "parser_notes": "effective date missing or ambiguous; extracted=html",
+      "manual_review_required": "true",
+      "reason": "missing or invalid effective date/confidence"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2019-12-13",
+      "effective_date": "2019-12-23",
+      "added_tickers": "",
+      "removed_tickers": "",
+      "source_url": "https://press.spglobal.com/2019-12-13-Live-Nation-Entertainment-Zebra-Technologies-STERIS-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+      "source_title": "Live Nation Entertainment, Zebra Technologies, STERIS Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205927Z-5f0d3c3968fe-2019-12-13-Live-Nation-Entertainment-Zebra-Technologies-STERIS-Set-to-Join-S-P-500-Others-to-Join-S-.html",
+      "confidence_score": "0.40",
+      "parser_notes": "S&P 500 replacement pair not confidently parsed; extracted=html",
+      "manual_review_required": "true",
+      "reason": "parser marked for review or below threshold"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2020-03-31",
+      "effective_date": "",
+      "added_tickers": "",
+      "removed_tickers": "",
+      "source_url": "https://press.spglobal.com/2020-03-31-Otis-Worldwide-and-Carrier-Global-Set-to-Join-S-P-500-American-Tower-to-Join-S-P-100-and-Macys-to-Join-S-P-SmallCap-600",
+      "source_title": "Otis Worldwide and Carrier Global Set to Join S&P 500; American Tower to Join S&P 100 and Macy's to Join S&P SmallCap 600",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205930Z-8f3d960ddf91-2020-03-31-Otis-Worldwide-and-Carrier-Global-Set-to-Join-S-P-500-American-Tower-to-Join-S-P-100-and-.html",
+      "confidence_score": "0.40",
+      "parser_notes": "effective date missing or ambiguous; S&P 500 replacement pair not confidently parsed; extracted=html",
+      "manual_review_required": "true",
+      "reason": "missing or invalid effective date/confidence"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2020-06-12",
+      "effective_date": "2020-06-22",
+      "added_tickers": "",
+      "removed_tickers": "",
+      "source_url": "https://press.spglobal.com/2020-06-12-S-P-Dow-Jones-Indices-Announces-Tyler-Technologies-Bio-Rad-Laboratories-and-Teledyne-Technologies-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600",
+      "source_title": "S&P Dow Jones Indices Announces Tyler Technologies, Bio-Rad Laboratories and Teledyne Technologies Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205932Z-49768d0dedb5-2020-06-12-S-P-Dow-Jones-Indices-Announces-Tyler-Technologies-Bio-Rad-Laboratories-and-Teledyne-Tech.html",
+      "confidence_score": "0.40",
+      "parser_notes": "S&P 500 replacement pair not confidently parsed; extracted=html",
+      "manual_review_required": "true",
+      "reason": "parser marked for review or below threshold"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2020-11-30",
+      "effective_date": "2020-12-21",
+      "added_tickers": "",
+      "removed_tickers": "",
+      "source_url": "https://press.spglobal.com/2020-11-30-S-P-Dow-Jones-Indices-Announces-Implementation-of-Teslas-Addition-to-S-P-500",
+      "source_title": "S&P Dow Jones Indices Announces Implementation of Tesla's Addition to S&P 500",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T205936Z-3da188981e19-2020-11-30-S-P-Dow-Jones-Indices-Announces-Implementation-of-Teslas-Addition-to-S-P-500.html",
+      "confidence_score": "0.40",
+      "parser_notes": "S&P 500 replacement pair not confidently parsed; extracted=html",
+      "manual_review_required": "true",
+      "reason": "parser marked for review or below threshold"
+    },
+    {
+      "index_name": "S&P 500",
+      "announcement_date": "2023-08-09",
+      "effective_date": "",
+      "added_tickers": "",
+      "removed_tickers": "",
+      "source_url": "https://press.spglobal.com/2023-08-09-Kenvue-Set-to-Join-S-P-500",
+      "source_title": "Kenvue Set to Join S&P 500",
+      "raw_file_path": "audit\\raw_sources\\sp500\\20260606T210001Z-802637db56ec-2023-08-09-Kenvue-Set-to-Join-S-P-500.html",
+      "confidence_score": "0.40",
+      "parser_notes": "effective date missing or ambiguous; S&P 500 replacement pair not confidently parsed; extracted=html",
+      "manual_review_required": "true",
+      "reason": "missing or invalid effective date/confidence"
+    }
+  ]
+}

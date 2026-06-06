@@ -104,8 +104,8 @@ def build_report() -> str:
     lines.append("-" * 64)
     lines.append(f"  Total unique tickers ever in S&P 500 (2004–2026): {len(all_tickers)}")
     lines.append("")
-    lines.append("  (Note: tickers from 2020-2026 are carried forward from 2019-01-11,")
-    lines.append("   the last date in the source CSV. Source: fja05680/sp500 on GitHub.)")
+    lines.append("  (Note: post-2019 changes are reconciled against official S&P Global")
+    lines.append("   announcements; see audit/sp500_2019_2026_reconciliation.md.)")
     lines.append("")
 
     # -- Sorted unique tickers list (brief) --------------------------------

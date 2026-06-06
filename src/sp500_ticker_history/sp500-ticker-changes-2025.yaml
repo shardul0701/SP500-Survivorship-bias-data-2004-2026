@@ -507,42 +507,61 @@ tickers_on_Jan_1:
 
 changes:
 
-  '2025-04-24':
+  '2025-03-24':
     difference:
-      - 'BWA'
-      - 'CE'
-      - 'FMC'
-      - 'TFX'
+      - BWA
+      - CE
+      - FMC
+      - TFX
     union:
-      - 'DASH'
-      - 'EXE'
-      - 'TKO'
-      - 'WSM'
-
+      - DASH
+      - EXE
+      - TKO
+      - WSM
+    source_url: https://press.spglobal.com/2025-03-07-DoorDash,-TKO-Group-Holdings,-Williams-Sonoma-and-Expand-Energy-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: DoorDash, TKO Group Holdings, Williams-Sonoma and Expand Energy Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2025-03-07'
+    confidence_score: 0.99
   '2025-05-19':
     difference:
       - 'DFS'
     union:
       - 'COIN'
 
+    source_url: https://press.spglobal.com/2025-05-12-Coinbase-Global-Set-to-Join-S-P-500
+    source_title: Coinbase Global Set to Join S&P 500
+    announcement_date: '2025-05-12'
+    confidence_score: 0.99
   '2025-07-09':
     difference:
       - 'JNPR'
     union:
       - 'DDOG'
 
+    source_url: https://press.spglobal.com/2025-07-02-Datadog-Set-to-Join-S-P-500
+    source_title: Datadog Set to Join S&P 500
+    announcement_date: '2025-07-02'
+    confidence_score: 0.99
   '2025-07-18':
     difference:
       - 'ANSS'
     union:
       - 'TTD'
 
+    source_url: https://press.spglobal.com/2025-07-14-The-Trade-Desk-Set-to-Join-S-P-500
+    source_title: The Trade Desk Set to Join S&P 500
+    announcement_date: '2025-07-14'
+    confidence_score: 0.99
   '2025-07-23':
     difference:
       - 'HES'
     union:
       - 'XYZ'
 
+    source_url: https://press.spglobal.com/2025-07-18-Block-Set-to-Join-S-P-500
+    source_title: Block Set to Join S&P 500
+    announcement_date: '2025-07-18'
+    confidence_score: 0.99
   '2025-08-08':
     difference:
       - 'PARA'
@@ -555,6 +574,10 @@ changes:
     union:
       - 'IBKR'
 
+    source_url: https://press.spglobal.com/2025-08-25-Interactive-Brokers-Group-Set-to-Join-S-P-500,-Talen-Energy-to-Join-S-P-MidCap-400-and-Kinetik-Holdings-to-Join-S-P-SmallCap-600
+    source_title: Interactive Brokers Group Set to Join S&P 500, Talen Energy to Join S&P MidCap 400 and Kinetik Holdings to Join S&P SmallCap 600
+    announcement_date: '2025-08-25'
+    confidence_score: 0.99
   '2025-09-22':
     difference:
       - 'CZR'
@@ -565,22 +588,42 @@ changes:
       - 'EME'
       - 'HOOD'
 
+    source_url: https://press.spglobal.com/2025-09-05-AppLovin,-Robinhood-Markets-and-Emcor-Group-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: AppLovin, Robinhood Markets and Emcor Group Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2025-09-05'
+    confidence_score: 0.99
   '2025-10-30':
     union:
       - 'SOLS'
 
+    source_url: https://press.spglobal.com/2025-10-27-Solstice-Advance-Materials-and-Qnity-Electronics-Set-to-Join-S-P-500-Others-to-Join-S-P-SmallCap-600
+    source_title: Solstice Advance Materials and Qnity Electronics Set to Join S&P 500; Others to Join S&P SmallCap 600
+    announcement_date: '2025-10-27'
+    confidence_score: 0.99
   '2025-10-31':
     difference:
       - 'KMX'
 
+    source_url: https://press.spglobal.com/2025-10-27-Solstice-Advance-Materials-and-Qnity-Electronics-Set-to-Join-S-P-500-Others-to-Join-S-P-SmallCap-600
+    source_title: Solstice Advance Materials and Qnity Electronics Set to Join S&P 500; Others to Join S&P SmallCap 600
+    announcement_date: '2025-10-27'
+    confidence_score: 0.99
   '2025-11-03':
     union:
       - 'Q'
 
+    source_url: https://press.spglobal.com/2025-10-27-Solstice-Advance-Materials-and-Qnity-Electronics-Set-to-Join-S-P-500-Others-to-Join-S-P-SmallCap-600
+    source_title: Solstice Advance Materials and Qnity Electronics Set to Join S&P 500; Others to Join S&P SmallCap 600
+    announcement_date: '2025-10-27'
+    confidence_score: 0.99
   '2025-11-04':
     difference:
       - 'EMN'
 
+    source_url: https://press.spglobal.com/2025-10-27-Solstice-Advance-Materials-and-Qnity-Electronics-Set-to-Join-S-P-500-Others-to-Join-S-P-SmallCap-600
+    source_title: Solstice Advance Materials and Qnity Electronics Set to Join S&P 500; Others to Join S&P SmallCap 600
+    announcement_date: '2025-10-27'
+    confidence_score: 0.99
   '2025-11-11':
     difference:
       - 'FI'
@@ -593,12 +636,20 @@ changes:
     union:
       - 'SNDK'
 
+    source_url: https://press.spglobal.com/2025-11-24-Sandisk-Set-to-Join-S-P-500-Upwork,-First-Interstate-BancSystem,-PTC-Therapeutics-to-Join-S-P-SmallCap-600
+    source_title: Sandisk Set to Join S&P 500; Upwork, First Interstate BancSystem, PTC Therapeutics to Join S&P SmallCap 600
+    announcement_date: '2025-11-24'
+    confidence_score: 0.99
   '2025-12-11':
     difference:
       - 'K'
     union:
       - 'ARES'
 
+    source_url: https://press.spglobal.com/2025-12-08-Ares-Management-Set-to-Join-S-P-500-Sezzle-and-Vital-Farms-to-Join-S-P-SmallCap-600
+    source_title: Ares Management Set to Join S&P 500; Sezzle and Vital Farms to Join S&P SmallCap 600
+    announcement_date: '2025-12-08'
+    confidence_score: 0.99
   '2025-12-22':
     difference:
       - 'LKQ'
@@ -608,3 +659,7 @@ changes:
       - 'CRH'
       - 'CVNA'
       - 'FIX'
+    source_url: https://press.spglobal.com/2025-12-05-CRH,-Carvana-and-Comfort-Systems-USA-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: CRH, Carvana and Comfort Systems USA Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2025-12-05'
+    confidence_score: 0.99

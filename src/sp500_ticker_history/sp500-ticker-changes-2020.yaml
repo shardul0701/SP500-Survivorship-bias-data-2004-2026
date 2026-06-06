@@ -515,6 +515,10 @@ changes:
     union:
       - 'PAYC'
 
+    source_url: https://press.spglobal.com/2020-01-22-Paycom-Software-Set-to-Join-S-P-500
+    source_title: Paycom Software Set to Join S&P 500
+    announcement_date: '2020-01-22'
+    confidence_score: 0.95
   '2020-03-03':
     difference:
       - 'XEC'
@@ -545,12 +549,20 @@ changes:
       - 'DPZ'
       - 'DXCM'
 
+    source_url: https://press.spglobal.com/2020-05-06-DexCom-Dominos-Pizza-Set-to-Join-S-P-500-Salesforce-com-to-Join-S-P-100-STORE-Capital-to-Join-S-P-MidCap-400-Capri-Holdings-to-Join-S-P-SmallCap-600
+    source_title: DexCom & Domino's Pizza Set to Join S&P 500; Salesforce.com to Join S&P 100; STORE Capital to Join S&P MidCap 400; Capri Holdings to Join S&P SmallCap 600
+    announcement_date: '2020-05-06'
+    confidence_score: 0.95
   '2020-05-22':
     difference:
       - 'HP'
     union:
       - 'WST'
 
+    source_url: https://press.spglobal.com/2020-05-18-West-Pharmaceutical-Services-Set-to-Join-S-P-500-Physicians-Realty-Trust-to-Join-S-P-MidCap-400-Helmerich-Payne-to-Join-S-P-SmallCap-600
+    source_title: West Pharmaceutical Services Set to Join S&P 500; Physicians Realty Trust to Join S&P MidCap 400; Helmerich & Payne to Join S&P SmallCap 600
+    announcement_date: '2020-05-18'
+    confidence_score: 0.95
   '2020-06-22':
     difference:
       - 'ADS'
@@ -577,18 +589,34 @@ changes:
       - 'ETSY'
       - 'TER'
 
+    source_url: https://press.spglobal.com/2020-09-04-Etsy-Teradyne-and-Catalent-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Etsy, Teradyne and Catalent Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2020-09-04'
+    confidence_score: 0.99
   '2020-10-07':
     difference:
       - 'ETFC'
     union:
       - 'POOL'
 
+    source_url: https://press.spglobal.com/2020-10-01-Pool-Set-to-Join-S-P-500-Neogen-Simpson-Manufacturing-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600
+    source_title: Pool Set to Join S&P 500; Neogen & Simpson Manufacturing to Join S&P MidCap 400; Others to Join S&P SmallCap 600
+    announcement_date: '2020-10-01'
+    confidence_score: 0.99
+  '2020-10-09':
+    union:
+      - VNT
+    source_url: https://press.spglobal.com/2020-10-05-Vontier-Set-to-Join-S-P-500
+    source_title: Vontier Set to Join S&P 500
+    announcement_date: '2020-10-05'
+    confidence_score: 0.99
   '2020-10-12':
     difference:
-      - 'NBL'
-    union:
-      - 'VNT'
-
+      - NBL
+    source_url: https://press.spglobal.com/2020-10-05-Vontier-Set-to-Join-S-P-500
+    source_title: Vontier Set to Join S&P 500
+    announcement_date: '2020-10-05'
+    confidence_score: 0.99
   '2020-11-17':
     difference:
       - 'MYL'

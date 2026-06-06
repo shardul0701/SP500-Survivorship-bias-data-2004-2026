@@ -10,6 +10,8 @@ sources:
     official_source: true
     enabled: true
     discovery: true
+    archive_page_size: 100
+    archive_max_pages: 50
     notes: Official S&P Global press archive; discovery is title-filtered for S&P 500 changes.
     seed_urls:
       - https://press.spglobal.com/2026-06-05-Marvell-Technology-and-Flex-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600

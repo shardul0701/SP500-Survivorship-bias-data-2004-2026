@@ -515,24 +515,40 @@ changes:
     union:
       - 'FRC'
 
+    source_url: https://press.spglobal.com/2018-12-27-First-Republic-Bank-Set-to-Join-S-P-500
+    source_title: First Republic Bank Set to Join S&P 500
+    announcement_date: '2018-12-27'
+    confidence_score: 0.95
   '2019-01-18':
     difference:
       - 'PCG'
     union:
       - 'TFX'
 
+    source_url: https://press.spglobal.com/2019-01-15-Teleflex-Set-to-Join-S-P-500-Green-Dot-to-Join-S-P-MidCap-400-Mercer-International-to-Join-S-P-SmallCap-600
+    source_title: Teleflex Set to Join S&P 500; Green Dot to Join S&P MidCap 400; Mercer International to Join S&P SmallCap 600
+    announcement_date: '2019-01-15'
+    confidence_score: 0.95
   '2019-02-15':
     difference:
       - 'NFX'
     union:
       - 'ATO'
 
+    source_url: https://press.spglobal.com/2019-02-08-Atmos-Energy-Set-to-Join-S-P-500-Spire-to-Join-S-P-MidCap-400-NorthStar-Realty-Europe-to-Join-S-P-SmallCap-600
+    source_title: Atmos Energy Set to Join S&P 500; Spire to Join S&P MidCap 400; NorthStar Realty Europe to Join S&P SmallCap 600
+    announcement_date: '2019-02-08'
+    confidence_score: 0.95
   '2019-02-27':
     difference:
       - 'GT'
     union:
       - 'WAB'
 
+    source_url: https://press.spglobal.com/2019-02-21-Wabtec-Set-to-Join-S-P-500-and-The-Goodyear-Tire-Rubber-to-Join-S-P-MidCap-400
+    source_title: Wabtec Set to Join S&P 500 and The Goodyear Tire & Rubber to Join S&P MidCap 400
+    announcement_date: '2019-02-21'
+    confidence_score: 0.95
   '2019-04-02':
     difference:
       - 'BHF'
@@ -571,6 +587,10 @@ changes:
     union:
       - 'TMUS'
 
+    source_url: https://press.spglobal.com/2019-07-09-T-Mobile-US-Set-to-Join-S-P-500
+    source_title: T-Mobile US Set to Join S&P 500
+    announcement_date: '2019-07-09'
+    confidence_score: 0.95
   '2019-08-08':
     difference:
       - 'TMK'
@@ -591,12 +611,20 @@ changes:
     union:
       - 'CDW'
 
+    source_url: https://press.spglobal.com/2019-09-17-CDW-Set-to-Join-S-P-500
+    source_title: CDW Set to Join S&P 500
+    announcement_date: '2019-09-17'
+    confidence_score: 0.95
   '2019-09-26':
     difference:
       - 'JEF'
     union:
       - 'NVR'
 
+    source_url: https://press.spglobal.com/2019-09-20-NVR-Set-to-Join-S-P-500-Jefferies-Financial-Group-II-VI-to-Join-S-P-MidCap-400-Callon-Petroleum-PriceSmart-to-Join-S-P-SmallCap-600
+    source_title: NVR Set to Join S&P 500; Jefferies Financial Group, II-VI to Join S&P MidCap 400; Callon Petroleum, PriceSmart to Join S&P SmallCap 600
+    announcement_date: '2019-09-20'
+    confidence_score: 0.95
   '2019-10-03':
     difference:
       - 'NKTR'

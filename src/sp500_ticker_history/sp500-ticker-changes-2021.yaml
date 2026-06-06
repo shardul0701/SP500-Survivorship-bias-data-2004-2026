@@ -515,18 +515,30 @@ changes:
     union:
       - 'ENPH'
 
+    source_url: https://press.spglobal.com/2020-12-30-Enphase-Energy-Set-to-Join-S-P-500-Capri-Holdings-Brooks-Automation-to-Join-S-P-MidCap-400-Celsius-Holdings-e-l-f-Beauty-to-Join-S-P-SmallCap-600
+    source_title: Enphase Energy Set to Join S&P 500; Capri Holdings & Brooks Automation to Join S&P MidCap 400; Celsius Holdings & e.l.f. Beauty to Join S&P SmallCap 600
+    announcement_date: '2020-12-30'
+    confidence_score: 0.99
   '2021-01-21':
     difference:
       - 'CXO'
     union:
       - 'TRMB'
 
+    source_url: https://press.spglobal.com/2021-01-15-Trimble-Set-to-Join-S-P-500-YETI-Holdings-to-Join-S-P-MidCap-400-Hilltop-Holdings-to-Join-S-P-SmallCap-600
+    source_title: Trimble Set to Join S&P 500; YETI Holdings to Join S&P MidCap 400; Hilltop Holdings to Join S&P SmallCap 600
+    announcement_date: '2021-01-15'
+    confidence_score: 0.99
   '2021-02-12':
     difference:
       - 'FTI'
     union:
       - 'MPWR'
 
+    source_url: https://press.spglobal.com/2021-02-08-Monolithic-Power-Systems-Set-to-Join-S-P-500-Iridium-Communications-to-Join-S-P-MidCap-400-Collegium-Pharmaceutical-to-Join-S-P-SmallCap-600
+    source_title: Monolithic Power Systems Set to Join S&P 500; Iridium Communications to Join S&P MidCap 400; Collegium Pharmaceutical to Join S&P SmallCap 600
+    announcement_date: '2021-02-08'
+    confidence_score: 0.99
   '2021-03-22':
     difference:
       - 'FLS'
@@ -539,30 +551,54 @@ changes:
       - 'NXPI'
       - 'PENN'
 
+    source_url: https://press.spglobal.com/2021-03-12-NXP-Semiconductors-Penn-National-Gaming-Generac-Holdings-and-Caesars-Entertainment-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-S-P-SmallCap-600-and-S-P-100
+    source_title: NXP Semiconductors, Penn National Gaming, Generac Holdings and Caesars Entertainment Set to Join S&P 500; Others to Join S&P MidCap 400, S&P SmallCap 600 and S&P 100
+    announcement_date: '2021-03-12'
+    confidence_score: 0.99
   '2021-04-20':
     difference:
       - 'VAR'
     union:
       - 'PTC'
 
+    source_url: https://press.spglobal.com/2021-04-15-PTC-Set-to-Join-S-P-500-Lattice-Semiconductor-Progyny-to-Join-S-P-MidCap-400-Domtar-to-Join-S-P-SmallCap-600
+    source_title: PTC Set to Join S&P 500; Lattice Semiconductor & Progyny to Join S&P MidCap 400; Domtar to Join S&P SmallCap 600
+    announcement_date: '2021-04-15'
+    confidence_score: 0.99
   '2021-05-14':
     difference:
       - 'FLIR'
     union:
       - 'CRL'
 
+    source_url: https://press.spglobal.com/2021-05-10-Charles-River-Laboratories-International-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Charles River Laboratories International Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2021-05-10'
+    confidence_score: 0.99
+  '2021-06-03':
+    union:
+      - OGN
+    source_url: https://press.spglobal.com/2021-05-27-Organon-Set-to-Join-S-P-500-HollyFrontier-to-Join-S-P-MidCap-400-Service-Properties-Trust-to-Join-S-P-SmallCap-600
+    source_title: Organon Set to Join S&P 500; HollyFrontier to Join S&P MidCap 400; Service Properties Trust to Join S&P SmallCap 600
+    announcement_date: '2021-05-27'
+    confidence_score: 0.99
   '2021-06-04':
     difference:
-      - 'HFC'
-    union:
-      - 'OGN'
-
+      - HFC
+    source_url: https://press.spglobal.com/2021-05-27-Organon-Set-to-Join-S-P-500-HollyFrontier-to-Join-S-P-MidCap-400-Service-Properties-Trust-to-Join-S-P-SmallCap-600
+    source_title: Organon Set to Join S&P 500; HollyFrontier to Join S&P MidCap 400; Service Properties Trust to Join S&P SmallCap 600
+    announcement_date: '2021-05-27'
+    confidence_score: 0.99
   '2021-07-21':
     difference:
       - 'ALXN'
     union:
       - 'MRNA'
 
+    source_url: https://press.spglobal.com/2021-07-15-Moderna-Set-to-Join-S-P-500
+    source_title: Moderna Set to Join S&P 500
+    announcement_date: '2021-07-15'
+    confidence_score: 0.99
   '2021-08-03':
     difference:
       - 'LB'
@@ -575,6 +611,10 @@ changes:
     union:
       - 'TECH'
 
+    source_url: https://press.spglobal.com/2021-08-24-Bio-Techne-Set-to-Join-S-P-500-Saia,-Mimecast-Option-Care-Health-to-Join-S-P-MidCap-400-Others-to-Join-S-P-SmallCap-600
+    source_title: Bio-Techne Set to Join S&P 500; Saia, Mimecast & Option Care Health to Join S&P MidCap 400; Others to Join S&P SmallCap 600
+    announcement_date: '2021-08-24'
+    confidence_score: 0.99
   '2021-09-20':
     difference:
       - 'NOV'
@@ -585,6 +625,10 @@ changes:
       - 'CDAY'
       - 'MTCH'
 
+    source_url: https://press.spglobal.com/2021-09-03-Match-Group,-Ceridian-HCM-and-Brown-Brown-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Match Group, Ceridian HCM and Brown & Brown Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2021-09-03'
+    confidence_score: 0.99
   '2021-10-04':
     difference:
       - 'COG'
@@ -597,6 +641,10 @@ changes:
     union:
       - 'EPAM'
 
+    source_url: https://press.spglobal.com/2021-12-07-EPAM-Systems-Set-to-Join-S-P-500
+    source_title: EPAM Systems Set to Join S&P 500
+    announcement_date: '2021-12-07'
+    confidence_score: 0.99
   '2021-12-20':
     difference:
       - 'HBI'
@@ -606,3 +654,7 @@ changes:
       - 'FDS'
       - 'SBNY'
       - 'SEDG'
+    source_url: https://press.spglobal.com/2021-12-03-Signature-Bank,-SolarEdge-Technologies-and-FactSet-Research-Systems-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Signature Bank, SolarEdge Technologies and FactSet Research Systems Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2021-12-03'
+    confidence_score: 0.99
