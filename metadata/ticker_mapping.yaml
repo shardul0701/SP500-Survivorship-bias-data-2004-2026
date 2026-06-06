@@ -1,0 +1,8 @@
+# Only notation aliases belong here. Do not map historical companies to successors.
+aliases:
+  BRK-B: BRK.B
+  BF-B: BF.B
+
+notes:
+  - GOOG and GOOGL are distinct share classes and must never be collapsed.
+  - Historical ticker renames require an official-source correction and explicit correction mode.

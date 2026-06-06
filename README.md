@@ -52,6 +52,22 @@ python scripts/validate_yaml.py
 Checks: YAML parses correctly, no duplicate tickers, member counts in valid range
 (450-560), year-to-year continuity, no empty change entries.
 
+## Official-source refresh
+
+The repository includes a fail-closed weekly refresh that checks official S&P Global/S&P DJI
+sources, retains raw evidence and audit reports, and opens a pull request for manual review:
+
+```bash
+python scripts/fetch_official_sp500_announcements.py
+python scripts/update_membership_yaml.py --index sp500 --dry-run
+python scripts/validate_membership.py --index sp500
+python scripts/audit_membership_update.py
+python scripts/check_freshness.py --index sp500
+```
+
+See `MERGE_OR_REFRESH_SPEC.md` for source registration, validation, correction mode, and the
+pull-request workflow.
+
 ## Run the membership audit
 
 ```bash

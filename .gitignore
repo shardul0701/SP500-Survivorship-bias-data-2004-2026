@@ -2,6 +2,9 @@ __pycache__/
 *.pyc
 *.pyo
 audit/*.txt
+audit/*.csv
+audit/raw_sources/
+audit/*_update_plan.json
 *.egg-info/
 dist/
 build/

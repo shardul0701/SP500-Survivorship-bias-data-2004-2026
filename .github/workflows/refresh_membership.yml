@@ -1,0 +1,65 @@
+name: Refresh Official PIT Membership
+
+on:
+  schedule:
+    - cron: "41 11 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Fetch official S&P announcements
+        run: python scripts/fetch_official_sp500_announcements.py
+      - name: Plan update
+        run: python scripts/update_membership_yaml.py --index sp500 --dry-run
+      - name: Apply validated candidates
+        run: python scripts/update_membership_yaml.py --index sp500 --apply
+      - name: Validate and audit
+        run: |
+          python scripts/validate_membership.py --index sp500
+          python scripts/audit_membership_update.py
+          python scripts/check_freshness.py --index sp500
+          python scripts/validate_yaml.py
+      - name: Upload audit artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sp500-membership-refresh-audit
+          path: |
+            audit/
+            metadata/*fetch_state.json
+            metadata/data_freshness.json
+      - name: Open review pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if git diff --quiet -- src/sp500_ticker_history; then
+            echo "No membership YAML changes detected."
+            exit 0
+          fi
+          stamp="$(date -u +%Y-%m-%d)"
+          branch="automation/refresh-sp500-${stamp}-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add src/sp500_ticker_history metadata audit
+          git commit -m "data: refresh S&P 500 PIT membership through ${stamp}"
+          git push --set-upstream origin "$branch"
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title "Update PIT membership through ${stamp}" \
+            --body-file audit/update_diff_report.md
