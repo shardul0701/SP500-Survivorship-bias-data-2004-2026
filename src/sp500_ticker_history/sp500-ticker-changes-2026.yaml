@@ -580,3 +580,18 @@ changes:
     announcement_date: '2026-06-05'
     confidence_score: 0.99
     pending: true
+  '2026-06-29':
+    union:
+      - HONA
+    source_url: https://press.spglobal.com/2026-06-23-Honeywell-Aerospace-Set-to-Join-S-P-500-S-P-100-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Honeywell Aerospace Set to Join S&P 500 & S&P 100; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2026-06-23'
+    confidence_score: 0.99
+  '2026-06-30':
+    difference:
+      - CAG
+    source_url: https://press.spglobal.com/2026-06-23-Honeywell-Aerospace-Set-to-Join-S-P-500-S-P-100-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Honeywell Aerospace Set to Join S&P 500 & S&P 100; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2026-06-23'
+    confidence_score: 0.99
+    pending: true
