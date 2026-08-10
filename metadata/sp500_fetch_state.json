@@ -1,13 +1,13 @@
 {
   "index_name": "S&P 500",
-  "fetched_at": "2026-06-06T21:00:34+00:00",
+  "fetched_at": "2026-08-10T12:31:11+00:00",
   "sources_attempted": 1,
-  "candidate_urls": 95,
-  "parsed_candidates": 109,
-  "manual_review_items": 15,
+  "candidate_urls": 7,
+  "parsed_candidates": 9,
+  "manual_review_items": 0,
   "errors": [],
-  "successful_fetches": 19,
+  "successful_fetches": 3,
   "successful": true,
-  "history_start": "2018-11-01",
-  "history_end": "2026-06-06"
+  "history_start": null,
+  "history_end": null
 }
