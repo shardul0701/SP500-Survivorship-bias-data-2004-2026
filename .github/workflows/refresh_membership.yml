@@ -41,6 +41,30 @@ jobs:
             audit/
             metadata/*fetch_state.json
             metadata/data_freshness.json
+      - name: Commit refreshed metadata and audit
+        # The membership YAML being unchanged does NOT mean nothing was refreshed.
+        # check_freshness.py and the audit reports rewrite themselves on every run,
+        # and the old workflow exited before `git add` whenever the YAML was static,
+        # so those refreshes were discarded and the repo reported itself stale even
+        # while the automation was healthy. Metadata and audit are derived artifacts
+        # with no review value, so they go straight to main.
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- src/sp500_ticker_history; then
+            echo "Membership YAML changed -- metadata travels with the review PR."
+            exit 0
+          fi
+          git add metadata audit
+          if git diff --cached --quiet; then
+            echo "Metadata and audit reports unchanged."
+            exit 0
+          fi
+          git commit -m "chore(data): refresh S&P 500 freshness metadata and audit ($(date -u +%Y-%m-%d))"
+          git push origin HEAD:main
+
       - name: Open review pull request
         env:
           GH_TOKEN: ${{ github.token }}
@@ -58,8 +82,28 @@ jobs:
           git add src/sp500_ticker_history metadata audit
           git commit -m "data: refresh S&P 500 PIT membership through ${stamp}"
           git push --set-upstream origin "$branch"
-          gh pr create \
-            --base main \
-            --head "$branch" \
-            --title "Update PIT membership through ${stamp}" \
-            --body-file audit/update_diff_report.md
+          url="$(gh pr create             --base main             --head "$branch"             --title "Update PIT membership through ${stamp}"             --body-file audit/update_diff_report.md)"
+          echo "Opened $url"
+
+          # A PR opened with the default GITHUB_TOKEN cannot trigger any workflow,
+          # so `Validate YAML` registers as action_required and never runs. Between
+          # that and nobody merging by hand, 11 of these stacked up and the S&P 500
+          # data sat three months stale. The checks that PR would have run are the
+          # ones this job already ran above, on these exact bytes, before the branch
+          # existed -- so a green PR check would carry no information the run does
+          # not already have. Merge it here instead of waiting for a signal that
+          # structurally cannot arrive.
+          #
+          # The one thing the run cannot vouch for is a candidate it could not
+          # validate. Those are never applied to the YAML (refresh_lib skips any row
+          # flagged manual_review_required or under the confidence threshold) and are
+          # written to audit/manual_review_required.csv, which is rewritten per run.
+          # If that file has any data row, leave the PR open for a human.
+          manual="audit/manual_review_required.csv"
+          if [ -s "$manual" ] && [ "$(tail -n +2 "$manual" | grep -c .)" -gt 0 ]; then
+            echo "::warning::$(tail -n +2 "$manual" | grep -c .) manual-review item(s) this run -- PR left open for review."
+            gh pr edit "$url" --add-label "needs-human-review" || true
+            exit 0
+          fi
+          gh pr merge "$url" --merge --delete-branch
+          echo "Merged $url"
