@@ -580,3 +580,49 @@ changes:
     announcement_date: '2026-06-05'
     confidence_score: 0.99
     pending: true
+  '2026-06-29':
+    union:
+      - HONA
+    source_url: https://press.spglobal.com/2026-06-23-Honeywell-Aerospace-Set-to-Join-S-P-500-S-P-100-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Honeywell Aerospace Set to Join S&P 500 & S&P 100; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2026-06-23'
+    confidence_score: 0.99
+  '2026-06-30':
+    difference:
+      - CAG
+    source_url: https://press.spglobal.com/2026-06-23-Honeywell-Aerospace-Set-to-Join-S-P-500-S-P-100-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Honeywell Aerospace Set to Join S&P 500 & S&P 100; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2026-06-23'
+    confidence_score: 0.99
+  '2026-08-05':
+    difference:
+      - EA
+    union:
+      - FERG
+    source_url: https://press.spglobal.com/2026-07-31-Ferguson-Enterprises-Set-to-Join-S-P-500-and-ADI-Global-Distribution-to-Join-S-P-SmallCap-600
+    source_title: Ferguson Enterprises Set to Join S&P 500 and ADI Global Distribution to Join S&P SmallCap 600
+    announcement_date: '2026-07-31'
+    confidence_score: 0.99
+  '2026-08-18':
+    difference:
+      - AVB
+    union:
+      - RDDT
+    source_url: https://press.spglobal.com/2026-08-13-Reddit-Set-to-Join-S-P-500-and-Sun-Communities-to-Join-S-P-MidCap-400
+    source_title: Reddit Set to Join S&P 500 and Sun Communities to Join S&P MidCap 400
+    announcement_date: '2026-08-13'
+    confidence_score: 0.99
+  '2026-09-21':
+    difference:
+      - BLDR
+      - TAP
+      - TTD
+    union:
+      - BE
+      - ILMN
+      - P
+    source_url: https://press.spglobal.com/2026-09-04-Bloom-Energy,-Illumina,-and-Everpure-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400,-and-S-P-SmallCap-600
+    source_title: Bloom Energy, Illumina, and Everpure Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400, and S&P SmallCap 600
+    announcement_date: '2026-09-04'
+    confidence_score: 0.99
+    pending: true
