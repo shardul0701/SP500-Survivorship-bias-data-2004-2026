@@ -65,6 +65,8 @@ INDEX_PROFILES = {
         "glob": "n100-ticker-changes-*.yaml",
         "min_members": 95,
         "max_members": 110,
+        # 120 observed gaps between real membership changes, max 364 days
+        "quiet_period_days": 400,
         "candidate_file": AUDIT_DIR / "nq100_official_candidates.csv",
         "official_domains": {
             "nasdaq.com",
@@ -79,6 +81,8 @@ INDEX_PROFILES = {
         "data_dir": ROOT / "src" / "sp500_ticker_history",
         "filename": "sp500-ticker-changes-{year}.yaml",
         "glob": "sp500-ticker-changes-*.yaml",
+        # 481 observed gaps between real membership changes, max 99 days
+        "quiet_period_days": 120,
         "min_members": 450,
         "max_members": 560,
         "candidate_file": AUDIT_DIR / "sp500_official_candidates.csv",
@@ -699,6 +703,13 @@ def fetch_official_candidates(
     ]
     session = request_session()
     discovered: dict[str, str] = {}
+    # Which of those came from the CRAWLER rather than from seed_urls. A
+    # discovery source that contributes nothing beyond its own hardcoded seeds
+    # is not "no changes were announced", it is a crawler that cannot see. That
+    # was silently true of the nq100 sibling repo for its entire life -- the
+    # title pattern was matched against anchor text that is always the literal
+    # string "HTML" -- and the only thing that ever revealed it was counting.
+    crawled: set[str] = set()
     fetch_errors: list[str] = []
     successful_fetches = 0
     for source in sources:
@@ -713,6 +724,7 @@ def fetch_official_candidates(
                 max_pages=int(source.get("archive_max_pages", 50)),
             )
             discovered.update(historical)
+            crawled.update(historical)
             fetch_errors.extend(errors)
             successful_fetches += fetch_count
             urls = [
@@ -747,6 +759,7 @@ def fetch_official_candidates(
                     for link, title in discover_links(index, response.content, url):
                         if official_url(link, prof["official_domains"]):
                             discovered[link] = title
+                            crawled.add(link)
                 else:
                     discovered[url] = fallback_title
                 _ = raw
@@ -801,6 +814,8 @@ def fetch_official_candidates(
         "fetched_at": iso_now(),
         "sources_attempted": len(sources),
         "candidate_urls": len(discovered),
+        "discovery_sources": sum(1 for src in sources if src.get("discovery", False)),
+        "crawled_urls": len(crawled),
         "parsed_candidates": len(rows),
         "manual_review_items": len(manual_rows),
         "errors": fetch_errors,
@@ -1332,20 +1347,60 @@ def latest_yaml_change(index: str) -> str:
     return latest
 
 
+# Set above the longest gap each index has ever actually produced, so the
+# quiet-period warning means "never seen before" and not "ordinary".
+# S&P 500: 481 observed gaps, max 99 days. Nasdaq-100: 120 gaps, max 364.
+QUIET_PERIOD_DAYS_DEFAULT = 120
+
+
 def check_freshness(index: str) -> dict:
     prof = profile(index)
     fetch_state_path = METADATA_DIR / f"{index}_fetch_state.json"
     fetch_state = json.loads(fetch_state_path.read_text(encoding="utf-8")) if fetch_state_path.exists() else {}
     latest_change = latest_yaml_change(index)
     trusted = date.fromisoformat(latest_change) if latest_change else None
-    stale_after = trusted.fromordinal(trusted.toordinal() + 30) if trusted else None
-    warnings = []
+    # The age of the newest membership CHANGE is a property of the index, not
+    # of this repository, and the two indices behave nothing alike: measured on
+    # the change dates these repos already hold, S&P 500 gaps run median 11
+    # days / p95 59 / max 99, while Nasdaq-100 runs median 46 / p95 188 / max
+    # 364. A single 30-day threshold therefore fired on 19% of real S&P gaps
+    # and 68% of real Nasdaq ones -- i.e. a fully current repo spent much of
+    # its life labelled "stale_or_incomplete", which is the exact field a
+    # consumer reads to decide whether to trust the data. An alarm that is
+    # usually wrong gets ignored, and then the once it is right nobody looks.
+    #
+    # Freshness is whether WE CHECKED; that is the fetch-state test below. A
+    # quiet stretch is kept separately, warning only past a threshold set above
+    # everything this index has ever actually done, so it means "longer than
+    # any gap on record" rather than "it is Tuesday".
+    quiet_days = int(prof.get("quiet_period_days", QUIET_PERIOD_DAYS_DEFAULT))
+    quiet_after = (
+        trusted.fromordinal(trusted.toordinal() + quiet_days) if trusted else None
+    )
+    warnings, notes = [], []
     if not trusted:
         warnings.append("no dated membership changes found")
-    elif date.today() > stale_after:
-        warnings.append(f"latest trusted change is more than 30 days old ({latest_change})")
+    elif date.today() > quiet_after:
+        warnings.append(
+            f"no membership change in over {quiet_days} days ({latest_change}) "
+            f"-- longer than any gap on record; verify discovery is still "
+            f"reaching the official source"
+        )
+    elif (date.today() - trusted).days > 30:
+        notes.append(
+            f"latest membership change is {(date.today() - trusted).days} days "
+            f"old ({latest_change}); within this index's normal cadence"
+        )
     if not fetch_state.get("successful"):
         warnings.append("no recent successful official-source fetch")
+    # The defect that actually hides here is a blind crawler, and it does not
+    # show up as an error: every fetch succeeds, the parse succeeds, and the
+    # only candidates are the hardcoded seeds. Counting is what reveals it.
+    if fetch_state.get("discovery_sources", 0) and not fetch_state.get("crawled_urls", 0):
+        warnings.append(
+            "discovery found no URLs beyond the hardcoded seed_urls -- the "
+            "crawler is probably not matching the archive's markup"
+        )
     result = {
         "index_name": prof["index_name"],
         "latest_yaml_year": max(
@@ -1356,9 +1411,10 @@ def check_freshness(index: str) -> dict:
         "latest_official_source_checked": fetch_state.get("fetched_at"),
         "latest_successful_fetch": fetch_state.get("fetched_at") if fetch_state.get("successful") else None,
         "latest_trusted_date": latest_change or None,
-        "stale_after_date": stale_after.isoformat() if stale_after else None,
+        "stale_after_date": quiet_after.isoformat() if quiet_after else None,
         "confidence_level": "high" if not warnings else "stale_or_incomplete",
         "warnings": warnings,
+        "notes": notes,
     }
     METADATA_DIR.mkdir(parents=True, exist_ok=True)
     (METADATA_DIR / "data_freshness.json").write_text(
