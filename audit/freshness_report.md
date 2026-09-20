@@ -1,6 +1,6 @@
 # Data Freshness Report
 
-Generated: 2026-09-14T17:02:59+00:00
+Generated: 2026-09-20T16:17:37+00:00
 
 - **index_name**: S&P 500
 - **latest_yaml_year**: 2026
@@ -10,7 +10,7 @@ Generated: 2026-09-14T17:02:59+00:00
 - **latest_trusted_date**: 2026-08-18
 - **stale_after_date**: 2026-12-16
 - **confidence_level**: high
-- **notes**: []
+- **notes**: ["latest membership change is 33 days old (2026-08-18); within this index's normal cadence"]
 
 ## Warnings
 
