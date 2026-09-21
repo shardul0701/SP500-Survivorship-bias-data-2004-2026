@@ -16,4 +16,5 @@ jobs:
       - run: python -m pytest -q
       - run: python scripts/validate_membership.py --index sp500
       - run: python scripts/validate_yaml.py
+      - run: python scripts/validate_running_count.py
       - run: python scripts/audit_membership.py
