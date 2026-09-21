@@ -30,7 +30,12 @@ jobs:
         run: |
           python scripts/validate_membership.py --index sp500
           python scripts/audit_membership_update.py
-          python scripts/check_freshness.py --index sp500
+          # --no-fail here on purpose: this is the step that WRITES the freshness
+          # report, and it runs before the review PR is opened. Letting it exit
+          # non-zero would abort the job and skip the PR entirely, so a stale
+          # dataset would also stop being refreshed -- the opposite of the point.
+          # Enforcement is the final step in this job, after the data lands.
+          python scripts/check_freshness.py --index sp500 --no-fail
           python scripts/validate_yaml.py
       - name: Upload audit artifacts
         if: always()
@@ -107,3 +112,26 @@ jobs:
           fi
           gh pr merge "$url" --merge --delete-branch
           echo "Merged $url"
+
+      - name: Fail the run if the dataset is stale or incomplete
+        # Deliberately last, and if: always(). The refresh has to land first -- a
+        # consumer pinning this repo is better off with fresh-but-flagged data and
+        # a red run than with a green run and a roster that quietly stopped moving.
+        # That silence is exactly what a downstream backtest cannot detect for
+        # itself: "no membership changes" and "no longer recording changes" look
+        # identical from the outside.
+        if: always()
+        shell: bash
+        run: |
+          f=metadata/data_freshness.json
+          if [ ! -f "$f" ]; then
+            echo "::error::$f was not produced -- freshness is unknown, which is not the same as fine."
+            exit 1
+          fi
+          level="$(python -c 'import json,sys;print(json.load(open(sys.argv[1]))["confidence_level"])' "$f")"
+          echo "confidence_level=$level"
+          if [ "$level" != "high" ]; then
+            python -c 'import json,sys;[print("::error::stale_or_incomplete: "+w) for w in json.load(open(sys.argv[1]))["warnings"]]' "$f"
+            exit 1
+          fi
+          echo "Dataset is current."
