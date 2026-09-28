@@ -1,7 +1,7 @@
 # Membership Validation Report
 
 - Index: S&P 500
-- Generated: 2026-09-21T17:11:40+00:00
+- Generated: 2026-09-28T18:43:19+00:00
 - YAML files: 23
 - Errors: 0
 - Warnings: 394
