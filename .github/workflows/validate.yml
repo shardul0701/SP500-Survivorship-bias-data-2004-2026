@@ -18,3 +18,9 @@ jobs:
       - run: python scripts/validate_yaml.py
       - run: python scripts/validate_running_count.py
       - run: python scripts/audit_membership.py
+      # Informational on pushes and PRs: shows whether this YAML agrees with
+      # SPY's current holdings. It does not gate here -- a change announced but
+      # not yet entered would otherwise fail every unrelated push. The scheduled
+      # refresh workflow is the one that gates and raises issues.
+      - name: Live constituent check (informational)
+        run: python scripts/check_live_constituents.py --index sp500

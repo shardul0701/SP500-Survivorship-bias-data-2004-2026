@@ -554,6 +554,14 @@ changes:
     source_title: Veeva Systems Set to Join S&P 500
     announcement_date: '2026-04-30'
     confidence_score: 0.99
+  '2026-05-21':
+    difference:
+      - BK
+    union:
+      - BNY
+    evidence_url: https://www.bny.com/corporate/global/en/about-us/newsroom/press-release/bny-announces-planned-change-of-stock-ticker-symbol-to-bny-130465.html
+    evidence_note: 'Ticker change only: The Bank of New York Mellon Corporation moved its NYSE symbol from BK to BNY effective 2026-05-21 (announced 2026-05-11). Same security and index seat; S&P publishes no press release for a ticker change.'
+    announcement_date: '2026-05-11'
   '2026-06-01':
     union:
       - FDXF
@@ -579,7 +587,14 @@ changes:
     source_title: Marvell Technology and Flex Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
     announcement_date: '2026-06-05'
     confidence_score: 0.99
-    pending: true
+  '2026-06-24':
+    difference:
+      - SATS
+    union:
+      - ECHO
+    evidence_url: https://ir.echostar.com/news-releases/news-release-details/echostar-changing-stocker-ticker-sats-echo-marking-companys-next
+    evidence_note: 'Ticker change only: EchoStar Corporation moved its Nasdaq symbol from SATS to ECHO effective 2026-06-24 (announced 2026-06-22). Same security and index seat; S&P publishes no press release for a ticker change.'
+    announcement_date: '2026-06-22'
   '2026-06-29':
     union:
       - HONA
@@ -606,12 +621,16 @@ changes:
   '2026-08-18':
     difference:
       - AVB
+      - EQR
     union:
       - RDDT
+      - VMRK
     source_url: https://press.spglobal.com/2026-08-13-Reddit-Set-to-Join-S-P-500-and-Sun-Communities-to-Join-S-P-MidCap-400
     source_title: Reddit Set to Join S&P 500 and Sun Communities to Join S&P MidCap 400
     announcement_date: '2026-08-13'
     confidence_score: 0.99
+    evidence_url: https://www.sec.gov/Archives/edgar/data/0000906107/000114036126033377/ef20080318_8k.htm
+    evidence_note: 'EQR -> VMRK is a rename on the same date, not covered by the S&P release: on completing its merger with AvalonBay, Equity Residential renamed itself Vivmark Residential and its shares began trading on the NYSE as VMRK on 2026-08-18 (Form 8-K, CIK 906107).'
   '2026-09-21':
     difference:
       - BLDR
@@ -625,7 +644,6 @@ changes:
     source_title: Bloom Energy, Illumina, and Everpure Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400, and S&P SmallCap 600
     announcement_date: '2026-09-04'
     confidence_score: 0.99
-    pending: true
   '2026-10-01':
     union:
       - VYLR

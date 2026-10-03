@@ -28,6 +28,7 @@ from bs4 import BeautifulSoup
 from dateutil import parser as date_parser
 from pypdf import PdfReader
 from ruamel.yaml import YAML
+from ruamel.yaml.scalarstring import DoubleQuotedScalarString
 
 try:
     import truststore
@@ -104,10 +105,36 @@ SHORT_MONTH_DATE = (
 )
 DATE_PATTERN = re.compile(rf"\b{MONTH_DATE}\b", re.IGNORECASE)
 TICKER_PATTERN = re.compile(r"^[A-Z][A-Z0-9.\-]{0,11}$")
+# Nasdaq's newswire copy is not consistent about spacing inside the exchange
+# parenthetical. The Moderna release (2026-10-01) prints "( Nasdaq : MRNA)" --
+# a space after the bracket -- and the old pattern, which demanded "(Nasdaq",
+# matched nothing in it: no add, no remove, confidence 0.40, manual review, and
+# because a manual-review item changes no YAML the run reported nothing at all.
 EXCHANGE_TICKER_PATTERN = re.compile(
-    r"\((?:Nasdaq|NYSE|NASD|NYSE American)\s*:\s*([A-Z][A-Z0-9.\-/]{0,11})\)",
+    r"\(\s*(?:Nasdaq|NYSE American|NYSE|NASD)\s*:\s*([A-Z][A-Z0-9.\-/]{0,11})\s*\)",
     re.IGNORECASE,
 )
+# Corporate-suffix abbreviations whose full stop is not a sentence end. The
+# sentence-scoped patterns in parse_nq100 use [^.] to stay inside one sentence,
+# so "replacing CoStar Group, Inc. (Nasdaq: CSGP)" ended the match at "Inc."
+# and never reached CSGP -- the Lumentum release (2026-05-08) parsed as an
+# addition with no removal, and the add-without-remove guard sent it to review.
+# Masking those periods before matching keeps the sentence boundary where it
+# actually is.
+_ABBREVIATION_PERIOD = re.compile(
+    r"\b(Inc|Corp|Co|Cos|Ltd|Bros|Plc|PLC|Hldgs|Intl|Mfg|Grp)\.(?=[\s,)(])"
+    r"|\b([A-Z])\.([A-Z])\.(?=[\s,)(])"
+)
+_PERIOD_MASK = "․"  # ONE DOT LEADER: not "." so [^.] passes over it
+
+
+def mask_abbreviation_periods(text: str) -> str:
+    def repl(match: re.Match) -> str:
+        if match.group(1):
+            return match.group(1) + _PERIOD_MASK
+        return f"{match.group(2)}{_PERIOD_MASK}{match.group(3)}{_PERIOD_MASK}"
+
+    return _ABBREVIATION_PERIOD.sub(repl, text)
 
 
 @dataclass
@@ -442,6 +469,7 @@ def parse_nq100(
 ) -> list[ParsedChange]:
     announcement_date = announcement_date_from_html(html, text)
     dates = effective_dates(text, announcement_date)
+    text = mask_abbreviation_periods(text)
     added = _tickers_in_section(
         text,
         r"(?:following\s+\w+\s+companies\s+will\s+be\s+added|"
@@ -581,8 +609,8 @@ def parse_sp500(
     additions: list[str] = []
     removals: list[str] = []
     exchange_ticker = (
-        r"\((?:Nasdaq|NYSE|NASD|NYSE American)\s*:\s*"
-        r"([A-Z][A-Z0-9.\-/]{0,11})\)"
+        r"\(\s*(?:Nasdaq|NYSE American|NYSE|NASD)\s*:\s*"
+        r"([A-Z][A-Z0-9.\-/]{0,11})\s*\)"
     )
     replacement_pattern = re.compile(
         exchange_ticker
@@ -595,7 +623,9 @@ def parse_sp500(
         additions.append(match.group(1))
         removals.append(match.group(2))
 
-    for sentence in re.split(r"(?<=[.!?])\s+", text):
+    # Same abbreviation trap as parse_nq100: "Reddit Inc. (NYSE: RDDT)" would
+    # otherwise end the sentence at "Inc." and separate the pair.
+    for sentence in re.split(r"(?<=[.!?])\s+", mask_abbreviation_periods(text)):
         if "S&P 500" not in sentence:
             continue
         tickers = EXCHANGE_TICKER_PATTERN.findall(sentence)
@@ -1005,6 +1035,21 @@ def yaml_rt() -> YAML:
     return parser
 
 
+# ruamel writes YAML 1.2, where ON is a plain string, so it emits ON unquoted.
+# Every consumer of these files (july-backtester, data_gate, live_check) reads
+# them with PyYAML, which is YAML 1.1: bare ON/YES/NO/OFF/TRUE/FALSE load as
+# booleans and NULL/~ as None. ON Semiconductor is a real NDX ticker, and a bare
+# ON already turned into True on main once (PR #3). Quote any such word.
+_YAML11_NON_STRINGS = {"y", "yes", "n", "no", "on", "off", "true", "false", "null", "~"}
+
+
+def yaml_tickers(tickers) -> list:
+    return [
+        DoubleQuotedScalarString(t) if str(t).lower() in _YAML11_NON_STRINGS else t
+        for t in tickers
+    ]
+
+
 def yaml_path(index: str, year: int) -> Path:
     prof = profile(index)
     return prof["data_dir"] / prof["filename"].format(year=year)
@@ -1026,6 +1071,82 @@ def final_membership(data: dict) -> set[str]:
         members -= set(change.get("difference") or [])
         members |= set(change.get("union") or [])
     return members
+
+
+def rollover_year(index: str, today: date | None = None) -> Path | None:
+    """Create this year's file, seeded from last year's final membership.
+
+    A year file used to appear only when that year's first change was applied.
+    A quiet January (the Nasdaq-100 can go months without a change) leaves the
+    year with no file at all -- and every consumer that resolves membership by year
+    (july-backtester's tickers_as_of, data_gate) fails closed on the missing
+    file from January 1. Returns the path written, or None if nothing to do.
+    """
+    today = today or date.today()
+    path = yaml_path(index, today.year)
+    if path.exists():
+        return None
+    previous = load_year(index, today.year - 1)
+    if previous is None:
+        raise FileNotFoundError(f"cannot roll over to {today.year}: no {today.year - 1} file")
+    data = {
+        "year": today.year,
+        "tickers_on_Jan_1": yaml_tickers(sorted(final_membership(previous))),
+        "changes": {},
+    }
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        yaml_rt().dump(data, handle)
+    return path
+
+
+def expire_elapsed_pending(index: str, today: date | None = None) -> list[str]:
+    """Drop ``pending`` from changes whose effective date has arrived.
+
+    apply_candidates marks a future change pending, and nothing ever cleared
+    the flag once the date passed -- the S&P 500 2026-06-22 and 2026-09-21
+    changes still carried it weeks later. No consumer filters on it today, but
+    one that skipped pending entries would silently drop real membership
+    changes. Checks last year too, for a late-December change seen after
+    rollover. Returns the dates cleared.
+    """
+    today = today or date.today()
+    cleared: list[str] = []
+    for year in (today.year - 1, today.year):
+        data = load_year(index, year)
+        if data is None:
+            continue
+        due = [
+            key
+            for key, entry in (data.get("changes") or {}).items()
+            if (entry or {}).get("pending") and date.fromisoformat(str(key)) <= today
+        ]
+        if not due:
+            continue
+        for key in due:
+            del data["changes"][key]["pending"]
+        with yaml_path(index, year).open("w", encoding="utf-8", newline="\n") as handle:
+            yaml_rt().dump(data, handle)
+        cleared.extend(str(key) for key in due)
+    return cleared
+
+
+def entry_covers(entry: dict, removed: list[str], added: list[str]) -> bool:
+    """True if a recorded entry already reflects a candidate's changes.
+
+    Exact equality, or -- only when the entry carries evidence_url -- a
+    superset. A ticker rename effective the same day as an announced change
+    shares its date key, and the release covers only its own half: on
+    2026-08-18 the S&P release says AVB -> RDDT, while EQR -> VMRK (a rename,
+    never announced by S&P) is recorded in the same entry with evidence. An
+    exact-match test reported that release as a contradiction on every run.
+    Without evidence the extra tickers are unexplained, so a superset still
+    goes to manual review.
+    """
+    old_removed = set(entry.get("difference") or [])
+    old_added = set(entry.get("union") or [])
+    if old_removed == set(removed) and old_added == set(added):
+        return True
+    return bool(entry.get("evidence_url")) and set(removed) <= old_removed and set(added) <= old_added
 
 
 def candidate_changes(index: str, threshold: float = 0.90) -> list[dict]:
@@ -1066,6 +1187,18 @@ def apply_candidates(
     for candidate in changes:
         effective = date.fromisoformat(candidate["effective_date"])
         if effective.year < today.year and not correction_mode:
+            # The archive keeps last December's annual reconstitution in view
+            # for months. Checked only after the year gate, a change ALREADY
+            # recorded exactly was reported as needing a correction on every
+            # run -- a permanent manual-review row, which now raises an issue.
+            prior = (load_year(index, effective.year) or {}).get("changes") or {}
+            recorded = next(
+                (entry for key, entry in prior.items() if str(key) == candidate["effective_date"]),
+                None,
+            ) or {}
+            if recorded and entry_covers(recorded, candidate["removed"], candidate["added"]):
+                actions.append({**candidate, "status": "already_present", "reason": "historical change already recorded"})
+                continue
             actions.append({**candidate, "status": "manual_review", "reason": "historical correction flag required"})
             continue
         data = touched.get(effective.year) or load_year(index, effective.year)
@@ -1076,7 +1209,7 @@ def apply_candidates(
                 continue
             data = {
                 "year": effective.year,
-                "tickers_on_Jan_1": sorted(final_membership(previous)),
+                "tickers_on_Jan_1": yaml_tickers(sorted(final_membership(previous))),
                 "changes": {},
             }
         touched[effective.year] = data
@@ -1086,9 +1219,7 @@ def apply_candidates(
         desired_removed = candidate["removed"]
         desired_added = candidate["added"]
         if existing:
-            old_removed = sorted(existing.get("difference") or [])
-            old_added = sorted(existing.get("union") or [])
-            if old_removed != desired_removed or old_added != desired_added:
+            if not entry_covers(existing, desired_removed, desired_added):
                 actions.append({**candidate, "status": "manual_review", "reason": "contradicts existing same-day change"})
                 continue
             status = "source_metadata_added" if not existing.get("source_url") else "already_present"
@@ -1114,9 +1245,9 @@ def apply_candidates(
             continue
         entry = {}
         if desired_removed:
-            entry["difference"] = desired_removed
+            entry["difference"] = yaml_tickers(desired_removed)
         if desired_added:
-            entry["union"] = desired_added
+            entry["union"] = yaml_tickers(desired_added)
         entry["source_url"] = candidate["source_url"]
         entry["source_title"] = candidate["source_title"]
         entry["announcement_date"] = candidate["announcement_date"]
@@ -1206,6 +1337,17 @@ def validate_dataset(index: str) -> tuple[list[str], list[str], dict]:
                 if entry.get("source_url"):
                     if not official_url(str(entry["source_url"]), prof["official_domains"]):
                         errors.append(f"{path.name} {effective}: source URL is not official")
+                elif entry.get("evidence_url"):
+                    # Spin-offs, take-privates and exchange transfers are never
+                    # announced as press releases, so they cannot carry an
+                    # official source_url. They are recorded with secondary
+                    # evidence and confirmed by the live-constituent check.
+                    if not entry.get("evidence_note"):
+                        errors.append(f"{path.name} {effective}: evidence_url without evidence_note")
+                    warnings.append(
+                        f"{path.name} {effective}: no official press release; recorded from "
+                        f"secondary evidence ({entry['evidence_url']})"
+                    )
                 else:
                     warnings.append(f"{path.name} {effective}: legacy change has no official source metadata")
         except Exception as exc:
@@ -1352,6 +1494,16 @@ def latest_yaml_change(index: str) -> str:
 # S&P 500: 481 observed gaps, max 99 days. Nasdaq-100: 120 gaps, max 364.
 QUIET_PERIOD_DAYS_DEFAULT = 120
 
+# The live check runs every weekday; Friday to Monday is 3 days, so 4 means a
+# run was genuinely missed.
+LIVE_CHECK_MAX_AGE_DAYS = 4
+
+
+def needs_live_attention(state: dict) -> bool:
+    from live_check import needs_attention
+
+    return needs_attention(state)
+
 
 def check_freshness(index: str) -> dict:
     prof = profile(index)
@@ -1401,6 +1553,34 @@ def check_freshness(index: str) -> dict:
             "discovery found no URLs beyond the hardcoded seed_urls -- the "
             "crawler is probably not matching the archive's markup"
         )
+    # Every check above measures the CRAWLER, and in 2026 the crawler was
+    # healthy by all of them while five changes went unrecorded: it cannot
+    # report an announcement it never saw, and spin-offs, take-privates and
+    # exchange transfers are never announced at all. The live check compares
+    # names against the provider's current list instead, so it is the one test
+    # here that a blind crawler cannot pass. See scripts/live_check.py.
+    live_state_path = METADATA_DIR / "live_check_state.json"
+    live = json.loads(live_state_path.read_text(encoding="utf-8")) if live_state_path.exists() else {}
+    live_status = live.get("status")
+    if not live:
+        warnings.append("live constituent check has never run (scripts/check_live_constituents.py)")
+    else:
+        checked = datetime.fromisoformat(live["checked_at"])
+        age_days = (datetime.now(timezone.utc) - checked).days
+        official = (live.get("sources") or [{}])[0]
+        if age_days > LIVE_CHECK_MAX_AGE_DAYS:
+            warnings.append(
+                f"live constituent check last ran {age_days} days ago ({live['checked_at']}); "
+                f"the schedule is every weekday"
+            )
+        if live_status == "mismatch":
+            warnings.append(
+                f"YAML disagrees with the official current list: missing "
+                f"{official.get('missing_from_pit') or '-'}, extra {official.get('extra_in_pit') or '-'}"
+            )
+        elif live_status == "source_error":
+            msg = f"official current list unreachable: {official.get('error')}"
+            (warnings if needs_live_attention(live) else notes).append(msg)
     result = {
         "index_name": prof["index_name"],
         "latest_yaml_year": max(
@@ -1412,6 +1592,9 @@ def check_freshness(index: str) -> dict:
         "latest_successful_fetch": fetch_state.get("fetched_at") if fetch_state.get("successful") else None,
         "latest_trusted_date": latest_change or None,
         "stale_after_date": quiet_after.isoformat() if quiet_after else None,
+        "live_check_status": live_status,
+        "latest_live_check": live.get("checked_at"),
+        "latest_live_check_pass": live.get("last_pass_at"),
         "confidence_level": "high" if not warnings else "stale_or_incomplete",
         "warnings": warnings,
         "notes": notes,
