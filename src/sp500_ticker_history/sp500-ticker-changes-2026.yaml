@@ -626,3 +626,21 @@ changes:
     announcement_date: '2026-09-04'
     confidence_score: 0.99
     pending: true
+  '2026-10-01':
+    union:
+      - VYLR
+    source_url: https://press.spglobal.com/2026-10-01-Vylor-Added-to-the-S-P-500-Twilio-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Vylor Added to the S&P 500; Twilio Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2026-10-01'
+    confidence_score: 0.99
+  '2026-10-06':
+    difference:
+      - CTVA
+      - WBD
+    union:
+      - TWLO
+    source_url: https://press.spglobal.com/2026-10-01-Vylor-Added-to-the-S-P-500-Twilio-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: Vylor Added to the S&P 500; Twilio Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2026-10-01'
+    confidence_score: 0.99
+    pending: true

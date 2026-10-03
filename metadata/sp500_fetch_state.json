@@ -1,11 +1,11 @@
 {
   "index_name": "S&P 500",
-  "fetched_at": "2026-09-28T18:43:17+00:00",
+  "fetched_at": "2026-10-03T17:21:02+00:00",
   "sources_attempted": 1,
   "candidate_urls": 8,
   "discovery_sources": 1,
   "crawled_urls": 8,
-  "parsed_candidates": 10,
+  "parsed_candidates": 11,
   "manual_review_items": 0,
   "errors": [],
   "successful_fetches": 3,

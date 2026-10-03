@@ -1,10 +1,9 @@
 # PIT Membership Update Diff
 
-Generated: 2026-09-28T18:43:19+00:00
+Generated: 2026-10-03T17:21:04+00:00
 
 | Index | Effective date | Added | Removed | Confidence | Manual review | Source |
 |---|---|---|---|---:|---|---|
-| S&P 500 | 2026-04-09 | CASY | HOLX | 0.99 | false | [Casey's General Stores Set to Join S&P 500; DigitalOcean Holdings to Join S&P MidCap 400; Broadstone Net Lease to Join S&P SmallCap 600](https://press.spglobal.com/2026-04-06-Caseys-General-Stores-Set-to-Join-S-P-500-DigitalOcean-Holdings-to-Join-S-P-MidCap-400-Broadstone-Net-Lease-to-Join-S-P-SmallCap-600) |
 | S&P 500 | 2026-05-07 | VEEV | CTRA | 0.99 | false | [Veeva Systems Set to Join S&P 500](https://press.spglobal.com/2026-04-30-Veeva-Systems-Set-to-Join-S-P-500) |
 | S&P 500 | 2026-06-01 | FDXF | - | 0.99 | false | [FedEx Freight Holding Company Set to Join S&P 500; EPAM Systems and Dave to Join S&P SmallCap 600](https://press.spglobal.com/2026-05-27-FedEx-Freight-Holding-Company-Set-to-Join-S-P-500-EPAM-Systems-and-Dave-to-Join-S-P-SmallCap-600) |
 | S&P 500 | 2026-06-02 | - | EPAM | 0.99 | false | [FedEx Freight Holding Company Set to Join S&P 500; EPAM Systems and Dave to Join S&P SmallCap 600](https://press.spglobal.com/2026-05-27-FedEx-Freight-Holding-Company-Set-to-Join-S-P-500-EPAM-Systems-and-Dave-to-Join-S-P-SmallCap-600) |
@@ -14,3 +13,5 @@ Generated: 2026-09-28T18:43:19+00:00
 | S&P 500 | 2026-08-05 | FERG | EA | 0.99 | false | [Ferguson Enterprises Set to Join S&P 500 and ADI Global Distribution to Join S&P SmallCap 600](https://press.spglobal.com/2026-07-31-Ferguson-Enterprises-Set-to-Join-S-P-500-and-ADI-Global-Distribution-to-Join-S-P-SmallCap-600) |
 | S&P 500 | 2026-08-18 | RDDT | AVB | 0.99 | false | [Reddit Set to Join S&P 500 and Sun Communities to Join S&P MidCap 400](https://press.spglobal.com/2026-08-13-Reddit-Set-to-Join-S-P-500-and-Sun-Communities-to-Join-S-P-MidCap-400) |
 | S&P 500 | 2026-09-21 | BE;ILMN;P | BLDR;TAP;TTD | 0.99 | false | [Bloom Energy, Illumina, and Everpure Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400, and S&P SmallCap 600](https://press.spglobal.com/2026-09-04-Bloom-Energy,-Illumina,-and-Everpure-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400,-and-S-P-SmallCap-600) |
+| S&P 500 | 2026-10-01 | VYLR | - | 0.99 | false | [Vylor Added to the S&P 500; Twilio Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600](https://press.spglobal.com/2026-10-01-Vylor-Added-to-the-S-P-500-Twilio-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600) |
+| S&P 500 | 2026-10-06 | TWLO | CTVA;WBD | 0.99 | false | [Vylor Added to the S&P 500; Twilio Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600](https://press.spglobal.com/2026-10-01-Vylor-Added-to-the-S-P-500-Twilio-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600) |
