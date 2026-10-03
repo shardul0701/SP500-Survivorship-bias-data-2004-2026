@@ -2,12 +2,15 @@ name: Refresh Official PIT Membership
 
 on:
   schedule:
-    - cron: "41 11 * * 1"
+    # Every weekday. Weekly was long enough for a change to come and go
+    # unnoticed; the live check below is cheap and is the run that matters.
+    - cron: "41 11 * * 1-5"
   workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   refresh:
@@ -20,6 +23,8 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
+      - name: Year-file housekeeping (rollover, elapsed pending flags)
+        run: python scripts/rollover_year.py --index sp500
       - name: Fetch official S&P announcements
         run: python scripts/fetch_official_sp500_announcements.py
       - name: Plan update
@@ -30,6 +35,28 @@ jobs:
         run: |
           python scripts/validate_membership.py --index sp500
           python scripts/audit_membership_update.py
+      # Runs even if the crawler or validation failed: it shares no code with
+      # the crawler, so it is most valuable exactly when the crawler is broken.
+      #
+      # continue-on-error so a GitHub API failure while raising an issue cannot
+      # hold back the membership PR below; a later step turns the run red if
+      # either alert step failed.
+      - name: Live constituent check (official current list vs YAML)
+        id: live_alert
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/check_live_constituents.py --index sp500 --alert
+      - name: Manual-review alert
+        id: review_alert
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/alert_manual_review.py --index sp500 --alert
+      - name: Freshness and YAML checks
+        run: |
           # --no-fail here on purpose: this is the step that WRITES the freshness
           # report, and it runs before the review PR is opened. Letting it exit
           # non-zero would abort the job and skip the PR entirely, so a stale
@@ -46,6 +73,7 @@ jobs:
             audit/
             metadata/*fetch_state.json
             metadata/data_freshness.json
+            metadata/live_check_state.json
       - name: Commit refreshed metadata and audit
         # The membership YAML being unchanged does NOT mean nothing was refreshed.
         # check_freshness.py and the audit reports rewrite themselves on every run,
@@ -58,7 +86,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- src/sp500_ticker_history; then
+          # `git status --porcelain`, not `git diff --quiet`: diff ignores
+          # untracked files, so a newly created year file was invisible here.
+          if [ -n "$(git status --porcelain -- src/sp500_ticker_history)" ]; then
             echo "Membership YAML changed -- metadata travels with the review PR."
             exit 0
           fi
@@ -75,7 +105,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          if git diff --quiet -- src/sp500_ticker_history; then
+          if [ -z "$(git status --porcelain -- src/sp500_ticker_history)" ]; then
             echo "No membership YAML changes detected."
             exit 0
           fi
@@ -103,15 +133,34 @@ jobs:
           # validate. Those are never applied to the YAML (refresh_lib skips any row
           # flagged manual_review_required or under the confidence threshold) and are
           # written to audit/manual_review_required.csv, which is rewritten per run.
-          # If that file has any data row, leave the PR open for a human.
-          manual="audit/manual_review_required.csv"
-          if [ -s "$manual" ] && [ "$(tail -n +2 "$manual" | grep -c .)" -gt 0 ]; then
-            echo "::warning::$(tail -n +2 "$manual" | grep -c .) manual-review item(s) this run -- PR left open for review."
+          # If any of them is still outstanding, leave the PR open for a human.
+          #
+          # Outstanding, not "any row": the archive keeps a release listed long
+          # after it was dealt with, so a release a human already acknowledged as
+          # not a membership change (metadata/manual_review_ack.yaml) is in that
+          # CSV on every run. Counting raw rows would leave every PR open.
+          outstanding="$(python scripts/alert_manual_review.py --index sp500 --count)"
+          if [ "$outstanding" -gt 0 ]; then
+            echo "::warning::${outstanding} outstanding manual-review item(s) -- PR left open for review."
             gh pr edit "$url" --add-label "needs-human-review" || true
             exit 0
           fi
           gh pr merge "$url" --merge --delete-branch
           echo "Merged $url"
+
+      # After the PR step, so the state file and the alert are already written.
+      # Red here means the YAML disagrees with SPY's current holdings (or the
+      # holdings file has been unreachable for 3+ days) -- the open live-check
+      # issue says which names.
+      - name: Gate on the live constituent check
+        if: ${{ !cancelled() }}
+        run: python scripts/check_live_constituents.py --index sp500 --gate
+
+      - name: Fail if an alert could not be raised
+        if: ${{ !cancelled() && (steps.live_alert.outcome == 'failure' || steps.review_alert.outcome == 'failure') }}
+        run: |
+          echo "::error::An alert step failed (see its log); the condition it was reporting may be unannounced."
+          exit 1
 
       - name: Fail the run if the dataset is stale or incomplete
         # Deliberately last, and if: always(). The refresh has to land first -- a
