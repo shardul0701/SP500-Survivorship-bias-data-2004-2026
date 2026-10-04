@@ -56,14 +56,17 @@ Checks: YAML parses correctly, no duplicate tickers, member counts in valid rang
 
 ## Official-source refresh
 
-The repository includes a fail-closed weekly refresh that checks official S&P Global/S&P DJI
-sources, retains raw evidence and audit reports, and opens a pull request for manual review:
+The repository includes a fail-closed weekday refresh. It checks official S&P Global/S&P DJI
+sources, compares the YAML with the index's current holdings (SPY's daily holdings file),
+raises GitHub issues when they disagree, keeps raw evidence and audit reports, and opens a
+pull request for review:
 
 ```bash
 python scripts/fetch_official_sp500_announcements.py
 python scripts/update_membership_yaml.py --index sp500 --dry-run
 python scripts/validate_membership.py --index sp500
 python scripts/audit_membership_update.py
+python scripts/check_live_constituents.py --index sp500
 python scripts/check_freshness.py --index sp500
 ```
 
@@ -74,8 +77,8 @@ python scripts/fetch_official_sp500_announcements.py --history-start 2018-11-01
 python scripts/reconcile_official_sp500_history.py --start-year 2019 --end-year 2026
 ```
 
-See `MERGE_OR_REFRESH_SPEC.md` for source registration, validation, correction mode, and the
-pull-request workflow.
+See `MERGE_OR_REFRESH_SPEC.md` for source registration, validation, correction mode, ticker
+renames, the live check, alerts, year-file housekeeping, and the pull-request workflow.
 
 ## Run the membership audit
 
