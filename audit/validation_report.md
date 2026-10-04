@@ -1,10 +1,10 @@
 # Membership Validation Report
 
 - Index: S&P 500
-- Generated: 2026-10-03T17:21:03+00:00
+- Generated: 2026-10-04T12:40:16+00:00
 - YAML files: 23
 - Errors: 0
-- Warnings: 394
+- Warnings: 396
 
 ## Errors
 
@@ -406,3 +406,5 @@
 - sp500-ticker-changes-2025.yaml 2025-08-08: legacy change has no official source metadata
 - sp500-ticker-changes-2025.yaml 2025-11-11: legacy change has no official source metadata
 - sp500-ticker-changes-2026.yaml 2026-01-14: legacy change has no official source metadata
+- sp500-ticker-changes-2026.yaml 2026-05-21: no official press release; recorded from secondary evidence (https://www.bny.com/corporate/global/en/about-us/newsroom/press-release/bny-announces-planned-change-of-stock-ticker-symbol-to-bny-130465.html)
+- sp500-ticker-changes-2026.yaml 2026-06-24: no official press release; recorded from secondary evidence (https://ir.echostar.com/news-releases/news-release-details/echostar-changing-stocker-ticker-sats-echo-marking-companys-next)
