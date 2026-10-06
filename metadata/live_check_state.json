@@ -1,8 +1,8 @@
 {
   "index_name": "S&P 500",
-  "checked_at": "2026-10-05T22:07:05+00:00",
-  "status": "pass",
-  "pit_count_today": 504,
+  "checked_at": "2026-10-06T17:24:10+00:00",
+  "status": "mismatch",
+  "pit_count_today": 503,
   "official_source": "ssga_spy",
   "sources": [
     {
@@ -10,16 +10,20 @@
       "url": "https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx",
       "role": "official",
       "reachable": true,
-      "as_of": "2026-10-02",
-      "count": 504,
+      "as_of": "2026-10-05",
+      "count": 503,
       "error": null,
-      "missing_from_pit": [],
-      "extra_in_pit": [],
+      "missing_from_pit": [
+        "SKYD"
+      ],
+      "extra_in_pit": [
+        "PSKY"
+      ],
       "window": [
-        "2026-10-01",
         "2026-10-02",
         "2026-10-05",
-        "2026-10-06"
+        "2026-10-06",
+        "2026-10-07"
       ]
     }
   ],
