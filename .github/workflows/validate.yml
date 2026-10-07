@@ -2,7 +2,9 @@ name: Validate YAML
 
 on:
   push:
-  pull_request:
+  # Every human PR is validated by its branch push. A PR created with the
+  # repository GITHUB_TOKEN cannot start a pull_request workflow, which left a
+  # misleading action_required/failure check on automation refresh PRs.
 
 jobs:
   validate:

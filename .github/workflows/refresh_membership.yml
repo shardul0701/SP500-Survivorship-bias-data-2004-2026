@@ -101,6 +101,7 @@ jobs:
           git push origin HEAD:main
 
       - name: Open review pull request
+        id: review_pr
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -119,34 +120,7 @@ jobs:
           git push --set-upstream origin "$branch"
           url="$(gh pr create             --base main             --head "$branch"             --title "Update PIT membership through ${stamp}"             --body-file audit/update_diff_report.md)"
           echo "Opened $url"
-
-          # A PR opened with the default GITHUB_TOKEN cannot trigger any workflow,
-          # so `Validate YAML` registers as action_required and never runs. Between
-          # that and nobody merging by hand, 11 of these stacked up and the S&P 500
-          # data sat three months stale. The checks that PR would have run are the
-          # ones this job already ran above, on these exact bytes, before the branch
-          # existed -- so a green PR check would carry no information the run does
-          # not already have. Merge it here instead of waiting for a signal that
-          # structurally cannot arrive.
-          #
-          # The one thing the run cannot vouch for is a candidate it could not
-          # validate. Those are never applied to the YAML (refresh_lib skips any row
-          # flagged manual_review_required or under the confidence threshold) and are
-          # written to audit/manual_review_required.csv, which is rewritten per run.
-          # If any of them is still outstanding, leave the PR open for a human.
-          #
-          # Outstanding, not "any row": the archive keeps a release listed long
-          # after it was dealt with, so a release a human already acknowledged as
-          # not a membership change (metadata/manual_review_ack.yaml) is in that
-          # CSV on every run. Counting raw rows would leave every PR open.
-          outstanding="$(python scripts/alert_manual_review.py --index sp500 --count)"
-          if [ "$outstanding" -gt 0 ]; then
-            echo "::warning::${outstanding} outstanding manual-review item(s) -- PR left open for review."
-            gh pr edit "$url" --add-label "needs-human-review" || true
-            exit 0
-          fi
-          gh pr merge "$url" --merge --delete-branch
-          echo "Merged $url"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
 
       # After the PR step, so the state file and the alert are already written.
       # Red here means the YAML disagrees with SPY's current holdings (or the
@@ -184,3 +158,23 @@ jobs:
             exit 1
           fi
           echo "Dataset is current."
+
+      - name: Auto-merge the validated membership PR
+        if: ${{ steps.review_pr.outputs.url != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ steps.review_pr.outputs.url }}
+        shell: bash
+        run: |
+          # The refresh job already ran the full validators on these exact bytes.
+          # This step is deliberately after the live-list, alert-delivery and
+          # freshness gates. Any earlier failure leaves the PR open and main
+          # unchanged instead of publishing an untrusted roster.
+          outstanding="$(python scripts/alert_manual_review.py --index sp500 --count)"
+          if [ "$outstanding" -gt 0 ]; then
+            echo "::warning::${outstanding} outstanding manual-review item(s) -- PR left open for review."
+            gh pr edit "$PR_URL" --add-label "needs-human-review" || true
+            exit 0
+          fi
+          gh pr merge "$PR_URL" --merge --delete-branch
+          echo "Merged $PR_URL after every gate passed."

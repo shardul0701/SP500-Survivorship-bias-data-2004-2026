@@ -654,10 +654,14 @@ changes:
   '2026-10-06':
     difference:
       - CTVA
+      - PSKY
       - WBD
     union:
+      - SKYD
       - TWLO
     source_url: https://press.spglobal.com/2026-10-01-Vylor-Added-to-the-S-P-500-Twilio-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
     source_title: Vylor Added to the S&P 500; Twilio Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
     announcement_date: '2026-10-01'
     confidence_score: 0.99
+    evidence_url: https://www.sec.gov/Archives/edgar/data/2041610/000110465926113076/tm2626659d3_8k.htm
+    evidence_note: 'Ticker change only: Paramount Skydance Corporation transferred its Class B common stock from Nasdaq to the NYSE and changed its symbol from PSKY to SKYD effective 2026-10-06. Same security and index seat; the S&P release covers the same-day constituent changes but not this ticker rename.'

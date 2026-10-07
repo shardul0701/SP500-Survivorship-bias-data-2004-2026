@@ -1,6 +1,6 @@
 # Data Freshness Report
 
-Generated: 2026-10-06T17:24:12+00:00
+Generated: 2026-10-07T17:41:43+00:00
 
 - **index_name**: S&P 500
 - **latest_yaml_year**: 2026
@@ -9,12 +9,12 @@ Generated: 2026-10-06T17:24:12+00:00
 - **latest_successful_fetch**: 2026-10-06T17:24:07+00:00
 - **latest_trusted_date**: 2026-10-06
 - **stale_after_date**: 2027-02-03
-- **live_check_status**: mismatch
-- **latest_live_check**: 2026-10-06T17:24:10+00:00
-- **latest_live_check_pass**: 2026-10-05T22:07:05+00:00
-- **confidence_level**: stale_or_incomplete
+- **live_check_status**: pass
+- **latest_live_check**: 2026-10-07T17:41:41+00:00
+- **latest_live_check_pass**: 2026-10-07T17:41:41+00:00
+- **confidence_level**: high
 - **notes**: []
 
 ## Warnings
 
-- YAML disagrees with the official current list: missing ['SKYD'], extra ['PSKY']
+- None
