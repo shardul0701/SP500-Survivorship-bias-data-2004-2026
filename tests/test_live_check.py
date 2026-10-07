@@ -62,6 +62,14 @@ def test_the_pre_rename_yaml_is_caught():
     assert extra == ["BK", "EQR", "SATS"]
 
 
+def test_psky_becomes_skyd_on_2026_10_06():
+    data = yaml_2026()
+    before = L.members_from_yaml(data, date(2026, 10, 5))
+    after = L.members_from_yaml(data, date(2026, 10, 6))
+    assert "PSKY" in before and "SKYD" not in before
+    assert "SKYD" in after and "PSKY" not in after
+
+
 def test_a_swap_that_keeps_the_count_is_still_caught():
     data = {"tickers_on_Jan_1": ["AAA", "BBB", "CCC"], "changes": {}}
     missing, extra, _ = L.persistent_diff(
