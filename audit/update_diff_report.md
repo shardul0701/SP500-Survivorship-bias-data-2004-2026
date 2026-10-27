@@ -1,10 +1,9 @@
 # PIT Membership Update Diff
 
-Generated: 2026-10-26T17:38:15+00:00
+Generated: 2026-10-27T16:50:30+00:00
 
 | Index | Effective date | Added | Removed | Confidence | Manual review | Source |
 |---|---|---|---|---:|---|---|
-| S&P 500 | 2026-05-07 | VEEV | CTRA | 0.99 | false | [Veeva Systems Set to Join S&P 500](https://press.spglobal.com/2026-04-30-Veeva-Systems-Set-to-Join-S-P-500) |
 | S&P 500 | 2026-06-01 | FDXF | - | 0.99 | false | [FedEx Freight Holding Company Set to Join S&P 500; EPAM Systems and Dave to Join S&P SmallCap 600](https://press.spglobal.com/2026-05-27-FedEx-Freight-Holding-Company-Set-to-Join-S-P-500-EPAM-Systems-and-Dave-to-Join-S-P-SmallCap-600) |
 | S&P 500 | 2026-06-02 | - | EPAM | 0.99 | false | [FedEx Freight Holding Company Set to Join S&P 500; EPAM Systems and Dave to Join S&P SmallCap 600](https://press.spglobal.com/2026-05-27-FedEx-Freight-Holding-Company-Set-to-Join-S-P-500-EPAM-Systems-and-Dave-to-Join-S-P-SmallCap-600) |
 | S&P 500 | 2026-06-22 | FLEX;MRVL | CPB;POOL | 0.99 | false | [Marvell Technology and Flex Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600](https://press.spglobal.com/2026-06-05-Marvell-Technology-and-Flex-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600) |

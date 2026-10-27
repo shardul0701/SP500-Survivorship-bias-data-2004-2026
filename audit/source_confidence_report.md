@@ -1,9 +1,9 @@
 # Source Confidence Report
 
-Generated: 2026-10-26T17:38:15+00:00
+Generated: 2026-10-27T16:50:30+00:00
 
-- Candidate changes: 11
+- Candidate changes: 10
 - Manual-review items: 0
-- High confidence (>= 0.90): 11
+- High confidence (>= 0.90): 10
 
 Only official domains listed in `metadata/source_registry.yaml` are accepted.
