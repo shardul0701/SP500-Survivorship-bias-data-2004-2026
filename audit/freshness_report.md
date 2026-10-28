@@ -1,17 +1,17 @@
 # Data Freshness Report
 
-Generated: 2026-10-27T16:50:32+00:00
+Generated: 2026-10-28T17:21:32+00:00
 
 - **index_name**: S&P 500
 - **latest_yaml_year**: 2026
 - **latest_change_date**: 2026-10-06
-- **latest_official_source_checked**: 2026-10-27T16:50:29+00:00
-- **latest_successful_fetch**: 2026-10-27T16:50:29+00:00
+- **latest_official_source_checked**: 2026-10-28T17:21:27+00:00
+- **latest_successful_fetch**: 2026-10-28T17:21:27+00:00
 - **latest_trusted_date**: 2026-10-06
 - **stale_after_date**: 2027-02-03
 - **live_check_status**: pass
-- **latest_live_check**: 2026-10-27T16:50:31+00:00
-- **latest_live_check_pass**: 2026-10-27T16:50:31+00:00
+- **latest_live_check**: 2026-10-28T17:21:29+00:00
+- **latest_live_check_pass**: 2026-10-28T17:21:29+00:00
 - **confidence_level**: high
 - **notes**: []
 
