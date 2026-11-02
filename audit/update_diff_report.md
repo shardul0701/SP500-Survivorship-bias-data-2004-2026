@@ -1,6 +1,6 @@
 # PIT Membership Update Diff
 
-Generated: 2026-10-30T17:09:32+00:00
+Generated: 2026-11-02T20:52:37+00:00
 
 | Index | Effective date | Added | Removed | Confidence | Manual review | Source |
 |---|---|---|---|---:|---|---|
@@ -14,3 +14,4 @@ Generated: 2026-10-30T17:09:32+00:00
 | S&P 500 | 2026-09-21 | BE;ILMN;P | BLDR;TAP;TTD | 0.99 | false | [Bloom Energy, Illumina, and Everpure Set to Join S&P 500; Others to Join S&P 100, S&P MidCap 400, and S&P SmallCap 600](https://press.spglobal.com/2026-09-04-Bloom-Energy,-Illumina,-and-Everpure-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400,-and-S-P-SmallCap-600) |
 | S&P 500 | 2026-10-01 | VYLR | - | 0.99 | false | [Vylor Added to the S&P 500; Twilio Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600](https://press.spglobal.com/2026-10-01-Vylor-Added-to-the-S-P-500-Twilio-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600) |
 | S&P 500 | 2026-10-06 | TWLO | CTVA;WBD | 0.99 | false | [Vylor Added to the S&P 500; Twilio Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600](https://press.spglobal.com/2026-10-01-Vylor-Added-to-the-S-P-500-Twilio-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600) |
+| S&P 500 | 2026-11-04 | OKTA | KVUE | 0.99 | false | [Okta Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600](https://press.spglobal.com/2026-10-30-Okta-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600) |
