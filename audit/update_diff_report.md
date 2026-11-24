@@ -1,6 +1,6 @@
 # PIT Membership Update Diff
 
-Generated: 2026-11-23T22:54:37+00:00
+Generated: 2026-11-24T21:29:52+00:00
 
 | Index | Effective date | Added | Removed | Confidence | Manual review | Source |
 |---|---|---|---|---:|---|---|
@@ -15,3 +15,4 @@ Generated: 2026-11-23T22:54:37+00:00
 | S&P 500 | 2026-10-01 | VYLR | - | 0.99 | false | [Vylor Added to the S&P 500; Twilio Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600](https://press.spglobal.com/2026-10-01-Vylor-Added-to-the-S-P-500-Twilio-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600) |
 | S&P 500 | 2026-10-06 | TWLO | CTVA;WBD | 0.99 | false | [Vylor Added to the S&P 500; Twilio Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600](https://press.spglobal.com/2026-10-01-Vylor-Added-to-the-S-P-500-Twilio-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600) |
 | S&P 500 | 2026-11-04 | OKTA | KVUE | 0.99 | false | [Okta Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600](https://press.spglobal.com/2026-10-30-Okta-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600) |
+| S&P 500 | 2026-12-02 | SN | AES | 0.99 | false | [SharkNinja Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600](https://press.spglobal.com/2026-11-23-SharkNinja-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600) |
