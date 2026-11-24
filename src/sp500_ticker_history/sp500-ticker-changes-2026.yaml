@@ -674,3 +674,13 @@ changes:
     source_title: Okta Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
     announcement_date: '2026-10-30'
     confidence_score: 0.99
+  '2026-12-02':
+    difference:
+      - AES
+    union:
+      - SN
+    source_url: https://press.spglobal.com/2026-11-23-SharkNinja-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600
+    source_title: SharkNinja Set to Join S&P 500; Others to Join S&P MidCap 400 and S&P SmallCap 600
+    announcement_date: '2026-11-23'
+    confidence_score: 0.99
+    pending: true
