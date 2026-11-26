@@ -1,6 +1,6 @@
 {
   "index_name": "S&P 500",
-  "checked_at": "2026-11-25T20:37:51+00:00",
+  "checked_at": "2026-11-26T20:30:53+00:00",
   "status": "pass",
   "pit_count_today": 503,
   "official_source": "ssga_spy",
@@ -23,5 +23,5 @@
       ]
     }
   ],
-  "last_pass_at": "2026-11-25T20:37:51+00:00"
+  "last_pass_at": "2026-11-26T20:30:53+00:00"
 }
